@@ -6,7 +6,7 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-03-05T21:54:32+10:00"
+      "last_modified": "2022-03-05T21:59:56+10:00"
     },
     {
       "path": "index.html",
@@ -14,7 +14,15 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-03-05T21:54:32+10:00"
+      "last_modified": "2022-03-05T21:59:57+10:00"
+    },
+    {
+      "path": "projects.html",
+      "title": "Projects",
+      "description": "Some additional details about my projects",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-03-05T21:59:58+10:00"
     }
   ],
   "collections": []

@@ -1,12 +1,13 @@
 name: "edwchris.github.io"
-title: "Christopher Edwards"
+title: "Chris Edwards"
 description: |
   Christopher Edwards
 output_dir: "docs"
+creative_commons: CC BY-SA
+twitter:
+  site: "@edchris_"
 navbar:
   right:
-    - text: "Home"
-      href: index.html
     - text: "About"
       href: about.html
     - text: "Articles"

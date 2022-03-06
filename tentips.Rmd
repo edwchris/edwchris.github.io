@@ -1,18 +1,19 @@
 ---
-title: "Success in sonography"
-description: |
-   10 Tips for students.
+title: "Success in sonography - 10 Tips for Students"
 author:
   - first_name: "Christopher"
     last_name: "Edwards"
-    url: https:https://edwchris.github.io/
-    affiliation: QUeensland University of Technology (QUT) 
+    url: https://edwchris.github.io/
+    affiliation: Queensland University of Technology (QUT) 
     affiliation_url: https://www.qut.edu.au
     orcid_id: 0000-0001-7466-9530
+citation_url: https://edwchris.github.io/
+slug: Edwards2022Tentips
 date: February 22, 2022
 bibliography: biblio1.bib
 creative_commons: CC BY-SA
 output: distill::distill_article
+
 ---
 
 ```{r setup, include=FALSE}
@@ -54,11 +55,11 @@ Postgraduate ultrasound education should not be viewed as a top-down approach. L
 
 Take responsibility for your learning. Read your reports and follow up cases that interest you. Regularly engage your colleagues, and if there is an element you would like assistance with, ask for it! Ultrasound departments are hectic, complex environments and students need to use their initiative to enhance their training. Ultrasound training is a privilege and a fantastic opportunity few people get. Don't remain a passive observer; help out where you can when times are busy, and use your time wisely during quiet periods. Seek feedback from all members of the health care team. Learn from radiologists, cardiologists and other imaging specialists, talk to referrers and gain insights from a wide network. 
 
-#### 7. Reflect on the journey in the early stage. 
+### 7. Reflect on the journey in the early stage. 
 
 Sonography training is difficult and stressful; this is the truth. Success will require you to manage these in the short term to realise your long-term goals. However, there must be an element of enjoyment in what you do. Struggling in a profession that you learn is the wrong fit has no benefit. The investment in a single student for a department is massive. It won't take long to understand what is required and what the future holds. If you realise the career is not for you, step away and pursue something better suited. There is no shame in this, and it demonstrates a level of insight and maturity. 
 
-####  8. Be a scholar
+###  8. Be a scholar
 
 As a university student, read the academic literature and think critically about what you have read. Read full-text articles and don't simply rely on headlines distilling the virtues of ultrasound. Ultrasound technology does not need to be marketed. It needs to be understood. It is not without its flaws and has many. Understand the limitations and advantages, when it should be employed to improve patient care and when to be avoided. Engage with your professional bodies such as ASA and ASUM. But also challenge them to promote factually correct information backed by peer-reviewed research. If an organisation shares information, check who wrote it and search out and read the research paper. A good paper will discuss any limitations missed in the headline. For example, "the participants in the study were trained athletes and do not represent the broader population". If a link does not contain direct access to the entire research paper, ask for it or search directly and share it. Suppose the journal paper is behind a pay-wall. In that case, university research repositories, such as QUT ePrints, or national databases such as PubMed.gov often have agreements with the publisher to provide full-text approved versions of papers.  
 

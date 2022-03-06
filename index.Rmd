@@ -1,11 +1,28 @@
 ---
 title: "Chris Edwards"
-description: |
-  Welcome to the website. I hope you enjoy it!
+image: "images/profile.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/edchris/"
+  - label: Twitter
+    url: "https://twitter.com/edchris_"
+  - label: Google Scholar
+    url: "https://scholar.google.com/citations?user=Ce18xdAAAAAJ&hl=en&oi=ao"
+  - label: Email
+    url: "mailto:c8.edwards@qut.edu.au"
+output:
+  postcards::trestles
 site: distill::distill_website
 ---
+ 
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## Bio
+
+I am a Senior Lecturer in the School of Clinical Sciences and Course coordinator of the Graduate Diploma in Medical Ultrasound at QUT. I am an accredited Medical Sonographer and registered Medical Radiation Practitioner and hold a concurrent position as a clinical Radiographer/Sonographer within QLD Health. My interests are in applied ultrasound technology, educational leadership and national accreditation standards. I am currently collaborating with Mater Research and the QLD Family Cohort, exploring the role of ultrasound elastography to assess the placenta.
+
+## Projects

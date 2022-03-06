@@ -8,8 +8,6 @@ twitter:
   site: "@edchris_"
 navbar:
   right:
-    - text: "About"
-      href: about.html
     - text: "Articles"
       menu:
           - text: "Success in sonography - 10 Tips"

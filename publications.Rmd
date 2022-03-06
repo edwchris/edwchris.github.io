@@ -3,7 +3,7 @@ title: "Publications"
 author:
   - first_name: "Christopher"
     last_name: "Edwards"
-    url: https://edwchris.github.io/
+    url: https://orcid.org/0000-0001-7466-9530
     affiliation: Queensland University of Technology (QUT), QUT Centre for BioMedical Technology
     affiliation_url: https://eprints.qut.edu.au/view/person/Edwards,_Christopher.html
     orcid_id: 0000-0001-7466-9530

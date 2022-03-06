@@ -3,11 +3,11 @@ title: "Success in sonography - 10 Tips for Students"
 author:
   - first_name: "Christopher"
     last_name: "Edwards"
-    url: https://edwchris.github.io/
+    url: https://orcid.org/0000-0001-7466-9530
     affiliation: Queensland University of Technology (QUT) 
     affiliation_url: https://www.qut.edu.au
     orcid_id: 0000-0001-7466-9530
-citation_url: https://edwchris.github.io/
+citation_url: https://eprints.qut.edu.au/view/person/Edwards,_Christopher.html
 slug: Edwards2022Tentips
 date: February 22, 2022
 bibliography: biblio1.bib

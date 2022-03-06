@@ -1,14 +1,21 @@
 name: "edwchris.github.io"
-title: "Chris Edwards"
+title: "Christopher Edwards"
 description: |
-  Chris Edwaeds
+  Christopher Edwards
 output_dir: "docs"
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Projects"
-      href: projects.html
     - text: "About"
       href: about.html
+    - text: "Articles"
+      menu:
+          - text: "Success in sonography - 10 Tips"
+            href: tentips.html
+      href: projects.html
+    - text: "Teaching"
+      href: teaching.html
+    - text: "Publications"
+      href: publications.html
 output: distill::distill_article

@@ -14,7 +14,7 @@ output:
   postcards::trestles
 site: distill::distill_website
 ---
- 
+  
 
 
 ```{r setup, include=FALSE}
@@ -23,6 +23,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Bio
 
-I am a Senior Lecturer in the School of Clinical Sciences and Course coordinator of the Graduate Diploma in Medical Ultrasound at QUT. I am an accredited Medical Sonographer and registered Medical Radiation Practitioner and hold a concurrent position as a clinical Radiographer/Sonographer within QLD Health. My interests are in applied ultrasound technology, educational leadership and national accreditation standards. I am currently collaborating with Mater Research and the QLD Family Cohort, exploring the role of ultrasound elastography to assess the placenta.
+Chris is a Senior Lecturer in the School of Clinical Sciences and Course Coordinator of the [Graduate Diploma in Medical Ultrasound at QUT](https://www.qut.edu.au/courses/graduate-diploma-in-medical-ultrasound). He is an accredited Medical Sonographer and registered Medical Radiation Practitioner and holds a concurrent position as a clinical Radiographer/Sonographer within QLD Health. He conducts teaching, research and outreach on topics related to Medical Ultrasound. He has a keen interest in applied ultrasound technology, educational leadership and national accreditation standards. Chris is an active Board member of the Australian Sonographers Accreditation Registry.  
 
 ## Projects
+
+Chris is currently collaborating with [Mater Research and the QLD Family Cohort](https://www.materresearch.org.au/Our-research/Research-programs/Mothers-babies-and-women-s-health/Queensland-Family-Cohort-Study), exploring the role of ultrasound elastography to assess the placenta.
+

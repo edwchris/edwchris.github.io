@@ -8,3 +8,21 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r , layout="l-body-outset"}
+library(tidyverse)
+
+units <- read_csv("data/teaching.csv")
+
+
+x<- knitr::kable(units[1:5, ],
+  booktabs = TRUE,
+  caption = 'A table of the first 10 rows of the mtcars data.')
+x
+
+```
+
+
+```{r}
+
+```
+

@@ -1,9 +1,9 @@
 name: "edwchris.github.io"
 title: "Chris Edwards"
 description: |
-  Christopher Edwards
+  Lecturer and Researcher in Medical Ultrasound at
+  Queensland University of Technology (QUT), Brisbane, Australia
 output_dir: "docs"
-creative_commons: CC BY-SA
 twitter:
   site: "@edchris_"
 navbar:

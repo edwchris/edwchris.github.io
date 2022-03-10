@@ -1,12 +1,12 @@
 ---
-title: "Projects"
-description: |
-  Some additional details about my projects
+title: "Teaching"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+###  University Teaching 
 
 ```{r , layout="l-body-outset"}
 library(tidyverse)
@@ -16,11 +16,12 @@ units <- read_csv("data/teaching.csv")
 
 x<- knitr::kable(units[1:5, ],
   booktabs = TRUE,
-  caption = 'A table of the first 10 rows of the mtcars data.')
+  caption = 'List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound')
 x
 
 ```
 
+### Invited Talks / Presentations
 
 ```{r}
 

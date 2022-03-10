@@ -19,5 +19,6 @@ navbar:
       href: teaching.html
     - text: "Publications"
       href: publications.html
-    - icon: images/bw_avatar.jfif
+    - icon: fab fa-github
+      href: https://github.com/edwchris/edwchris.github.io
       output: distill::distill_article

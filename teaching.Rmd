@@ -1,5 +1,6 @@
 ---
 title: "Teaching"
+output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}

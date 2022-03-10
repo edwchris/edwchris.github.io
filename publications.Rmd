@@ -7,25 +7,28 @@ author:
     affiliation: Queensland University of Technology (QUT), QUT Centre for BioMedical Technology
     affiliation_url: https://eprints.qut.edu.au/view/person/Edwards,_Christopher.html
     orcid_id: 0000-0001-7466-9530
-output: distill::distill_article
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-### 2022
+### Journals
+
+**2022**
 
 Edwards, C., Cavanagh, E., Kumar, S., Clifton, V. L., Borg, D. J., Priddle, J., Marie-Luise, W., Drovandi, C., & Fontanarosa, D. (2022). Relationship between placental elastography, maternal pre-pregnancy body mass index and gestational weight gain. Placenta, 121, 1–6. https://doi.org/10.1016/j.placenta.2022.02.015
 
 Edwards, C., Chamunyonga, C., Searle, B., & Reddan, T. (2022). The application of artificial intelligence in the sonography profession: Professional and educational considerations. Ultrasound, 1742271X2110724. https://doi.org/10.1177/1742271X211072473
 
-### 2021
+**2021**
 
 Borg, D., Rae, K., Fiveash, C., Schagen, J., James-McAlpine, J., Friedlander, F., Thurston, C., Oliveri, M., Harmey, T., Cavanagh, E., Edwards, C., Fontanarosa, D., Perkins, T., de Zubicaray, G., Moritz, K., Kumar, S., & Clifton, V. (2021). Queensland Family Cohort: a study protocol. BMJ Open, 11(6), e044463. https://doi.org/10.1136/bmjopen-2020-044463
 
 Camps, S. M., & Edwards, C. (2021). Ultrasound for measuring interfraction organ motion. In E. Harris, D. Fontanarosa, S. Camps, & F. Verhaegen (Eds.), Modern Applications of 3D/4D Ultrasound Imaging in Radiotherapy. IOP Publishing. https://doi.org/10.1088/978-0-7503-2552-3
-
-Camps, S., & Edwards, C. (2021). Ultrasound for measuring interfraction organ motion. In Modern Applications of 3D/4D Ultrasound Imaging in Radiotherapy. IOP Publishing. https://doi.org/10.1088/978-0-7503-2552-3ch6
 
 Childs, J., Thoirs, K., Osborne, B., Halligan, T., Stoodley, P., Quinton, A., Lombardo, P., McDonald, S. A., Slade, D., Chandler, A., Pollard, K., Edwards, C., Long, J., & Taylor, L. (2021). Professional Competency Framework for Sonographers. Figshare, October.
 https://doi.org/10.6084/m9.figshare.17148035.v2
@@ -38,26 +41,45 @@ Edwards, C., Cavanagh, E., Kumar, S., Clifton, V., & Fontanarosa, D. (2021). Int
 
 Sungkana, H., Edwards, C., & Reddan, T. (2021). The utility of abdominal ultrasonography in the diagnosis of fungal infections in children: a narrative review. Journal of Medical Radiation Sciences, 68(1), 75–85. https://doi.org/10.1002/jmrs.431
 
-### 2020
+**2020**
 
 Camps, S. M., Houben, T., Carneiro, G., Edwards, C., Antico, M., Dunnhofer, M., Martens, E. G. H. J., Baeza, J. A., Vanneste, B. G. L., van Limbergen, E. J., de With, P. H. N., Verhaegen, F., & Fontanarosa, D. (2020). Automatic Quality Assessment of Transperineal Ultrasound Images of the Male Pelvic Region, Using Deep Learning. Ultrasound in Medicine and Biology, 46(2), 445–454. https://doi.org/10.1016/j.ultrasmedbio.2019.10.027
 
 Chamunyonga, C., Edwards, C., Caldwell, P., Rutledge, P., & Burbery, J. (2020). The Impact of Artificial Intelligence and Machine Learning in Radiation Therapy: Considerations for Future Curriculum Enhancement. Journal of Medical Imaging and Radiation Sciences, 51(2), 214–220. https://doi.org/10.1016/j.jmir.2020.01.008
 
+Chamunyonga, C., Edwards, C., Caldwell, P., Rutledge, P., Burbery, J. (2020) Leadership in the radiation therapy profession: The importance of understanding the potential benefits and theoretical perspectives. Journal of Medical Imaging and Radiation Sciences, 51(4), pp. 535-539. https://doi.org/10.1016/j.jmir.2020.09.008
+
 Chamunyonga, C., Singh, A., Gunn, T., & Edwards, C. (2020). Strategies to develop student support mechanisms in medical radiation sciences clinical education. Journal of Medical Imaging and Radiation Sciences, 51(4), 512–517. https://doi.org/10.1016/j.jmir.2020.08.004
+
+Chamunyonga, C., Singh, A., Gunn, T., & Edwards, C. (2020) Authors' response re: Strategies to develop student support mechanisms in medical radiation sciences clinical education. Journal of Medical Imaging and Radiation Sciences, 51(4), pp. 697-698. https://doi.org/10.1016/j.jmir.2020.09.010
 
 Edwards, C., Cavanagh, E., Kumar, S., Clifton, V., & Fontanarosa, D. (2020). The use of elastography in placental research – A literature review. Placenta, 99, 78–88. https://doi.org/10.1016/j.placenta.2020.07.014
 
 Johnson, A., Edwards, C., & Reddan, T. (2020). A review of sonographic thyroid volume and iodine sufficiency in children: An Australian perspective. Australasian Journal of Ultrasound in Medicine, 23(1), 33–38. https://doi.org/10.1002/ajum.12189
 
-### 2018 
+**2018** 
 
 Camps, S., Houben, T., Edwards, C., Antico, M., Dunnhofer, M., Martens, E., Baeza, J., Vanneste, B., Van Limbergen, E., De With, P., Verhaegen, F., Carneiro, G., & Fontanarosa, D. (2018). Quality Assessment of Transperineal Ultrasound Images of the Male Pelvic Region Using Deep Learning. IEEE International Ultrasonics Symposium, IUS, 2018-Janua. https://doi.org/10.1109/ULTSYM.2018.8579839
 
 Chamunyonga, C., Edwards, C., Caldwell, P., Rutledge, P., & Burbery, J. (2018). Exploring the Role and Application of the Deliberate Practice Concept in Radiation Therapy. Journal of Medical Imaging and Radiation Sciences, 49(3). https://doi.org/10.1016/j.jmir.2018.04.024
 
+Camps, S., Houben, T., Fontanarosa, D., Edwards, C., Antico, M., Dunnhofer, M., Martens, E., Baeza, J.Vanneste, B., van Limbergen, E., Peter, V., F.Carneiro, G. (2018) One-class Gaussian process regressor for quality assessment of transperineal ultrasound images. In Isgum, I, Sanchez, C, & Litjens, G (Eds.) Proceedings of the 1st International Conference on Medical Imaging with Deep Learning 2018. Medical Imaging with Deep Learning Conference Committee, The Netherlands, pp. 1-10. https://eprints.qut.edu.au/120113/
+
 Edwards, C., Chamunyonga, C., & Clarke, J. (2018). The role of deliberate practice in development of essential sonography skills. Sonography, 5(2), 76–81. https://doi.org/10.1002/sono.12146
 
-### 2017 
+**2017**
 
 Coyer, F., Clark, M., Slattery, P., Thomas, P., McNamara, G., Edwards, C., Ingleman, J., Stephenson, J., & Ousey, K. (2017). Exploring pressures, tissue reperfusion and body positioning: a pilot evaluation. Journal of Wound Care, 26(10), 583–592. https://doi.org/10.12968/jowc.2017.26.10.583
+
+### Book Contributions
+
+Camps, S. M., & Edwards, C. (2021). Ultrasound for measuring interfraction organ motion. In E. Harris, D. Fontanarosa, S. Camps, & F. Verhaegen (Eds.), Modern Applications of 3D/4D Ultrasound Imaging in Radiotherapy. IOP Publishing. https://doi.org/10.1088/978-0-7503-2552-3 
+
+### Cited Conference Proceedings
+
+**2019**
+
+Edwards, Christopher, Chamunyonga, Crispen, & Clarke, Jillian (2019) Deliberate practice in medical sciences education. Journal of Medical Radiation Sciences, 66(S1), p. 85 https://doi.org/10.1002/jmrs.2_324 
+
+Camps, S.M., Houben, T., Carneiro, G., Edwards, C., Antico, M., Dunnhofer, M., et al. (2019) Automatic deep learning based quality assessment of transperineal ultrasound guided prostate radiotherapy. In ASMIRT / AACRT 2019 Conference, 2019-03-28 - 2019-03-31. https://doi.org/10.1002/jmrs.324 [Slides](https://eprints.qut.edu.au/128005/2/128005.pdf)
+

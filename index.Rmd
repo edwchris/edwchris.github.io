@@ -1,7 +1,6 @@
 ---
 title: "Chris Edwards"
 image: "images/profile.jpg"
-favicon: images/bw_icon.png
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/edchris/"

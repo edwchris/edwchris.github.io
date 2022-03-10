@@ -5,9 +5,9 @@ author:
     last_name: "Edwards"
     url: https://orcid.org/0000-0001-7466-9530
     affiliation: Queensland University of Technology (QUT) 
-    affiliation_url: https://www.qut.edu.au
+    affiliation_url: https://eprints.qut.edu.au/view/person/Edwards,_Christopher.html
     orcid_id: 0000-0001-7466-9530
-citation_url: https://eprints.qut.edu.au/view/person/Edwards,_Christopher.html
+citation_url: https://edwchris.github.io/tentips.html
 slug: Edwards2022Tentips
 date: February 22, 2022
 bibliography: biblio1.bib

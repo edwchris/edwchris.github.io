@@ -7,15 +7,17 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r}
+library(tidyverse)
+
+units <- read_csv("data/teaching.csv")
+```
+
 ###  University Teaching 
 
 Table 1 : List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
 
 ```{r , layout="l-body-outset"}
-library(tidyverse)
-
-units <- read_csv("data/teaching.csv")
-
 knitr::kable(units[1:5, ],
   booktabs = TRUE)
 

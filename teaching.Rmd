@@ -9,18 +9,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ###  University Teaching 
 
+Table 1 : List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
+
 ```{r , layout="l-body-outset"}
 library(tidyverse)
 
 units <- read_csv("data/teaching.csv")
 
-
-x<- knitr::kable(units[1:5, ],
-  booktabs = TRUE,
-  caption = 'List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound')
-x
+knitr::kable(units[1:5, ],
+  booktabs = TRUE)
 
 ```
+
+Table 2 : List of Undergradaute Teachning at QUT - (CS49) Bachelor of Radiation Therapy, (CS48) Bachelor of Medical Imaging (Honours)
+
+```{r, layout="l-body-outset"}
+knitr::kable(units[6:8, ],
+  booktabs = TRUE)
+```
+
+### HDR - Honours Projects
+
+Pressure pain thresholds in sub-elite athletes with and without plantar fasciopathy
+
+Developmental dysplasia of the Hip - formulation of normal values for age using ultrasound
+
+Dosimetric Impact of the Clarity Autoscan Ultrasound Probe on Perineal Dose in Prostate Cancer Patients 
 
 ### Invited Talks / Presentations
 

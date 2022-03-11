@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r}
 library(tidyverse)
+library(kableExtra)
 
 units <- read_csv("data/teaching.csv")
 ```
@@ -18,16 +19,23 @@ units <- read_csv("data/teaching.csv")
 Table 1 : List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
 
 ```{r , layout="l-body-outset"}
-knitr::kable(units[1:5, ],
+T1<- knitr::kable(units[1:5, ],
   booktabs = TRUE)
 
+T1a<- column_spec(T1, 1, width = "4cm")
+T1a
 ```
 
 Table 2 : List of Undergradaute Teachning at QUT - (CS49) Bachelor of Radiation Therapy, (CS48) Bachelor of Medical Imaging (Honours)
 
 ```{r, layout="l-body-outset"}
-knitr::kable(units[6:8, ],
+
+
+T2<- knitr::kable(units[6:8, ],
   booktabs = TRUE)
+
+T2a<- column_spec(T2, 1, width = "4cm")
+T2a
 ```
 
 ### HDR - Honours Projects

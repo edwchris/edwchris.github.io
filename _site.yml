@@ -16,6 +16,7 @@ navbar:
       menu:
           - text: "Success in sonography - 10 Tips"
             href: tentips.html
+    - text: "Projects"
       href: projects.html
     - text: "Teaching"
       href: teaching.html

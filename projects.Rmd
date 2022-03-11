@@ -1,10 +1,15 @@
 ---
 title: "Projects"
-description: |
-  Some additional details about my projects
+output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+
+
+
+
+
 

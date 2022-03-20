@@ -16,7 +16,7 @@ units <- read_csv("data/teaching.csv")
 
 ###  University Teaching 
 
-List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
+List of postgraduate teaching at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
 
 ```{r , layout="l-body-outset"}
 T1<- knitr::kable(units[1:5, ],
@@ -27,7 +27,7 @@ T1b<- column_spec(T1a, 2, width = "3cm")
 T1b
 ```
 
-List of Undergradaute Teachning at QUT - (CS49) Bachelor of Radiation Therapy, (CS48) Bachelor of Medical Imaging (Honours)
+List of undergraduate teaching at QUT - (CS49) Bachelor of Radiation Therapy, (CS48) Bachelor of Medical Imaging (Honours)
 
 ```{r, layout="l-body-outset"}
 

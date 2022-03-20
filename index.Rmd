@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Bio
 
-Chris is a Senior Lecturer in the School of Clinical Sciences and Course Coordinator of the [Graduate Diploma in Medical Ultrasound at QUT](https://www.qut.edu.au/courses/graduate-diploma-in-medical-ultrasound). He is an accredited Medical Sonographer and registered Medical Radiation Practitioner and holds a concurrent position as a clinical Radiographer/Sonographer within QLD Health. He conducts teaching, research and outreach on topics related to Medical Ultrasound. He has a keen interest in applied ultrasound technology, educational leadership and national accreditation standards. Chris is an active Board member of the Australian Sonographers Accreditation Registry.  
+Chris is a Senior Lecturer in the School of Clinical Sciences and Course Coordinator of the [Graduate Diploma in Medical Ultrasound at QUT](https://www.qut.edu.au/courses/graduate-diploma-in-medical-ultrasound). He is an accredited Medical Sonographer and registered Medical Radiation Practitioner and holds a concurrent position as a clinical Radiographer/Sonographer within QLD Health. He conducts teaching, research and outreach on topics related to Medical Ultrasound. Chris is an active Board member of the Australian Sonographers Accreditation Registry and is an editorial Board member of the journal [*Sonography*](https://onlinelibrary.wiley.com/journal/20546750). He has a keen interest in applied ultrasound technology, educational leadership and national accreditation standards. He has an developing interest in data science, and tinkers in RStudio exploring creative ways to communicate ultrasound research and other broader interest.  
 
 ## Projects
 

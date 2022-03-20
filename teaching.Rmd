@@ -16,17 +16,18 @@ units <- read_csv("data/teaching.csv")
 
 ###  University Teaching 
 
-Table 1 : List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
+List of Postgraduate Teachning at QUT - (CS60) Graduate Diploma in Medical Ultrasound, (CS61) Graduate Diploma in Cardiac Ultrasound
 
 ```{r , layout="l-body-outset"}
 T1<- knitr::kable(units[1:5, ],
   booktabs = TRUE)
 
 T1a<- column_spec(T1, 1, width = "4cm")
-T1a
+T1b<- column_spec(T1a, 2, width = "3cm")
+T1b
 ```
 
-Table 2 : List of Undergradaute Teachning at QUT - (CS49) Bachelor of Radiation Therapy, (CS48) Bachelor of Medical Imaging (Honours)
+List of Undergradaute Teachning at QUT - (CS49) Bachelor of Radiation Therapy, (CS48) Bachelor of Medical Imaging (Honours)
 
 ```{r, layout="l-body-outset"}
 
@@ -35,10 +36,11 @@ T2<- knitr::kable(units[6:8, ],
   booktabs = TRUE)
 
 T2a<- column_spec(T2, 1, width = "4cm")
-T2a
+T2b<- column_spec(T2a, 2, width = "3cm")
+T2b
 ```
 
-### HDR - Honours Projects
+### HDR & Honours Projects
 
 Pressure pain thresholds in sub-elite athletes with and without plantar fasciopathy
 
@@ -47,6 +49,10 @@ Developmental dysplasia of the Hip - formulation of normal values for age using 
 Dosimetric Impact of the Clarity Autoscan Ultrasound Probe on Perineal Dose in Prostate Cancer Patients 
 
 ### Invited Talks / Presentations
+
+*Longitudinal analysis of placental stiffness using ultrasound - Towards the Digital Placenta*. [QUT CBT Conference](https://research.qut.edu.au/cbt/conference/), Brisbane, 11-12 November 2021
+
+*Modelling the biomechanical properties of the placenta using sonoelastography*. Placental Consortium Seminar [Stillbirth Centre of Research Excellence](https://stillbirthcre.org.au/), Brisbane, 23 March November 2022
 
 ```{r}
 

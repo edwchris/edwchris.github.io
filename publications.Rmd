@@ -20,6 +20,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 **2022**
 
+Childs, J., Thoirs, K., Quinton, A., Osborne, B., Edwards, C., Stoodley, P., Lombardo, P., McDonald, S., Slade, D., Chandler, A., Taylor, L., Long, J., Pollard, K., & Halligan, T. (2022). Development of a Professional Competency Framework for Australian Sonographers – Perspectives for Developing Competencies Using a Delphi Methodology. International Journal for Quality in Health Care. https://doi.org/10.1093/intqhc/mzac017
+
 Edwards, C., Cavanagh, E., Kumar, S., Clifton, V. L., Borg, D. J., Priddle, J., Marie-Luise, W., Drovandi, C., & Fontanarosa, D. (2022). Relationship between placental elastography, maternal pre-pregnancy body mass index and gestational weight gain. Placenta, 121, 1–6. https://doi.org/10.1016/j.placenta.2022.02.015
 
 Edwards, C., Chamunyonga, C., Searle, B., & Reddan, T. (2022). The application of artificial intelligence in the sonography profession: Professional and educational considerations. Ultrasound, 1742271X2110724. https://doi.org/10.1177/1742271X211072473

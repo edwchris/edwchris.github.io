@@ -52,7 +52,7 @@ Dosimetric Impact of the Clarity Autoscan Ultrasound Probe on Perineal Dose in P
 
 *Longitudinal analysis of placental stiffness using ultrasound - Towards the Digital Placenta*. [QUT CBT Conference](https://research.qut.edu.au/cbt/conference/), Brisbane, 11-12 November 2021
 
-*Modelling the biomechanical properties of the placenta using sonoelastography*. Placental Consortium Seminar [Stillbirth Centre of Research Excellence](https://stillbirthcre.org.au/), Brisbane, 23 March November 2022
+*Modelling the biomechanical properties of the placenta using sonoelastography*. Placental Consortium Seminar [Stillbirth Centre of Research Excellence](https://stillbirthcre.org.au/), Brisbane, 23 March November 2022 [slides](./docs/slides/Placental_oral.pdf)
 
 ```{r}
 

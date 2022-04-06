@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 **2022**
 
+<font size="2"> 
 Childs, J., Thoirs, K., Quinton, A., Osborne, B., Edwards, C., Stoodley, P., Lombardo, P., McDonald, S., Slade, D., Chandler, A., Taylor, L., Long, J., Pollard, K., & Halligan, T. (2022). Development of a Professional Competency Framework for Australian Sonographers – Perspectives for Developing Competencies Using a Delphi Methodology. International Journal for Quality in Health Care. https://doi.org/10.1093/intqhc/mzac017
 
 Edwards, C., Cavanagh, E., Kumar, S., Clifton, V. L., Borg, D. J., Priddle, J., Marie-Luise, W., Drovandi, C., & Fontanarosa, D. (2022). Relationship between placental elastography, maternal pre-pregnancy body mass index and gestational weight gain. Placenta, 121, 1–6. https://doi.org/10.1016/j.placenta.2022.02.015
@@ -84,4 +85,4 @@ Camps, S. M., & Edwards, C. (2021). Ultrasound for measuring interfraction organ
 Edwards, Christopher, Chamunyonga, Crispen, & Clarke, Jillian (2019) Deliberate practice in medical sciences education. Journal of Medical Radiation Sciences, 66(S1), p. 85 https://doi.org/10.1002/jmrs.2_324 
 
 Camps, S.M., Houben, T., Carneiro, G., Edwards, C., Antico, M., Dunnhofer, M., et al. (2019) Automatic deep learning based quality assessment of transperineal ultrasound guided prostate radiotherapy. In ASMIRT / AACRT 2019 Conference, 2019-03-28 - 2019-03-31. https://doi.org/10.1002/jmrs.324 [Slides](https://eprints.qut.edu.au/128005/2/128005.pdf)
-
+</font> 

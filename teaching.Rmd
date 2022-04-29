@@ -54,6 +54,8 @@ Dosimetric Impact of the Clarity Autoscan Ultrasound Probe on Perineal Dose in P
 
 *Modelling the biomechanical properties of the placenta using sonoelastography*. Placental Consortium Seminar [Stillbirth Centre of Research Excellence](https://stillbirthcre.org.au/), Brisbane, 23 March November 2022 [slides](./data/Placental_oral.pdf)
 
+*Understanding the reliability and consistency of Ultrasound dervied elastrography measures of the human placenta*. PhD Final Seminar [Queensland University of Technology (QUT)](https://www.qut.edu.au/), Brisbane, 15 April 2022 [slides](./data/PHD Thesis Final Seminar.pdf)
+
 ```{r}
 
 ```

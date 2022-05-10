@@ -11,12 +11,12 @@ citation_url: https://edwchris.github.io/tentips.html
 slug: Edwards2022Tentips
 date: February 22, 2022
 bibliography: biblio1.bib
-creative_commons: CC BY-SA
+creative_commons: CC BY-NC
 output: 
   distill::distill_article:
     toc: true
     toc_depth: 3
-repository_url: https://edwchris.github.io/tentips.html
+
 
 ---
 

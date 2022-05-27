@@ -56,6 +56,8 @@ Dosimetric Impact of the Clarity Autoscan Ultrasound Probe on Perineal Dose in P
 
 *Understanding the reliability and consistency of Ultrasound dervied elastrography measures of the human placenta*. PhD Final Seminar [Queensland University of Technology (QUT)](https://www.qut.edu.au/), Brisbane, 15 April 2022 [slides](./data/PHD Thesis Final Seminar.pdf)
 
+*Using non-invasive ultrasound elastography to monitor structural changes of the placenta*. QLD Family Cohort Symposium [QLD Family Cohort / Mater Research](https://www.qldfamilycohort.org/), Translational Research Institue, Brisbane, 20 May 2022 
+
 ```{r}
 
 ```

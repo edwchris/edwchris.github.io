@@ -1,5 +1,5 @@
 ---
-title: "Featured posts"
+title: "Blog"
 listing: posts
 
 ---

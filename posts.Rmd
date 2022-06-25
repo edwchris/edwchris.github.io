@@ -1,6 +1,7 @@
 ---
-title: "Blog"
+title: "Posts"
 listing: posts
+output: distill::distill_article
 
 ---
 

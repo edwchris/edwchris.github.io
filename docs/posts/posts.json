@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-07-26-practice/",
+    "title": "Practice",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Unknown",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-26",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing,\r\nnative to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-26T19:50:10+10:00",
+    "input_file": "practice.knit.md"
+  },
+  {
     "path": "posts/2022-06-25-2nd-listing/",
     "title": "2nd Listing",
     "description": "A short description of the post.",

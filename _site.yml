@@ -13,6 +13,7 @@ collections:
     categories: true
     categories_metadata: true
     authors_metadata: false
+base_url: https://edwchris.github.io/
 navbar:
   logo:
     image: images/bw_avatar.jfif

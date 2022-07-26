@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Chris Edwards</title>
+    <link>https://edwchris.github.io/</link>
+    <atom:link href="https://edwchris.github.io/posts.xml" rel="self" type="application/rss+xml"/>
+    <description>Lecturer and Researcher in Medical Ultrasound at
+Queensland University of Technology (QUT), Brisbane, Australia
+</description>
+    <image>
+      <title>Chris Edwards</title>
+      <url>https://edwchris.github.io/images/bw_icon.png</url>
+      <link>https://edwchris.github.io/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Practice</title>
+      <dc:creator>Unknown</dc:creator>
+      <link>https://edwchris.github.io/posts/2022-07-26-practice</link>
+      <description>A short description of the post.</description>
+      <guid>https://edwchris.github.io/posts/2022-07-26-practice</guid>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>2nd Listing</title>
+      <dc:creator>Unknown</dc:creator>
+      <link>https://edwchris.github.io/posts/2022-06-25-2nd-listing</link>
+      <description>A short description of the post.</description>
+      <guid>https://edwchris.github.io/posts/2022-06-25-2nd-listing</guid>
+      <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>TEST</title>
+      <dc:creator>Unknown</dc:creator>
+      <link>https://edwchris.github.io/posts/2022-06-25-test</link>
+      <description>A short description of the post.</description>
+      <guid>https://edwchris.github.io/posts/2022-06-25-test</guid>
+      <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

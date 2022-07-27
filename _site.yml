@@ -28,7 +28,7 @@ navbar:
       href: teaching.html
     - text: "Publications"
       href: publications.html
-    - text: "Posts"
+    - text: "Blog"
       href: posts.html
     - icon: fa fa-rss
       href: posts.xml

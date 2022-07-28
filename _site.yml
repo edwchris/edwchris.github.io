@@ -13,6 +13,7 @@ collections:
     categories: true
     categories_metadata: true
     authors_metadata: false
+    share: [twitter, linkedin]
 base_url: https://edwchris.github.io/
 navbar:
   logo:

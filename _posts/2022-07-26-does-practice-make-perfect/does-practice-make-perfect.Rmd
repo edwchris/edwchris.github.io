@@ -32,6 +32,11 @@ Sonography requires the operator's integrated skill to manipulate the transducer
 Like other health disciples, student sonographers are exposed to various training environments; at times, these are effective and provide ample opportunity to learn and develop. At other times learning can be complex due to external factors.
 
 
+```{r fig.cap="Figure used under external licence", out.extra="class=external"}
+knitr::include_graphics("Depositphotos1.jpg")
+```
+
+
 *At this point I proposed some questions and introduced other information and research in the field of skill acquisition.* 
 
 Some readers may be familiar with the terms purposeful or Deliberate Practice (DP). Which has been popularised in several books, some of which are best sellers. The book *Outliers: The story of success* by Malcolm Gladwell [@Gladwell2008] has several elements, but a vital tenet of the book argues the secret to success is the notion of 10,000 hours of practice. Highlighting that a significant degree of time focused on a task is required to become truly an expert in any field, more so than any innate natural ability or genetic predisposition. Gladwell writes on many levels giving examples, some personal and others from popular culture such as The Beatles and Bill Gates, and discussing the importance of environment and socio-economic factors being highly correlated to success.

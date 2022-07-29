@@ -1,7 +1,7 @@
 ---
 title: "Sonography training - Does practice make perfect?"
 description: |
-  *An adapted version of this post was originally provided to first-year medical ultrasound students at QUT to encourage discussion on ways they could accelerate their learning.* 
+  *An adapted version of this post was originally provided to first-year medical ultrasound students at QUT to encourage discussion on ways to accelerate learning.* 
 author:
   - name: Christopher Edwards
     url: {}

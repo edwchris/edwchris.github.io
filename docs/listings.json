@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/edwchris.github.io/index.html",
+    "items": [
+      "/edwchris.github.io/posts/post-with-code/index.html",
+      "/edwchris.github.io/posts/welcome/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/posts/post-with-code/index.html",

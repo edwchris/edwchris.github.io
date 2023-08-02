@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "edwchris.github.io"
+  title: "Chris Edwards"
   navbar:
     right:
       - about.qmd

@@ -1,8 +1,10 @@
 ---
-title: "About"
-image: profile.jpg
+title: "Author"
+image: profile.png
 about:
-  template: jolla
+  id: hero-heading
+  template: trestles
+  image-shape: rectangle
   links:
     - icon: twitter
       text: Twitter
@@ -13,7 +15,36 @@ about:
     - icon: github
       text: Github
       href: https://github.com
-
 ---
 
-About this blog
+:::callout-note
+## Template for about page
+
+It is possible to use different templates for the About page. Check this [link](https://quarto.org/docs/websites/website-about.html) to find out more.
+
+:::
+
+
+::: {#hero-heading}
+
+I am a researcher at University of Oslo. 
+
+My work is about Electronic Health Records.
+
+
+## Education 
+
+University of Oslo | Oslo, Norway
+
+PhD in Biostatistics | Oct 2022
+
+University of Oslo | Oslo, Norway
+
+MSc in Statistics | June 2018
+
+## Experience
+
+I have developed X R packages, published Y papers. 
+
+:::
+

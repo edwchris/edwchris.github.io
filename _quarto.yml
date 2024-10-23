@@ -3,18 +3,29 @@ project:
   output-dir: docs
 
 website:
-  title: "Chris Edwards2"
+  page-navigation: true
+  title: "Hello :)"
+
+  page-footer:
+    left: "&copy; Copyright 2022, Author"
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+
   navbar:
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+    left:
+      - href: index.qmd
+        text: Home
+
+      - href: projects/index.qmd
+        text: Projects
+
+      - href: about.qmd
+        text: About
+
 format:
   html:
     theme: cosmo
     css: styles.css
+    toc: true
 
 
 

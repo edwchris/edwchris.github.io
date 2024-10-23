@@ -5,6 +5,7 @@ project:
 website:
   page-navigation: true
   title: "Chris Edwards"
+  google-analytics: "G-69T2DQZDC7"
 
   page-footer:
     left: "&copy; Copyright 2024, Chris Edwards"

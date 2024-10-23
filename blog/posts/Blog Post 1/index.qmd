@@ -1,0 +1,8 @@
+---
+title: "Blog Post 1"
+subtitle: "New Post Subtitle"
+date: today
+categories: [testing]
+date-modified: last-modified
+draft: true
+---

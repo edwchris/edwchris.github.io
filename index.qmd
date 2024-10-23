@@ -1,5 +1,5 @@
 ---
-title: "Author"
+title: "Chris Edwards"
 image: profile.png
 about:
   id: hero-heading
@@ -19,11 +19,11 @@ about:
 
 ::: {#hero-heading}
 
-I am a researcher at University of Oslo. 
+I am a researcher at Queensland University of Technology. 
 
-My work is about Electronic Health Records. My thesis is about ...
+My work is about . My thesis is about ...
 
-I am interested in developing packages. For example, ...
+I am interested in . For example, ...
 
 
 :::

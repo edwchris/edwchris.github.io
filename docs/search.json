@@ -21,31 +21,31 @@
     "text": "Project II\nA description of Project"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Author",
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "About",
     "section": "",
-    "text": "Template for about page\n\n\n\nIt is possible to use different templates for the About page. Check this link to find out more."
+    "text": "I am a researcher at QUT\nMy work is about ."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Author",
+    "objectID": "about/index.html#education",
+    "href": "about/index.html#education",
+    "title": "About",
     "section": "Education",
-    "text": "Education\nUniversity of Oslo | Oslo, Norway\nPhD in Biostatistics | Oct 2022\nUniversity of Oslo | Oslo, Norway\nMSc in Statistics | June 2018"
+    "text": "Education"
   },
   {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "Author",
+    "objectID": "about/index.html#experience",
+    "href": "about/index.html#experience",
+    "title": "About",
     "section": "Experience",
     "text": "Experience\nI have developed X R packages, published Y papers."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Author",
+    "title": "Chris Edwards",
     "section": "",
-    "text": "I am a researcher at University of Oslo.\nMy work is about Electronic Health Records. My thesis is about …\nI am interested in developing packages. For example, …\n \n  \n   \n  \n    \n     Twitter\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github"
+    "text": "I am a researcher at Queensland University of Technology.\nMy work is about . My thesis is about …\nI am interested in . For example, …\n \n  \n   \n  \n    \n     Twitter\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github"
   }
 ]

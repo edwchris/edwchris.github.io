@@ -4,10 +4,10 @@ project:
 
 website:
   page-navigation: true
-  title: "Hello :)"
+  title: "Chris Edwards"
 
   page-footer:
-    left: "&copy; Copyright 2022, Author"
+    left: "&copy; Copyright 2024, Chris Edwards"
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
 
   navbar:
@@ -18,7 +18,7 @@ website:
       - href: projects/index.qmd
         text: Projects
 
-      - href: about.qmd
+      - href: about/index.qmd
         text: About
 
 format:

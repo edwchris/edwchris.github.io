@@ -1,0 +1,17 @@
+---
+title: "About"
+subtitle: "Here is an About section."
+---
+
+I am a researcher at QUT 
+
+My work is about .
+
+
+## Education 
+
+
+
+## Experience
+
+I have developed X R packages, published Y papers. 

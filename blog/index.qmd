@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-subtitle: "Blog posts."
+subtitle: "A curated experiment in digital note-taking and idea sharing."
 editor: visual
 listing:
   contents: posts

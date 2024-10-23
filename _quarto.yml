@@ -11,7 +11,7 @@ website:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
 
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
         
@@ -28,7 +28,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
+    toc: false
 
 
 

@@ -1,30 +1,33 @@
 ---
 title: "Chris Edwards"
-image: profile.png
+image: profile2.jpg
 about:
-  id: hero-heading
-  template: jolla
-  image-shape: rectangle
+  template: trestles
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/edchris/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/edwchris
+    - icon: google
+      text: Google Scholar
+      href: https://scholar.google.com/citations?hl=en&user=Ce18xdAAAAAJ
 ---
 
-::: {#hero-heading}
+# Hi! I'm Chris
 
-I am a researcher at Queensland University of Technology. 
+I'm a associate professor of medical ultrasound at [Queensland University of Technology](https://www.qut.edu.au/about/our-people/academic-profiles/c8.edwards) and an active researcher in ultrasound education and technology. I focus on improving ultrasound training, exploring new techniques, and making sonography more accessible for healthcare professionals.
 
-My work is about . My thesis is about ...
+I'm passionate about advancing the field and helping students and professionals grow in their careers.
 
-I am interested in . For example, ...
+## Education
 
+**Ph.D in Medical Ultrasound** Queensland University of Technology \| Brisbane, Australia
 
-:::
+**M.of App.Sci (Medical Ultrasound)** Queensland University of Technology \| Brisbane, Australia
+
+**Grad.Cert (Magnetic Resonance Tech.)** University of Queensland \| Brisbane, Australia
+
+**B.of App.Sci (Medical Radiation Technology)** Queensland University of Technology \| Brisbane, Australia
 

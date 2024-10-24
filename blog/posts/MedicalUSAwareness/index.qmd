@@ -5,38 +5,49 @@ date: today
 categories: [Sonography]
 date-modified: last-modified
 draft: true
+bibliography: references.bib
 ---
 
 October is Medical Ultrasound Awareness Month, and the 27th of October is Australasian Sonographers Day. These are fantastic opportunities to bring the public closer to the incredible ultrasound technology and highlight the essential role sonographers play in modern healthcare. Unlike many imaging techniques, the success of ultrasound examinations depends heavily on the sonographer's skills, intuition, and expertise. This unique relationship between humans and machines presents challenges and remarkable rewards for those in the profession.
 
-Facing the Challenges of Sonography Today
+![](cup.png)
 
-The sonography profession faces several significant challenges today. Increasing demand for imaging services, an overstretched post-pandemic workforce, and a healthcare system that often under-recognizes the contributions of sonographers are just a few of the difficulties. Furthermore, ongoing concerns about workplace health and safety, alongside a chronic lack of training opportunities for the next generation of sonographers, have compounded the pressures on the field. While none of these challenges have easy solutions, focusing solely on the obstacles would overlook the incredible aspects of sonography that continue to make it a deeply rewarding career. So, what makes this profession so special? Here are three reasons.
+#### Facing the Challenges of Sonography Today
 
-The Joy of Mastering a Challenge
+The sonography profession faces several significant challenges today. Increasing demand for imaging services, an overstretched workforce, and a lack of professional recognition are just a few of the difficulties. Furthermore, ongoing concerns about workplace health and safety, alongside a chronic lack of training opportunities for the next generation of sonographers, have compounded the pressures on the field. While none of these challenges have easy solutions, focusing solely on the obstacles would overlook the incredible aspects of sonography that continue to make it a deeply rewarding career. So, what makes this profession so special? Here are three reasons.
 
-One of the most fulfilling aspects of sonography is its inherent complexity. Mastering the skill takes years, and excellence can take decades, but that journey is what makes it so satisfying. John F. Kennedy once said of the quest to land on the moon, "...not because they are easy, but because they are hard; because that goal will serve to organise and measure the best of our energies and skills..." This resonates with sonographers, who are challenged to perform complex tasks daily.
+#### The Joy of Mastering a Challenge
+
+One of the most fulfilling aspects of sonography is its inherent complexity. Mastering the skill takes years, and excellence can take decades, but that journey is what makes it so satisfying. John F. Kennedy once said of the quest to land on the moon,
+
+> "...not because they are easy, but because they are hard; because that goal will serve to  organise and measure the best of our energies and skills..."
+
+This resonates with sonographers, who are challenged to perform complex tasks daily.
 
 Each examination demands technical precision, an understanding of human anatomy, and split-second decision-making. The sonographer must simultaneously manipulate the ultrasound probe, adjust the ultrasound beam, interpret numerous images in real-time, and engage with the patient to ensure their comfort and cooperation. It is a dance of skill and intuition, with the patient always at the centre of the experience.
 
-As one paper described sonography, it is "25% art, 25% knowledge, and 50% public relations." Every exam is different, requiring a mix of creativity, problem-solving, and a deep connection with the patient. It may look easy to outsiders, but those in the field know the truth—this is a job for those who thrive on challenges.
+As one paper described sonography, it is "25% art, 25% knowledge, and 50% public relations."[@mulkey2005] Every exam is different, requiring a mix of creativity, problem-solving, and a deep connection with the patient. It may look easy to outsiders, but those in the field know the truth—this is a job for those who thrive on challenges.
 
-Creativity in Practice
+#### Creativity in Practice
 
-Sonography is far from a rote or procedural profession. Every patient presents a new puzzle, and sonographers rely on their creativity for the best results. Ultrasound machines don't know where to find the best images; it’s up to the sonographer’s skill and intuition to locate the ideal window, angle, or view. This makes every exam a creative act as much as a technical one.
+Sonography is far from a rote or procedural profession. Every patient presents a new puzzle, and sonographers rely on their creativity for the best results. Ultrasound machines don't know where to find the best images; it’s up to the sonographer’s skill and intuition to locate the ideal window, angle, or imaging plane. This makes every exam a creative act as much as a technical one.
 
-The creative aspect of sonography isn't just about solving problems on the fly—it’s also about the sonographer’s ability to use their body and mind in harmony. The literature is full of evidence that engaging in creative activities enhances happiness and well-being, and sonography offers a constant opportunity to apply that creativity in real-world settings. It's not just the technology of ultrasound that tells the story; it’s the sonographer’s ability to shape that story through creative exploration.
+The creative aspect of sonography isn't just about solving problems on the fly—it’s also about the sonographer’s ability to use their body and mind in harmony. The literature is full of evidence that engaging in creative activities enhances happiness and well-being [@forgeard2014], and sonography offers a constant opportunity to apply that creativity in real-world settings. It's not just the technology of ultrasound that tells the story; it’s the sonographer’s ability to shape that story through creative exploration.
 
-The Human Touch in a Technological World
+#### The Human Touch in a Technological World
 
-Ultrasound imaging is unique in its reliance on human skill and interpretation. Unlike other imaging technologies, where machines often handle the bulk of the analysis, ultrasound depends on the expertise of the sonographer. The interaction between the sonographer and their machine is essential—not only to humanise the technology but also to achieve the diagnostic accuracy needed for patient care. Even with substantial technological advancements, the role of the sonographer remains indispensable.
+Ultrasound imaging is unique in its reliance on human skill and interpretation. Unlike other imaging technologies, where machines often handle the bulk of the image acquistion and more recently the analysis, ultrasound depends on the expertise of the sonographer. The interaction between the sonographer and their machine is essential—not only to humanise the technology but also to achieve the diagnostic accuracy needed for optimal care. Even with substantial technological advancements, the role of the sonographer remains indispensable.
 
-While AI is making waves across industries, including healthcare, it remains difficult to predict precisely how it will impact the sonography profession. Some AI tools might quietly improve image quality in the background, while others may directly interact with sonographers during procedures. For example, AI systems already assist in detecting anatomical landmarks or even highlighting pathologies, reducing some of the burden on sonographers. However, these systems require human oversight. No matter how advanced the technology becomes, the interpretation of images, especially in challenging cases, will continue to depend heavily on the expertise of the sonographer.
+While AI is making waves across the healthcare industy it is difficult to predict precisely how it will impact the sonography profession. Some AI tools will likely improve image quality, others however may directly interact with sonographers during the exam. As AI evolves, seeing how the profession navigates this new reality will be fascinating.
+
+Each patient is unique, and sonographers must adapt their approach to account for various variables, from patient anatomy to clinical history.
+
+However, these systems require human oversight, the interpretation of images, especially in challenging cases, will continue to depend heavily on the expertise of the sonographer.
 
 In a world increasingly dominated by automation, sonography maintains a distinct "human touch." The human connection differentiates between a routine scan and a comprehensive, patient-centered examination. When faced with complex or ambiguous cases, the sonographer’s judgement—shaped by years of experience—guides the interpretation. AI can assist with diagnostics, but the sonographer’s insight is what ensures accuracy. For example, an expert sonographer can quickly spot an error in AI output, while a less experienced practitioner might accept it without question. This delicate balance between trust in AI and human scepticism will be crucial as AI tools become more integrated into sonographic practice.
 
 The dynamic between humans and machines is evident in ultrasound, where the sonographer’s skill and intuition transform raw data into meaningful diagnoses. In obstetrics, for instance, patients and their families seek out trusted sonographers, knowing that the individual’s expertise—not just the technology—ensures the best care. While AI can assist with labelling anatomy or identifying anomalies, it cannot replace the deep understanding from hands-on experience.
 
-Moreover, sonography’s complexity mirrors the unpredictability of healthcare itself. Each patient is unique, and sonographers must adapt their approach to account for various variables, from patient anatomy to clinical history. AI may offer tools to assist with image interpretation. Still, it cannot fully account for the “messiness” of real-life scenarios, such as non-standardized planes, extremes of body habitus, or the challenges of patient interaction. These are the situations where the human touch remains irreplaceable.
+Moreover, sonography’s complexity mirrors the unpredictability of healthcare itself.  AI may offer tools to assist with image interpretation. Still, it cannot fully account for the “messiness” of real-life scenarios, such as non-standardized planes, extremes of body habitus, or the challenges of patient interaction. These are the situations where the human touch remains irreplaceable.
 
-As AI evolves, seeing how the profession navigates this new reality will be fascinating. However, one thing remains clear: the success of ultrasound exams will continue to rely on the unique partnership between sonographers and their machines. AI may assist with decision-making, but the sonographer’s expertise ensures the technology is used effectively, delivering the best outcomes for patients.
+

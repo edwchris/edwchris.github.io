@@ -1,19 +1,21 @@
 ---
 title: "Projects"
-subtitle: "Here is an overview of the project I have been working on."
+subtitle: "Here are some links to the project I and my students are currently working on."
 ---
 
-## Project I
+#### Barriers and enablers to trainee sonographer work-integrated learning experience
+
+[link](https://www.qut.edu.au/research/our-research/participate-in-research/barriers-and-enablers-to-trainee-sonographer-work-integrated-learning-experience)
 
 
+#### Optimising Ultrasound-based Liver Fat Quantification Methods
 
+[link](https://research.qut.edu.au/ultrasound/projects/liver-fat-quantification/)
 
-## Project II
+#### Exploring professional perceptions of accountability in the use of AI recommender tools in medical radiations
 
-A description of Project 
+[link](https://www.qut.edu.au/research/our-research/participate-in-research/exploring-professional-perceptions-of-accountability-in-the-use-of-ai-recommender-tools-in-medical-radiations)
 
-# Publication
+#### Publications
 
-Paper I
-
-Paper II
+A list of my presentations are available via [QUT ePrints](https://eprints.qut.edu.au/view/person/Edwards,_Christopher.html) or [Google Scholar](https://scholar.google.com/citations?hl=en&user=Ce18xdAAAAAJ)

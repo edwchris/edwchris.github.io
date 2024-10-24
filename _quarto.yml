@@ -6,6 +6,8 @@ website:
   page-navigation: true
   title: "Chris Edwards"
   google-analytics: "G-69T2DQZDC7"
+  site-url: "https://edwchris.github.io"
+  description: "Sonography"
 
   page-footer:
     left: "&copy; Copyright 2024, Chris Edwards"
@@ -13,8 +15,6 @@ website:
 
   navbar:
     right:
-      - href: index.qmd
-        text: Home
         
       - href: blog/index.qmd
         text: Blog
@@ -24,6 +24,9 @@ website:
 
       - href: about/index.qmd
         text: About
+      
+      - icon: rss
+        href: blog/index.xml
 
 format:
   html:

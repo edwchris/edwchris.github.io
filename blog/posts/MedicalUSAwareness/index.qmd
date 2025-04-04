@@ -1,7 +1,7 @@
 ---
 title: "Celebrating the Art and Science of Sonography"
 subtitle: "October is Medical Ultrasound Awareness Month"
-date: 27/10/2024
+date: 10/27/2024
 categories: [Sonography]
 date-modified: last-modified
 draft: false

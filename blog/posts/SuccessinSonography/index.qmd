@@ -1,7 +1,7 @@
 ---
 title: "Success in sonography - 10 Tips for students"
 subtitle: "The original version of this article appeared on my Linkedin page- Feb 22, 2022"
-date: today
+date: 10/24/2024
 categories: [Sonography]
 date-modified: last-modified
 draft: false

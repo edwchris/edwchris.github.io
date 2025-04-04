@@ -2,6 +2,8 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/MedicalUSAwareness/index.html",
+      "/blog/posts/NewPostTemplate/index.html",
       "/blog/posts/SuccessinSonography/index.html"
     ]
   }

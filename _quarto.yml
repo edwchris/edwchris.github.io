@@ -27,6 +27,9 @@ website:
       
       - icon: rss
         href: blog/index.xml
+        
+      - icon: github
+        href: https://github.com/edwchris
 
 format:
   html:

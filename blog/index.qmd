@@ -4,13 +4,11 @@ subtitle: "A curated experiment in digital note-taking and idea sharing."
 editor: visual
 listing:
   contents: posts
+  fields: [image, date, title, description,reading-time, categories]
   sort: "date desc"
   type: default
   categories: true
   sort-ui: false
   filter-ui: false
-  fields: [date, title, reading-time, description, categories]
-  feed: true
-page-layout: full
-title-block-banner: false
+title-block-banner: true
 ---

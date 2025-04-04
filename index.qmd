@@ -15,7 +15,7 @@ about:
       href: https://scholar.google.com/citations?hl=en&user=Ce18xdAAAAAJ
 ---
 
-# Hi! I'm Chris
+# Hi! 
 
 I'm a associate professor of medical ultrasound at [Queensland University of Technology](https://www.qut.edu.au/about/our-people/academic-profiles/c8.edwards) and an active researcher in ultrasound education and technology. I focus on improving ultrasound training, exploring new techniques, and making sonography more accessible for healthcare professionals.
 

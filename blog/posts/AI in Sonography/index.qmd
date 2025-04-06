@@ -1,7 +1,7 @@
 ---
 title: "AI in Sonography"
 subtitle: "The original version of this article appeared in the Nov 2024 edition of the ASA - Soundefects News."
-date: today
+date: 03/15/2025
 categories: [Sonography, Artifical Intelligence]
 date-modified: last-modified
 draft: false

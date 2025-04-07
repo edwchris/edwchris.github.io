@@ -1,0 +1,145 @@
+---
+title: "Race Predictors..  "
+subtitle: "Art vs Science"
+date: today
+categories: [Running, Data Science]
+date-modified: last-modified
+code-fold: true
+draft: true
+format:
+  html:
+    theme: cosmo
+    tufte: true
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(readxl)
+
+# Read the Excel file
+tanda_data <- read_excel("data/tanda.xlsx")
+
+# Create formatted gt table
+tanda_data %>%
+  select(Date, Race, Runs_32km, Total_Dist, Avg_Dist_week_K, Pace,
+         Predicted_Time, Time, Difference, Over_Under_Tanda) %>%
+  gt() %>%
+  tab_header(
+    title = "Marathon Performance vs Tanda Prediction"
+  ) %>%
+  tab_spanner(
+    label = "Training Summary",
+    columns = c(Runs_32km, Total_Dist, Avg_Dist_week_K, Pace)
+  ) %>%
+  tab_spanner(
+    label = "Race Performance",
+    columns = c(Predicted_Time, Time, Difference, Over_Under_Tanda)
+  ) %>%
+  cols_label(
+    Date = "Race Date",
+    Race = "Event",
+    Runs_32km = "32km+ Runs",
+    Total_Dist = "Total Distance (km)",
+    Avg_Dist_week_K = "Avg Weekly Distance (K, km)",
+    Pace = "Training Pace (P, sec/km)",
+    Predicted_Time = "Tanda Prediction (Pₘ)",
+    Time = "Actual Time",
+    Difference = "Difference",
+    Over_Under_Tanda = "Over/Under"
+  ) %>%
+  fmt_number(
+    columns = Total_Dist,
+    decimals = 0
+  ) %>%
+  fmt_number(
+    columns = Avg_Dist_week_K,
+    decimals = 1
+  ) %>%
+  fmt_number(
+    columns = Pace,
+    decimals = 0
+  ) %>%
+  tab_source_note(
+    source_note = md(
+      "Tanda equation: $P_m = 17.1 + 140.0 \\cdot \\exp(-0.0053 \\cdot K) + 0.55 \\cdot P$  
+      [Tanda et al., 2011](http://dx.doi.org/10.4100/jhse.2011.63.05)"
+    )
+  )
+
+
+
+```
+
+```{r}
+
+#| label: fig-bland
+#| fig-cap: "MPG vs horsepower, colored by transmission."
+#| column: margin
+
+
+library(tidyverse)
+library(lubridate)
+
+# Prepare the data using base conversions
+tanda_ba <- tanda_data %>%
+  mutate(
+    Pred_sec = as.numeric(lubridate::period_to_seconds(lubridate::hms(Predicted_Time))),
+    Time_sec = as.numeric(lubridate::period_to_seconds(lubridate::hms(Time))),
+    Mean_time = (Pred_sec + Time_sec) / 2,
+    Diff_time = Time_sec - Pred_sec
+  )
+
+# Compute bias and limits of agreement
+bias <- mean(tanda_ba$Diff_time, na.rm = TRUE)
+sd_diff <- sd(tanda_ba$Diff_time, na.rm = TRUE)
+loa_upper <- bias + 1.96 * sd_diff
+loa_lower <- bias - 1.96 * sd_diff
+
+# Custom formatter for x-axis (hh:mm)
+sec_to_hhmm <- function(x) {
+  hours <- floor(x / 3600)
+  minutes <- floor((x %% 3600) / 60)
+  sprintf("%02d:%02d", hours, minutes)
+}
+
+# Create Bland–Altman plot
+BA_plot<- ggplot(tanda_ba, aes(x = Mean_time, y = Diff_time)) +
+  geom_point() +
+  geom_hline(yintercept = bias, linetype = "solid", color = "blue") +
+  geom_hline(yintercept = loa_upper, linetype = "dashed", color = "red") +
+  geom_hline(yintercept = loa_lower, linetype = "dashed", color = "red") +
+  scale_x_continuous(
+    labels = sec_to_hhmm,
+    name = "Mean of Tanda Prediction and Actual Time (hh:mm)"
+  ) +
+  scale_y_continuous(
+    name = "Difference: Actual - Predicted (sec)"
+  ) +
+  labs(
+    title = "Bland–Altman Plot: Tanda Prediction vs Actual Marathon Time"
+  ) +
+  theme_minimal()
+
+```
+
+```{r}
+#| label: fig-mtcars
+#| fig-cap: "MPG vs horsepower, colored by transmission."
+#| column: margin
+
+
+BA_plot
+
+library(ggplot2)
+mtcars2 <- mtcars
+mtcars2$am <- factor(
+  mtcars$am, labels = c('automatic', 'manual')
+)
+ggplot(mtcars2, aes(hp, mpg, color = am)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+```
+
+

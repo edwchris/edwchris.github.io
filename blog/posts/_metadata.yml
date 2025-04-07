@@ -13,8 +13,8 @@ format:
     toc: true
     toc-title: Contents
     toc-location: left
-    grid:
-      margin-width: 350px
+   # grid:
+    #  margin-width: 350px
 reference-location: margin
 citation-location: margin
 cap-location: margin

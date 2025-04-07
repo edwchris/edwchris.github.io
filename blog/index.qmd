@@ -7,6 +7,7 @@ listing:
   fields: [image, date, title, description,reading-time, categories]
   sort: "date desc"
   type: default
+  feed: true
   categories: true
   sort-ui: false
   filter-ui: false

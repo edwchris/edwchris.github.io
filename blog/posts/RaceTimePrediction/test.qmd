@@ -1,0 +1,33 @@
+---
+title: "Race Predictors.."
+subtitle: "Art vs Science"
+date: today
+categories: [Running, Data Science]
+date-modified: last-modified
+code-fold: true
+draft: true
+format:
+  html:
+    theme: cosmo
+    tufte: true
+---
+
+
+```{r}
+library(ggplot2)
+
+# Dummy plot for testing
+ba_plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  theme_minimal()
+
+```
+
+
+```{r ba-plot-margin-test, fig.margin=TRUE, echo=FALSE, fig.cap="Test margin plot", fig.width=4, fig.height=3} 
+
+print(ba_plot)
+
+
+```
+

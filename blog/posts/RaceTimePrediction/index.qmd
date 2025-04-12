@@ -5,52 +5,95 @@ date: today
 categories: [Running, Data Science]
 date-modified: last-modified
 code-fold: true
-draft: true
-format:
-  html:
-    theme: cosmo
-    tufte: true
+draft: false
+bibliography: references.bib
 ---
 
+> “All models are wrong, but some are useful.”[^1] — George Box
+
+[^1]: quote generally attributed to [George E. P. Box](https://en.wikipedia.org/wiki/George_E._P._Box), a British statistician, who argued models are never perfect by may still be useful in everyday life 
+
+Before diving into the training data, let’s take a quick detour into the curious, and sometimes overly optimistic, world of race prediction models. Most runners have come across these at some point: you plug in a recent race result, hit "calculate," and voilà — a predicted marathon time appears!
+
+The Riegel equation[^2], or some variation of it, is perhaps the most well-known. It uses a race result over a known distance to estimate a predicted finish time for a different distance, based on an exponential decay formula.
+
+Specifically, the formula is:
+
+[^2]: proposed by [Peter Riegel](https://en.wikipedia.org/wiki/Peter_Riegel) in a Runner's World article in 1977
+
+$$
+T_2 = T_1 \times \left( \frac{D_2}{D_1} \right)^b
+$$ Where:
+
+**T₁** = time over distance D₁
+
+**T₂** = predicted time over distance D₂
+
+**b** = decay exponent, and was originally proposed by Riegel to be 1.06
+
+Some more sober-minded folks argue the exponent should be higher—closer to 1.15—and you can read more about the logic behind that in the linked article - see: [FetchEveryone's improved Riegel calculator](https://www.fetcheveryone.com/training-calculators-improvedriegel.php?hours=1&minutes=24&seconds=0) . Running watches also provide predictors. Mine, a Garmin, currently pegs my marathon fitness at 3:11:xx. Where it gets this number from is anyone’s guess. Presumably a mix of VO₂ max estimates, and recent efforts.
+
+But there are other prediction methods that draw on your training data rather than race results. After sharing my [past marathon times](https://edwchris.github.io/blog/posts/TheBeginningStagesof/) in a previous post, I started wondering how well the training leading into those races actually correlated with my finish times.
+
+**Enter Tanda.** 
+
+Developed by Giovanni Tanda from the University of Genova, this model is based on actual training data, not race times. His 2011 paper[@tanda2011] looked at a bunch of marathoners' training logs and used regression analysis to see what best predicted marathon pace. 
+
+The result? For the 8 weeks leading into the final week of training, the paper excluded the final taper week, the two key variables that correlated best with finish times were:
+
+• K = average weekly distance (km/week)
+
+• P = average training pace (sec/km)
+
+There are, of course, some obvious limitations to the study. It included a modest number of runners (and only one female), and it didn’t attempt to correlate performance with things like individual VO₂ max, lactate threshold, body composition, or biomechanics—factors that are known to influence endurance performance.
+
+Christof Schwiening has written a brilliant blog[^4] exploring the Tanda model in depth, for those keen to venture further down the rabbit hole. One of his best analogies compares Tanda nicely to other race predictors: 
+
+> “...the Tanda 8-week period is just another race. It is the training race – a race with no defined distance or time, but a race nevertheless.”[^5]
+
+[^4]: Christof Schwiening's random thoughts and writings, [https://christofschwiening.blogspot.com/](https://christofschwiening.blogspot.com/)
+
+[^5]: Understanding race predictors - Riegel versus Tanda - Christof Schwiening [blog](https://christofschwiening.blogspot.com/2019/05/understanding-race-predictors-riegel.html)
+
+For me, it was just an interesting exercise to see how the model held up. So I went full archaeologist on the 8 weeks leading into all 12 previous marathons. I dug up the P and the K, and ran the Tanda model for each.
+
+Below is the output
+
 ```{r}
+#| warning: false
+#| include: false
 library(tidyverse)
 library(gt)
 library(readxl)
 
 # Read the Excel file
 tanda_data <- read_excel("data/tanda.xlsx")
+```
 
-# Create formatted gt table
+```{r}
 tanda_data %>%
-  select(Date, Race, Runs_32km, Total_Dist, Avg_Dist_week_K, Pace,
-         Predicted_Time, Time, Difference, Over_Under_Tanda) %>%
+  select(Race, Avg_Dist_week_K,
+         Predicted_Time, Pace, Time, Difference, Over_Under_Tanda) %>%
   gt() %>%
   tab_header(
     title = "Marathon Performance vs Tanda Prediction"
   ) %>%
   tab_spanner(
     label = "Training Summary",
-    columns = c(Runs_32km, Total_Dist, Avg_Dist_week_K, Pace)
+    columns = c(Avg_Dist_week_K, Pace)
   ) %>%
   tab_spanner(
     label = "Race Performance",
     columns = c(Predicted_Time, Time, Difference, Over_Under_Tanda)
   ) %>%
   cols_label(
-    Date = "Race Date",
     Race = "Event",
-    Runs_32km = "32km+ Runs",
-    Total_Dist = "Total Distance (km)",
     Avg_Dist_week_K = "Avg Weekly Distance (K, km)",
     Pace = "Training Pace (P, sec/km)",
-    Predicted_Time = "Tanda Prediction (Pₘ)",
-    Time = "Actual Time",
-    Difference = "Difference",
+    Predicted_Time = "Tanda Prediction (hh:mm:ss)",
+    Time = "Actual Time (hh:mm:ss)",
+    Difference = "Difference (mm:ss)",
     Over_Under_Tanda = "Over/Under"
-  ) %>%
-  fmt_number(
-    columns = Total_Dist,
-    decimals = 0
   ) %>%
   fmt_number(
     columns = Avg_Dist_week_K,
@@ -62,8 +105,7 @@ tanda_data %>%
   ) %>%
   tab_source_note(
     source_note = md(
-      "Tanda equation: $P_m = 17.1 + 140.0 \\cdot \\exp(-0.0053 \\cdot K) + 0.55 \\cdot P$  
-      [Tanda et al., 2011](http://dx.doi.org/10.4100/jhse.2011.63.05)"
+      "Tanda equation: $Pm (sec/km) = 17.1 + 140.0 \\cdot \\exp(-0.0053 \\cdot K) + 0.55 \\cdot P$"
     )
   )
 
@@ -71,11 +113,21 @@ tanda_data %>%
 
 ```
 
-```{r}
 
-#| label: fig-bland
-#| fig-cap: "MPG vs horsepower, colored by transmission."
-#| column: margin
+I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss. 
+
+The Bland–Altman plot[^3] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the *y-axis*. 
+
+What's more concerning is the width of the Limits of Agreement (LoA). The <span style="color:red;">red-dotted lines</span> hovers around *±25 minutes* — which is wild. That essentially means there's 95% "confidence" that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.
+
+[^3]: Wikipedia reference for the [Bland- Altman plot](https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot)
+
+Also, I have a feeling the finishes over 3:30 are skewing the results. Two of those were significant blow-ups — races where things really unravelled in the later stages. The third was more of a social run, where I paced comfortably alongside a mate.
+
+All up, it’s a reminder that while models like Tanda can offer a rough guide, they don’t always capture the messiness of the marathon. And maybe that’s the point: running isn’t always about prediction — sometimes it’s about embracing the unknown, the artistry of pacing, the conditions on the day, and that delicate mix of patience and bravery that makes each race its own adventure.
+
+
+```{r}
 
 
 library(tidyverse)
@@ -121,25 +173,51 @@ BA_plot<- ggplot(tanda_ba, aes(x = Mean_time, y = Diff_time)) +
   ) +
   theme_minimal()
 
+BA_plot
+
 ```
 
 ```{r}
-#| label: fig-mtcars
-#| fig-cap: "MPG vs horsepower, colored by transmission."
-#| column: margin
+#| eval: false
+#| include: false
+# Run the linear model
+model <- lm(P ~ Avg_Dist_week_K, data = tanda_data)
+
+r_squared <- summary(model)$r.squared
+r <- sqrt(r_squared)
 
 
-BA_plot
+# Calculate Standard Error of Estimate (SEE) in sec/km
+predicted <- predict(model)
+residuals <- tanda_data$P - predicted
+SEE <- sqrt(mean(residuals^2))
 
-library(ggplot2)
-mtcars2 <- mtcars
-mtcars2$am <- factor(
-  mtcars$am, labels = c('automatic', 'manual')
-)
-ggplot(mtcars2, aes(hp, mpg, color = am)) +
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "loess") +
-  theme(legend.position = 'bottom')
+R_AvgDist <- paste("R:", round(r, 3))
+SEE_AvgDist <-paste("SEE (sec/km):", round(SEE, 2))
+
+R_AvgDist
+SEE_AvgDist
+
 ```
 
+```{r}
+#| eval: false
+#| include: false
+# Run the linear model
+model <- lm(P ~ Pace, data = tanda_data)
 
+
+r_squared <- summary(model)$r.squared
+r <- sqrt(r_squared)
+
+predicted <- predict(model)
+residuals <- tanda_data$P - predicted
+SEE <- sqrt(mean(residuals^2))
+
+# Output results
+R_Pace <- paste("R:", round(r, 3))
+SEE_Pace <-paste("SEE (sec/km):", round(SEE, 2))
+
+R_Pace
+SEE_Pace
+```

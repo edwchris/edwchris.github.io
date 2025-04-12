@@ -10,7 +10,1081 @@
 <atom:link href="https://edwchris.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Sonography</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Sat, 05 Apr 2025 14:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 11 Apr 2025 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>Race Predictors..</title>
+  <link>https://edwchris.github.io/blog/posts/RaceTimePrediction/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="page-columns page-full"><blockquote class="blockquote">
+<p>“All models are wrong, but some are useful.”<sup>1</sup> — George Box</p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;quote generally attributed to <a href="https://en.wikipedia.org/wiki/George_E._P._Box">George E. P. Box</a>, a British statistician, who argued models are never perfect by may still be useful in everyday life</p></div></div></div>
+<p>Before diving into the training data, let’s take a quick detour into the curious, and sometimes overly optimistic, world of race prediction models. Most runners have come across these at some point: you plug in a recent race result, hit “calculate,” and voilà — a predicted marathon time appears!</p>
+<p>The Riegel equation<sup>2</sup>, or some variation of it, is perhaps the most well-known. It uses a race result over a known distance to estimate a predicted finish time for a different distance, based on an exponential decay formula.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;proposed by <a href="https://en.wikipedia.org/wiki/Peter_Riegel">Peter Riegel</a> in a Runner’s World article in 1977</p></div></div><p>Specifically, the formula is:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AT_2%20=%20T_1%20%5Ctimes%20%5Cleft(%20%5Cfrac%7BD_2%7D%7BD_1%7D%20%5Cright)%5Eb%0A"> Where:</p>
+<p><strong>T₁</strong> = time over distance D₁</p>
+<p><strong>T₂</strong> = predicted time over distance D₂</p>
+<p><strong>b</strong> = decay exponent, and was originally proposed by Riegel to be 1.06</p>
+<p>Some more sober-minded folks argue the exponent should be higher—closer to 1.15—and you can read more about the logic behind that in the linked article - see: <a href="https://www.fetcheveryone.com/training-calculators-improvedriegel.php?hours=1&amp;minutes=24&amp;seconds=0">FetchEveryone’s improved Riegel calculator</a> . Running watches also provide predictors. Mine, a Garmin, currently pegs my marathon fitness at 3:11:xx. Where it gets this number from is anyone’s guess. Presumably a mix of VO₂ max estimates, and recent efforts.</p>
+<p>But there are other prediction methods that draw on your training data rather than race results. After sharing my <a href="https://edwchris.github.io/blog/posts/TheBeginningStagesof/">past marathon times</a> in a previous post, I started wondering how well the training leading into those races actually correlated with my finish times.</p>
+<p><strong>Enter Tanda.</strong></p>
+<p>Developed by Giovanni Tanda from the University of Genova, this model is based on actual training data, not race times. His 2011 paper<span class="citation" data-cites="tanda2011">(Tanda 2011)</span> looked at a bunch of marathoners’ training logs and used regression analysis to see what best predicted marathon pace.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-tanda2011" class="csl-entry">
+Tanda, Giovanni. 2011. <span>“Prediction of Marathon Performance Time on the Basis of Training Indices.”</span> <em>Journal of Human Sport and Exercise</em> 6 (3): 511–20. <a href="https://doi.org/10.4100/jhse.2011.63.05">https://doi.org/10.4100/jhse.2011.63.05</a>.
+</div></div><p>The result? For the 8 weeks leading into the final week of training, the paper excluded the final taper week, the two key variables that correlated best with finish times were:</p>
+<p>• K = average weekly distance (km/week)</p>
+<p>• P = average training pace (sec/km)</p>
+<p>There are, of course, some obvious limitations to the study. It included a modest number of runners (and only one female), and it didn’t attempt to correlate performance with things like individual VO₂ max, lactate threshold, body composition, or biomechanics—factors that are known to influence endurance performance.</p>
+<p>Christof Schwiening has written a brilliant blog<sup>3</sup> exploring the Tanda model in depth, for those keen to venture further down the rabbit hole. One of his best analogies compares Tanda nicely to other race predictors:</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Christof Schwiening’s random thoughts and writings, <a href="https://christofschwiening.blogspot.com/">https://christofschwiening.blogspot.com/</a></p></div></div><div class="page-columns page-full"><blockquote class="blockquote">
+<p>“…the Tanda 8-week period is just another race. It is the training race – a race with no defined distance or time, but a race nevertheless.”<sup>4</sup></p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Understanding race predictors - Riegel versus Tanda - Christof Schwiening <a href="https://christofschwiening.blogspot.com/2019/05/understanding-race-predictors-riegel.html">blog</a></p></div></div></div>
+<p>For me, it was just an interesting exercise to see how the model held up. So I went full archaeologist on the 8 weeks leading into all 12 previous marathons. I dug up the P and the K, and ran the Tanda model for each.</p>
+<p>Below is the output</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">tanda_data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(Race, Avg_Dist_week_K,</span>
+<span id="cb1-3">         Predicted_Time, Pace, Time, Difference, Over_Under_Tanda) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">gt</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_header</span>(</span>
+<span id="cb1-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Marathon Performance vs Tanda Prediction"</span></span>
+<span id="cb1-7">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_spanner</span>(</span>
+<span id="cb1-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Training Summary"</span>,</span>
+<span id="cb1-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(Avg_Dist_week_K, Pace)</span>
+<span id="cb1-11">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_spanner</span>(</span>
+<span id="cb1-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Race Performance"</span>,</span>
+<span id="cb1-14">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(Predicted_Time, Time, Difference, Over_Under_Tanda)</span>
+<span id="cb1-15">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-16">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cols_label</span>(</span>
+<span id="cb1-17">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Race =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Event"</span>,</span>
+<span id="cb1-18">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Avg_Dist_week_K =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Avg Weekly Distance (K, km)"</span>,</span>
+<span id="cb1-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Pace =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Training Pace (P, sec/km)"</span>,</span>
+<span id="cb1-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Predicted_Time =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tanda Prediction (hh:mm:ss)"</span>,</span>
+<span id="cb1-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Time =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Actual Time (hh:mm:ss)"</span>,</span>
+<span id="cb1-22">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Difference =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Difference (mm:ss)"</span>,</span>
+<span id="cb1-23">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Over_Under_Tanda =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Over/Under"</span></span>
+<span id="cb1-24">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-25">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fmt_number</span>(</span>
+<span id="cb1-26">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Avg_Dist_week_K,</span>
+<span id="cb1-27">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">decimals =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb1-28">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-29">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fmt_number</span>(</span>
+<span id="cb1-30">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Pace,</span>
+<span id="cb1-31">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">decimals =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb1-32">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-33">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_source_note</span>(</span>
+<span id="cb1-34">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">source_note =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">md</span>(</span>
+<span id="cb1-35">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tanda equation: $Pm (sec/km) = 17.1 + 140.0 </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">cdot </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">exp(-0.0053 </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">cdot K) + 0.55 </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">cdot P$"</span></span>
+<span id="cb1-36">    )</span>
+<span id="cb1-37">  )</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="vhlpfjzrvp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vhlpfjzrvp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vhlpfjzrvp thead, #vhlpfjzrvp tbody, #vhlpfjzrvp tfoot, #vhlpfjzrvp tr, #vhlpfjzrvp td, #vhlpfjzrvp th {
+  border-style: none;
+}
+
+#vhlpfjzrvp p {
+  margin: 0;
+  padding: 0;
+}
+
+#vhlpfjzrvp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vhlpfjzrvp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vhlpfjzrvp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vhlpfjzrvp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vhlpfjzrvp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vhlpfjzrvp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vhlpfjzrvp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vhlpfjzrvp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vhlpfjzrvp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vhlpfjzrvp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vhlpfjzrvp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vhlpfjzrvp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vhlpfjzrvp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vhlpfjzrvp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vhlpfjzrvp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vhlpfjzrvp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vhlpfjzrvp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vhlpfjzrvp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vhlpfjzrvp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vhlpfjzrvp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vhlpfjzrvp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vhlpfjzrvp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vhlpfjzrvp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vhlpfjzrvp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vhlpfjzrvp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vhlpfjzrvp .gt_left {
+  text-align: left;
+}
+
+#vhlpfjzrvp .gt_center {
+  text-align: center;
+}
+
+#vhlpfjzrvp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vhlpfjzrvp .gt_font_normal {
+  font-weight: normal;
+}
+
+#vhlpfjzrvp .gt_font_bold {
+  font-weight: bold;
+}
+
+#vhlpfjzrvp .gt_font_italic {
+  font-style: italic;
+}
+
+#vhlpfjzrvp .gt_super {
+  font-size: 65%;
+}
+
+#vhlpfjzrvp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vhlpfjzrvp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vhlpfjzrvp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vhlpfjzrvp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vhlpfjzrvp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vhlpfjzrvp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vhlpfjzrvp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vhlpfjzrvp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vhlpfjzrvp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header gt_heading">
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Marathon Performance vs Tanda Prediction</th>
+</tr>
+<tr class="odd gt_col_headings gt_spanner_row">
+<th rowspan="2" id="Race" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Event</th>
+<th colspan="2" id="Training Summary" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Training Summary
+</div></th>
+<th colspan="4" id="Race Performance" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Race Performance
+</div></th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="Avg_Dist_week_K" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Avg Weekly Distance (K, km)</th>
+<th id="Pace" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Training Pace (P, sec/km)</th>
+<th id="Predicted_Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Tanda Prediction (hh:mm:ss)</th>
+<th id="Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Actual Time (hh:mm:ss)</th>
+<th id="Difference" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Difference (mm:ss)</th>
+<th id="Over_Under_Tanda" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Over/Under</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">81.6</td>
+<td class="gt_row gt_right" headers="Pace">298</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:11:01</td>
+<td class="gt_row gt_right" headers="Time">03:07:47</td>
+<td class="gt_row gt_right" headers="Difference">03:14</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Under</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Race">Melbourne</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">76.3</td>
+<td class="gt_row gt_right" headers="Pace">297</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:12:31</td>
+<td class="gt_row gt_right" headers="Time">03:38:06</td>
+<td class="gt_row gt_right" headers="Difference">25:35</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Over</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Race">Boston</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">75.9</td>
+<td class="gt_row gt_right" headers="Pace">294</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:11:31</td>
+<td class="gt_row gt_right" headers="Time">03:05:00</td>
+<td class="gt_row gt_right" headers="Difference">06:31</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Under</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">69.9</td>
+<td class="gt_row gt_right" headers="Pace">280</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:08:10</td>
+<td class="gt_row gt_right" headers="Time">02:58:12</td>
+<td class="gt_row gt_right" headers="Difference">09:58</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Under</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Race">Caberra</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">88.3</td>
+<td class="gt_row gt_right" headers="Pace">277</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:00:42</td>
+<td class="gt_row gt_right" headers="Time">03:01:21</td>
+<td class="gt_row gt_right" headers="Difference">00:39</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Over</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">56.6</td>
+<td class="gt_row gt_right" headers="Pace">317</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:27:45</td>
+<td class="gt_row gt_right" headers="Time">03:39:26</td>
+<td class="gt_row gt_right" headers="Difference">11:41</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Over</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Race">New York City</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">71.3</td>
+<td class="gt_row gt_right" headers="Pace">290</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:11:36</td>
+<td class="gt_row gt_right" headers="Time">03:17:11</td>
+<td class="gt_row gt_right" headers="Difference">05:35</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Over</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">88.4</td>
+<td class="gt_row gt_right" headers="Pace">309</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:13:05</td>
+<td class="gt_row gt_right" headers="Time">03:33:49</td>
+<td class="gt_row gt_right" headers="Difference">20:44</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Over</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">102.4</td>
+<td class="gt_row gt_right" headers="Pace">290</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:01:24</td>
+<td class="gt_row gt_right" headers="Time">02:52:17</td>
+<td class="gt_row gt_right" headers="Difference">09:07</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Under</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">72.4</td>
+<td class="gt_row gt_right" headers="Pace">315</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:21:01</td>
+<td class="gt_row gt_right" headers="Time">03:06:49</td>
+<td class="gt_row gt_right" headers="Difference">14:12</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Under</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Race">Sydney</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">79.8</td>
+<td class="gt_row gt_right" headers="Pace">319</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:19:52</td>
+<td class="gt_row gt_right" headers="Time">03:23:10</td>
+<td class="gt_row gt_right" headers="Difference">03:18</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Over</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Race">Gold Coast</td>
+<td class="gt_row gt_right" headers="Avg_Dist_week_K">74.9</td>
+<td class="gt_row gt_right" headers="Pace">297</td>
+<td class="gt_row gt_right" headers="Predicted_Time">03:13:15</td>
+<td class="gt_row gt_right" headers="Time">03:06:33</td>
+<td class="gt_row gt_right" headers="Difference">06:42</td>
+<td class="gt_row gt_left" headers="Over_Under_Tanda">Under</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="7" class="gt_sourcenote">Tanda equation: (Pm (sec/km) = 17.1 + 140.0 (-0.0053 K) + 0.55 P)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p>I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss.</p>
+<p>The Bland–Altman plot<sup>5</sup> below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the <em>y-axis</em>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Wikipedia reference for the <a href="https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot">Bland- Altman plot</a></p></div></div><p>What’s more concerning is the width of the Limits of Agreement (LoA). The <span style="color:red;">red-dotted lines</span> hovers around <em>±25 minutes</em> — which is wild. That essentially means there’s 95% “confidence” that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.</p>
+<p>Also, I have a feeling the finishes over 3:30 are skewing the results. Two of those were significant blow-ups — races where things really unravelled in the later stages. The third was more of a social run, where I paced comfortably alongside a mate.</p>
+<p>All up, it’s a reminder that while models like Tanda can offer a rough guide, they don’t always capture the messiness of the marathon. And maybe that’s the point: running isn’t always about prediction — sometimes it’s about embracing the unknown, the artistry of pacing, the conditions on the day, and that delicate mix of patience and bravery that makes each race its own adventure.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)</span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(lubridate)</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Prepare the data using base conversions</span></span>
+<span id="cb2-5">tanda_ba <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> tanda_data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb2-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb2-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Pred_sec =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(lubridate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">period_to_seconds</span>(lubridate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hms</span>(Predicted_Time))),</span>
+<span id="cb2-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Time_sec =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(lubridate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">period_to_seconds</span>(lubridate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hms</span>(Time))),</span>
+<span id="cb2-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Mean_time =</span> (Pred_sec <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> Time_sec) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,</span>
+<span id="cb2-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Diff_time =</span> Time_sec <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> Pred_sec</span>
+<span id="cb2-11">  )</span>
+<span id="cb2-12"></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Compute bias and limits of agreement</span></span>
+<span id="cb2-14">bias <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(tanda_ba<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Diff_time, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb2-15">sd_diff <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sd</span>(tanda_ba<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Diff_time, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb2-16">loa_upper <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> bias <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.96</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> sd_diff</span>
+<span id="cb2-17">loa_lower <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> bias <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.96</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> sd_diff</span>
+<span id="cb2-18"></span>
+<span id="cb2-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Custom formatter for x-axis (hh:mm)</span></span>
+<span id="cb2-20">sec_to_hhmm <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(x) {</span>
+<span id="cb2-21">  hours <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">floor</span>(x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3600</span>)</span>
+<span id="cb2-22">  minutes <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">floor</span>((x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3600</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">60</span>)</span>
+<span id="cb2-23">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sprintf</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"%02d:%02d"</span>, hours, minutes)</span>
+<span id="cb2-24">}</span>
+<span id="cb2-25"></span>
+<span id="cb2-26"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create Bland–Altman plot</span></span>
+<span id="cb2-27">BA_plot<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(tanda_ba, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> Mean_time, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> Diff_time)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-28">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-29">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">yintercept =</span> bias, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"solid"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"blue"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-30">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">yintercept =</span> loa_upper, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dashed"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"red"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-31">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">yintercept =</span> loa_lower, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dashed"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"red"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-32">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_x_continuous</span>(</span>
+<span id="cb2-33">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> sec_to_hhmm,</span>
+<span id="cb2-34">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">name =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mean of Tanda Prediction and Actual Time (hh:mm)"</span></span>
+<span id="cb2-35">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-36">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_y_continuous</span>(</span>
+<span id="cb2-37">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">name =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Difference: Actual - Predicted (sec)"</span></span>
+<span id="cb2-38">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-39">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb2-40">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bland–Altman Plot: Tanda Prediction vs Actual Marathon Time"</span></span>
+<span id="cb2-41">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-42">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>()</span>
+<span id="cb2-43"></span>
+<span id="cb2-44">BA_plot</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://edwchris.github.io/blog/posts/RaceTimePrediction/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+
+
+
+ ]]></description>
+  <category>Running</category>
+  <category>Data Science</category>
+  <guid>https://edwchris.github.io/blog/posts/RaceTimePrediction/</guid>
+  <pubDate>Fri, 11 Apr 2025 14:00:00 GMT</pubDate>
+</item>
 <item>
   <title>The Beginning Stages of..</title>
   <link>https://edwchris.github.io/blog/posts/TheBeginningStagesof/</link>
@@ -696,6 +1770,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
 </item>
 <item>
   <title>AI in Sonography</title>
+  <dc:creator>Christopher Edwards</dc:creator>
   <link>https://edwchris.github.io/blog/posts/AI in Sonography/</link>
   <description><![CDATA[ 
 

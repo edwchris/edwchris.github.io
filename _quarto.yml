@@ -8,7 +8,7 @@ website:
   google-analytics: "G-69T2DQZDC7"
   site-url: "https://edwchris.github.io"
   description: "Sonography"
-
+ 
   page-footer:
     left: "&copy; Copyright 2024, Chris Edwards"
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."

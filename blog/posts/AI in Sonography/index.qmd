@@ -2,9 +2,19 @@
 title: "AI in Sonography"
 subtitle: "The original version of this article appeared in the Nov 2024 edition of the ASA - Soundefects News."
 date: 03/15/2025
+date-modified: 03/15/2025
+author:
+  - name: Christopher Edwards
+    affiliation: Queensland University of Technology
+    orcid: 0000-0001-7466-9530
+citation:
+  type: article-magazine
+  title: AI in Sonography
+  url: https://eprints.qut.edu.au/253780/
 categories: [Sonography, Artifical Intelligence]
-date-modified: last-modified
 draft: false
+appendix-cite-as: false
+google-scholar: true
 ---
 
 ## The Rise of AI

@@ -1,10 +1,13 @@
 ---
 title: "April Training Plan "
 date: today
-categories: [Running, Data Science, #GCM25]
+categories: [Running, Data Science, GCM25]
 image: images/April_training.jpg
 date-modified: last-modified
-code-fold: true
+format:
+  html:
+    code-fold: true
+    toc: false
 draft: false
 ---
 

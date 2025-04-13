@@ -216,12 +216,12 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <p>“He who makes a beast of himself gets rid of the pain of being a man.” <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> — Dr.&nbsp;Samuel Johnson, quoted in Fear and Loathing in Las Vegas by Hunter S. Thompson (1971)</p>
 </blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Originally by Dr.&nbsp;Samuel Johnson, used by Hunter S. Thompson as the epigraph to <em>Fear and Loathing in Las Vegas</em> (1971).</p></div></div></div>
 <p>This is the beginning of a small experiment — part training log, part data science side project, part nostalgic therapy. After a long and sometimes questionable relationship with the marathon, I’ve decided to document the road to my next one — my 13th, though who’s counting. A “local” marathon, the <a href="https://goldcoastmarathon.com.au/">Gold Coast Marathon</a> and one I’m familiar with. I’m not chasing a personal best (at least, that’s what I tell myself), but I am chasing something: structure, understanding, maybe even redemption. This blog, and the series to follow, is a place to reflect on old performances, track new training efforts, and occasionally make sense of the numbers — or at least dress them up in tidy tables and plots that suggest control over what is an unpredictable pursuit.</p>
-<p>The marathon doesn’t just test the man — it spawns the beast in him. Not a beast of rage or reckless indulgence, like the one Hunter S. Thompson conjured in the neon haze of Vegas, but something more controlled, more methodical… yet still, undeniably, irrational. To train for a marathon is to willingly embrace a kind of madness: to rise early, log the miles, sweat through long runs, negotiate splits, and obsess over details that no one else will ever see or care about. No different, I suppose, than compulsions of drink and drugs — except that one ends with a finisher’s medal and (hopefully) less liver damage. Still, both require full immersion. Both blur the lines between discipline and delusion. And both, in their way, are a form of mayhem that allows escape from the polite constraints of ordinary life.</p>
-<p>Reflecting on my own running, I haven’t trained “properly” since 2019 — which, not coincidentally, was also my personal best (2:52). A high-water mark that I’ve stared at lovingly (and maybe delusionally) in the rear-view mirror ever since. Since then, the structure and my resolve have slipped. My belief systems about what “should work” in training have often charged ahead of the evidence. In hindsight, I probably need to be a better Bayesian <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>: update my beliefs <em>when the data tells me to,</em> not just when my ego needs a pick-me-up.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;For a general introduction to Bayesian inference — the process of updating beliefs as new evidence becomes available — see the <a href="https://en.wikipedia.org/wiki/Bayesian_inference">Wikipedia article on Bayesian inference</a>.</p></div></div><p>So, why blog now?</p>
-<p>Partly because I’m nostalgic. But also because I’ll “try” and quietly turn this into a small data science project — an excuse to tinker with my training logs, Strava uploads, physiological markers, and the occasional psychological pothole. Maybe there’s something to learn from 12 previous marathons. And really, I just love running — the rhythm, the ritual, the ridiculousness of it all. This is a way to make sense of it, or at least enjoy the attempt.</p>
-<p>It’s also a chance to learn more about Quarto <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (the system used to create this website), and to explore how to tell a story with better visuals, interactive tables, and a cleaner presentation style. I’ve taken a liking to the Tufte handout theme <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and writing more here gives me a good excuse to experiment with that as well. Consider it a running diary meets technical playground — one foot in the marathon world, the other in markdown.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Quarto is an open-source scientific and technical publishing system. For documentation and source code, see the official website at <a href="https://www.quarto.org">quarto.org</a> and the <a href="https://www.github.com/quarto-dev/quarto-cli">GitHub repository</a>.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;The Tufte theme in Quarto is inspired by Edward Tufte’s design principles, emphasizing clarity, simplicity, and effective use of white space. See the Quarto Tufte layout example at <a href="https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html">quarto-dev.github.io</a>.</p></div></div><p>For background, I’m including a table below that gives a snapshot of my past marathon performances, complete with age-graded percentages. It’s a mix of highs and “what the hell happened there?”</p>
+<p>The marathon doesn’t just test the man — it spawns the beast in him. Not a beast of rage or reckless indulgence, like the one Hunter S. Thompson conjured in the neon haze of Vegas, but something more controlled, more methodical… yet still, undeniably, irrational. To train for a marathon is to willingly embrace a kind of madness: to rise early, log the miles, sweat through long runs, negotiate splits, and obsess over details that no one else will ever see or care about. No different, I suppose, than other, less healthy forms of addition— except that one ends with a finisher’s medal and (hopefully) less liver damage. Still, both blur the lines between discipline and delusion. And both, in their way, are obsessions that allow escape from the polite constraints of ordinary life.</p>
+<p>Reflecting on my own running, I haven’t trained “properly” since 2019 — which, not coincidentally, was also my personal best (2:52). A high-water mark that I’ve stared at lovingly (and distortedly) in the rear-view mirror ever since. In the time that followed, both the structure and my resolve slipped. My belief systems about what <em>should</em> work in training have often charged ahead of the evidence. In hindsight, I probably need to be a better Bayesian <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>: update my beliefs <em>when the data tells me to,</em> not just <em>when my ego</em> needs a pick-me-up.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;For a general introduction to Bayesian inference — the process of updating beliefs as new evidence becomes available — see the <a href="https://en.wikipedia.org/wiki/Bayesian_inference">Wikipedia article on Bayesian inference</a>.</p></div></div><p>So, why write now?</p>
+<p>Partly because I’m keen to trace the path from start to finish. But also because I’ll “try” and quietly turn this into a small data science project — an excuse to tinker with my training logs, Strava uploads, physiological markers, and the occasional psychological pothole. Maybe there’s something to learn from 12 previous marathons. And really, I just love running — the rhythm, the ritual, the ridiculousness of it all. This is a way to make sense of it, or at least enjoy the attempt.</p>
+<p>It’s also a chance to learn more about Quarto<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (the system used to create this website), and to explore how to tell a story with better visuals, tables, and a cleaner presentation style. Consider it a running diary meets technical playground — one foot in the marathon world, the other in R markdown.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Quarto is an open-source scientific and technical publishing system. For documentation and source code, see the official website at <a href="https://www.quarto.org">quarto.org</a> and the <a href="https://www.github.com/quarto-dev/quarto-cli">GitHub repository</a>.</p></div></div><p>For background, I’m including some data below to give a snapshot of my past marathon performances, complete with age-graded percentages. It’s a mix of highs and “what the hell happened there?”</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -251,23 +251,23 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="mpwdbuathf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mpwdbuathf table {
+<div id="azkhylreok" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#azkhylreok table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mpwdbuathf thead, #mpwdbuathf tbody, #mpwdbuathf tfoot, #mpwdbuathf tr, #mpwdbuathf td, #mpwdbuathf th {
+#azkhylreok thead, #azkhylreok tbody, #azkhylreok tfoot, #azkhylreok tr, #azkhylreok td, #azkhylreok th {
   border-style: none;
 }
 
-#mpwdbuathf p {
+#azkhylreok p {
   margin: 0;
   padding: 0;
 }
 
-#mpwdbuathf .gt_table {
+#azkhylreok .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -293,12 +293,12 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_caption {
+#azkhylreok .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mpwdbuathf .gt_title {
+#azkhylreok .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -310,7 +310,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#mpwdbuathf .gt_subtitle {
+#azkhylreok .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -322,7 +322,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#mpwdbuathf .gt_heading {
+#azkhylreok .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -334,13 +334,13 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_bottom_border {
+#azkhylreok .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_col_headings {
+#azkhylreok .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -355,7 +355,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_col_heading {
+#azkhylreok .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -375,7 +375,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#mpwdbuathf .gt_column_spanner_outer {
+#azkhylreok .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,15 +387,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#mpwdbuathf .gt_column_spanner_outer:first-child {
+#azkhylreok .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mpwdbuathf .gt_column_spanner_outer:last-child {
+#azkhylreok .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mpwdbuathf .gt_column_spanner {
+#azkhylreok .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -407,11 +407,11 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#mpwdbuathf .gt_spanner_row {
+#azkhylreok .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mpwdbuathf .gt_group_heading {
+#azkhylreok .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -437,7 +437,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#mpwdbuathf .gt_empty_group_heading {
+#azkhylreok .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -452,15 +452,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#mpwdbuathf .gt_from_md > :first-child {
+#azkhylreok .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mpwdbuathf .gt_from_md > :last-child {
+#azkhylreok .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mpwdbuathf .gt_row {
+#azkhylreok .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,7 +479,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#mpwdbuathf .gt_stub {
+#azkhylreok .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -492,7 +492,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_stub_row_group {
+#azkhylreok .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -506,15 +506,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#mpwdbuathf .gt_row_group_first td {
+#azkhylreok .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mpwdbuathf .gt_row_group_first th {
+#azkhylreok .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mpwdbuathf .gt_summary_row {
+#azkhylreok .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -524,16 +524,16 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_first_summary_row {
+#azkhylreok .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_first_summary_row.thick {
+#azkhylreok .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mpwdbuathf .gt_last_summary_row {
+#azkhylreok .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -543,7 +543,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_grand_summary_row {
+#azkhylreok .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -553,7 +553,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_first_grand_summary_row {
+#azkhylreok .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -563,7 +563,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_last_grand_summary_row_top {
+#azkhylreok .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -573,11 +573,11 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_striped {
+#azkhylreok .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mpwdbuathf .gt_table_body {
+#azkhylreok .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -586,7 +586,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_footnotes {
+#azkhylreok .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -600,7 +600,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_footnote {
+#azkhylreok .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -609,7 +609,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_sourcenotes {
+#azkhylreok .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -623,7 +623,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_sourcenote {
+#azkhylreok .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -631,72 +631,72 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_left {
+#azkhylreok .gt_left {
   text-align: left;
 }
 
-#mpwdbuathf .gt_center {
+#azkhylreok .gt_center {
   text-align: center;
 }
 
-#mpwdbuathf .gt_right {
+#azkhylreok .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mpwdbuathf .gt_font_normal {
+#azkhylreok .gt_font_normal {
   font-weight: normal;
 }
 
-#mpwdbuathf .gt_font_bold {
+#azkhylreok .gt_font_bold {
   font-weight: bold;
 }
 
-#mpwdbuathf .gt_font_italic {
+#azkhylreok .gt_font_italic {
   font-style: italic;
 }
 
-#mpwdbuathf .gt_super {
+#azkhylreok .gt_super {
   font-size: 65%;
 }
 
-#mpwdbuathf .gt_footnote_marks {
+#azkhylreok .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mpwdbuathf .gt_asterisk {
+#azkhylreok .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mpwdbuathf .gt_indent_1 {
+#azkhylreok .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mpwdbuathf .gt_indent_2 {
+#azkhylreok .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mpwdbuathf .gt_indent_3 {
+#azkhylreok .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mpwdbuathf .gt_indent_4 {
+#azkhylreok .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mpwdbuathf .gt_indent_5 {
+#azkhylreok .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mpwdbuathf .katex-display {
+#azkhylreok .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mpwdbuathf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#azkhylreok div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -805,7 +805,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>One main difference this time is I’ve handed over the keys to someone else. A friend — and experienced runner — who is guiding me through the process. So training plan to come. Left to my own devices, I tend to alternate between overtraining, under-believing, and ignoring all evidence in favour of whatever romantic training idea is currently floating through my brain. So this time, I’m trying structure. Consistency. Restraint. (I give that three weeks, tops.).</p>
+<p>One main difference this time is I’ve handed over the keys to someone else. A friend — and experienced runner — who is guiding my training. So training plan to come. Left to my own devices, I tend to alternate between over-training, under-believing, and ignoring all evidence in favour of whatever romantic training idea is currently floating through my brain. So this time, I’m trying structure. Consistency. Restraint. (I give that three weeks, tops!).</p>
 <p>So here we are: 13 weeks out. The beginning stages of… I don’t know if I’ll run sub-3 again. But I’ll document the attempt, the process, and the data that drips out along the way. I’m choosing to believe if only for a little while, and at least in this moment it seems worth leaning into.</p>
 <p>Let’s see what happens.</p>
 

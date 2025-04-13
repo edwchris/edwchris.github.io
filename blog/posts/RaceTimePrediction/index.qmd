@@ -14,15 +14,15 @@ bibliography: references.bib
 
 > “All models are wrong, but some are useful.”[^1] — George Box
 
-[^1]: quote generally attributed to [George E. P. Box](https://en.wikipedia.org/wiki/George_E._P._Box), a British statistician, who argued models are never perfect by may still be useful in everyday life 
+[^1]: quote generally attributed to [George E. P. Box](https://en.wikipedia.org/wiki/George_E._P._Box), a British statistician, who argued models are never perfect by may still be useful in everyday life
 
 Before diving into the training data, let’s take a quick detour into the curious, and sometimes overly optimistic, world of race prediction models. Most runners have come across these at some point: you plug in a recent race result, hit "calculate," and voilà — a predicted marathon time appears!
 
-The Riegel equation[^2], or some variation of it, is perhaps the most well-known. It uses a race result over a known distance to estimate a predicted finish time for a different distance, based on an exponential decay formula.
-
-Specifically, the formula is:
+The Riegel equation[^2], or some variation of it, is perhaps the most well-known. It uses a race result over a known distance to estimate a predicted finish time for another distance, based on an exponential decay formula.
 
 [^2]: proposed by [Peter Riegel](https://en.wikipedia.org/wiki/Peter_Riegel) in a Runner's World article in 1977
+
+Specifically, the formula is:
 
 $$
 T_2 = T_1 \times \left( \frac{D_2}{D_1} \right)^b
@@ -32,15 +32,15 @@ $$ Where:
 
 **T₂** = predicted time over distance D₂
 
-**b** = decay exponent, and was originally proposed by Riegel to be 1.06
+**b** = decay exponent - originally proposed by Riegel to be 1.06
 
 Some more sober-minded folks argue the exponent should be higher—closer to 1.15—and you can read more about the logic behind that in the linked article - see: [FetchEveryone's improved Riegel calculator](https://www.fetcheveryone.com/training-calculators-improvedriegel.php?hours=1&minutes=24&seconds=0) . Running watches also provide predictors. Mine, a Garmin, currently pegs my marathon fitness at 3:11:xx. Where it gets this number from is anyone’s guess. Presumably a mix of VO₂ max estimates, and recent efforts.
 
 But there are other prediction methods that draw on your training data rather than race results. After sharing my [past marathon times](https://edwchris.github.io/blog/posts/TheBeginningStagesof/) in a previous post, I started wondering how well the training leading into those races actually correlated with my finish times.
 
-**Enter Tanda.** 
+**Enter Tanda.**
 
-Developed by Giovanni Tanda from the University of Genova, this model is based on actual training data, not race times. His 2011 paper[@tanda2011] looked at a bunch of marathoners' training logs and used regression analysis to see what best predicted marathon pace. 
+Developed by Giovanni Tanda from the University of Genova, this model is based on actual training data, not race times. His 2011 paper[@tanda2011] looked at a bunch of training logs and used regression analysis to see what best predicted marathon pace (and by extension marathon finish time).
 
 The result? For the 8 weeks leading into the final week of training, the paper excluded the final taper week, the two key variables that correlated best with finish times were:
 
@@ -48,15 +48,13 @@ The result? For the 8 weeks leading into the final week of training, the paper e
 
 • P = average training pace (sec/km)
 
-There are, of course, some obvious limitations to the study. It included a modest number of runners (and only one female), and it didn’t attempt to correlate performance with things like individual VO₂ max, lactate threshold, body composition, or biomechanics—factors that are known to influence endurance performance.
+There are, of course, some obvious limitations to the study. It included a modest number of runners (and only one female), and it didn’t attempt to correlate performance with things like individual VO₂ max, lactate threshold, body composition, or biomechanics—factors that are known to influence performance.
 
-Christof Schwiening has written a brilliant blog[^4] exploring the Tanda model in depth, for those keen to venture further down the rabbit hole. One of his best analogies compares Tanda nicely to other race predictors: 
+Christof Schwiening has written a [brilliant blog](https://christofschwiening.blogspot.com/) exploring the Tanda model in depth, for those keen to venture further down the rabbit hole. One of his best analogies compares Tanda nicely to other race predictors:
 
-> “...the Tanda 8-week period is just another race. It is the training race – a race with no defined distance or time, but a race nevertheless.”[^5]
+> “...the Tanda 8-week period is just another race. It is the training race – a race with no defined distance or time, but a race nevertheless.”[^3]
 
-[^4]: Christof Schwiening's random thoughts and writings, [https://christofschwiening.blogspot.com/](https://christofschwiening.blogspot.com/)
-
-[^5]: Understanding race predictors - Riegel versus Tanda - Christof Schwiening [blog](https://christofschwiening.blogspot.com/2019/05/understanding-race-predictors-riegel.html)
+[^3]: Understanding race predictors - Riegel versus Tanda - Christof Schwiening [blog](https://christofschwiening.blogspot.com/2019/05/understanding-race-predictors-riegel.html)
 
 For me, it was just an interesting exercise to see how the model held up. So I went full archaeologist on the 8 weeks leading into all 12 previous marathons. I dug up the P and the K, and ran the Tanda model for each.
 
@@ -116,19 +114,17 @@ tanda_data %>%
 
 ```
 
+I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss.
 
-I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss. 
+The Bland–Altman plot[^5] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the [blue line]{style="color:blue;"} howers around 0 on the *y-axis*. Which I suppose is a good thing.
 
-The Bland–Altman plot[^3] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the *y-axis*. Which I suppose is a good thing. 
+[^5]: Wikipedia reference for the [Bland- Altman plot](https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot)
 
-What's more concerning is the width of the Limits of Agreement (LoA). The <span style="color:red;">red-dotted lines</span> hovers around *±25 minutes* — which is wild. That essentially means there's 95% "confidence" that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.
-
-[^3]: Wikipedia reference for the [Bland- Altman plot](https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot)
+What's more concerning is the width of the Limits of Agreement (LoA). The [red-dotted lines]{style="color:red;"} hovers around *±25 minutes* — which is wild. That essentially means there's 95% "confidence" that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.
 
 Also, I have a feeling the finishes over 3:30 are skewing the results. Two of those were significant blow-ups — races where things really unravelled in the later stages. The third was more of a social run, where I paced comfortably alongside a mate.
 
 All up, it’s a reminder that while models like Tanda can offer a rough guide, they don’t always capture the messiness of the marathon. And maybe that’s the point: running isn’t always about prediction — sometimes it’s about embracing the unknown, the artistry of pacing, the conditions on the day, and that delicate mix of patience and bravery that makes each race its own adventure.
-
 
 ```{r}
 

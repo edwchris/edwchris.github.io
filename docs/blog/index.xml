@@ -312,23 +312,23 @@ font-style: inherit;">columns =</span> Sunday)</span>
 <span id="cb1-59">  ) </span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="ztovprzhnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ztovprzhnd table {
+<div id="ggpeoginmh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ggpeoginmh table {
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ztovprzhnd thead, #ztovprzhnd tbody, #ztovprzhnd tfoot, #ztovprzhnd tr, #ztovprzhnd td, #ztovprzhnd th {
+#ggpeoginmh thead, #ggpeoginmh tbody, #ggpeoginmh tfoot, #ggpeoginmh tr, #ggpeoginmh td, #ggpeoginmh th {
   border-style: none;
 }
 
-#ztovprzhnd p {
+#ggpeoginmh p {
   margin: 0;
   padding: 0;
 }
 
-#ztovprzhnd .gt_table {
+#ggpeoginmh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -354,12 +354,12 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-left-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_caption {
+#ggpeoginmh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ztovprzhnd .gt_title {
+#ggpeoginmh .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -371,7 +371,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-width: 0;
 }
 
-#ztovprzhnd .gt_subtitle {
+#ggpeoginmh .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -383,7 +383,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-top-width: 0;
 }
 
-#ztovprzhnd .gt_heading {
+#ggpeoginmh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -395,13 +395,13 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_bottom_border {
+#ggpeoginmh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_col_headings {
+#ggpeoginmh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -416,7 +416,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_col_heading {
+#ggpeoginmh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -436,7 +436,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   overflow-x: hidden;
 }
 
-#ztovprzhnd .gt_column_spanner_outer {
+#ggpeoginmh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -448,15 +448,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 4px;
 }
 
-#ztovprzhnd .gt_column_spanner_outer:first-child {
+#ggpeoginmh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ztovprzhnd .gt_column_spanner_outer:last-child {
+#ggpeoginmh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ztovprzhnd .gt_column_spanner {
+#ggpeoginmh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -468,11 +468,11 @@ font-style: inherit;">columns =</span> Sunday)</span>
   width: 100%;
 }
 
-#ztovprzhnd .gt_spanner_row {
+#ggpeoginmh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ztovprzhnd .gt_group_heading {
+#ggpeoginmh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -498,7 +498,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   text-align: left;
 }
 
-#ztovprzhnd .gt_empty_group_heading {
+#ggpeoginmh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -513,15 +513,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   vertical-align: middle;
 }
 
-#ztovprzhnd .gt_from_md > :first-child {
+#ggpeoginmh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ztovprzhnd .gt_from_md > :last-child {
+#ggpeoginmh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ztovprzhnd .gt_row {
+#ggpeoginmh .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -540,7 +540,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   overflow-x: hidden;
 }
 
-#ztovprzhnd .gt_stub {
+#ggpeoginmh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -553,7 +553,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#ztovprzhnd .gt_stub_row_group {
+#ggpeoginmh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -567,15 +567,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   vertical-align: top;
 }
 
-#ztovprzhnd .gt_row_group_first td {
+#ggpeoginmh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ztovprzhnd .gt_row_group_first th {
+#ggpeoginmh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ztovprzhnd .gt_summary_row {
+#ggpeoginmh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -585,16 +585,16 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#ztovprzhnd .gt_first_summary_row {
+#ggpeoginmh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_first_summary_row.thick {
+#ggpeoginmh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ztovprzhnd .gt_last_summary_row {
+#ggpeoginmh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -604,7 +604,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_grand_summary_row {
+#ggpeoginmh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -614,7 +614,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#ztovprzhnd .gt_first_grand_summary_row {
+#ggpeoginmh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -624,7 +624,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-top-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_last_grand_summary_row_top {
+#ggpeoginmh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -634,11 +634,11 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_striped {
+#ggpeoginmh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ztovprzhnd .gt_table_body {
+#ggpeoginmh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -647,7 +647,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_footnotes {
+#ggpeoginmh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -661,7 +661,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_footnote {
+#ggpeoginmh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -670,7 +670,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#ztovprzhnd .gt_sourcenotes {
+#ggpeoginmh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -684,7 +684,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#ztovprzhnd .gt_sourcenote {
+#ggpeoginmh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -692,72 +692,72 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#ztovprzhnd .gt_left {
+#ggpeoginmh .gt_left {
   text-align: left;
 }
 
-#ztovprzhnd .gt_center {
+#ggpeoginmh .gt_center {
   text-align: center;
 }
 
-#ztovprzhnd .gt_right {
+#ggpeoginmh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ztovprzhnd .gt_font_normal {
+#ggpeoginmh .gt_font_normal {
   font-weight: normal;
 }
 
-#ztovprzhnd .gt_font_bold {
+#ggpeoginmh .gt_font_bold {
   font-weight: bold;
 }
 
-#ztovprzhnd .gt_font_italic {
+#ggpeoginmh .gt_font_italic {
   font-style: italic;
 }
 
-#ztovprzhnd .gt_super {
+#ggpeoginmh .gt_super {
   font-size: 65%;
 }
 
-#ztovprzhnd .gt_footnote_marks {
+#ggpeoginmh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ztovprzhnd .gt_asterisk {
+#ggpeoginmh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ztovprzhnd .gt_indent_1 {
+#ggpeoginmh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ztovprzhnd .gt_indent_2 {
+#ggpeoginmh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ztovprzhnd .gt_indent_3 {
+#ggpeoginmh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ztovprzhnd .gt_indent_4 {
+#ggpeoginmh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ztovprzhnd .gt_indent_5 {
+#ggpeoginmh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ztovprzhnd .katex-display {
+#ggpeoginmh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ztovprzhnd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ggpeoginmh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -882,26 +882,26 @@ Weekend Sessions
 <p>“All models are wrong, but some are useful.”<sup>1</sup> — George Box</p>
 </blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;quote generally attributed to <a href="https://en.wikipedia.org/wiki/George_E._P._Box">George E. P. Box</a>, a British statistician, who argued models are never perfect by may still be useful in everyday life</p></div></div></div>
 <p>Before diving into the training data, let’s take a quick detour into the curious, and sometimes overly optimistic, world of race prediction models. Most runners have come across these at some point: you plug in a recent race result, hit “calculate,” and voilà — a predicted marathon time appears!</p>
-<p>The Riegel equation<sup>2</sup>, or some variation of it, is perhaps the most well-known. It uses a race result over a known distance to estimate a predicted finish time for a different distance, based on an exponential decay formula.</p>
+<p>The Riegel equation<sup>2</sup>, or some variation of it, is perhaps the most well-known. It uses a race result over a known distance to estimate a predicted finish time for another distance, based on an exponential decay formula.</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;proposed by <a href="https://en.wikipedia.org/wiki/Peter_Riegel">Peter Riegel</a> in a Runner’s World article in 1977</p></div></div><p>Specifically, the formula is:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AT_2%20=%20T_1%20%5Ctimes%20%5Cleft(%20%5Cfrac%7BD_2%7D%7BD_1%7D%20%5Cright)%5Eb%0A"> Where:</p>
 <p><strong>T₁</strong> = time over distance D₁</p>
 <p><strong>T₂</strong> = predicted time over distance D₂</p>
-<p><strong>b</strong> = decay exponent, and was originally proposed by Riegel to be 1.06</p>
+<p><strong>b</strong> = decay exponent - originally proposed by Riegel to be 1.06</p>
 <p>Some more sober-minded folks argue the exponent should be higher—closer to 1.15—and you can read more about the logic behind that in the linked article - see: <a href="https://www.fetcheveryone.com/training-calculators-improvedriegel.php?hours=1&amp;minutes=24&amp;seconds=0">FetchEveryone’s improved Riegel calculator</a> . Running watches also provide predictors. Mine, a Garmin, currently pegs my marathon fitness at 3:11:xx. Where it gets this number from is anyone’s guess. Presumably a mix of VO₂ max estimates, and recent efforts.</p>
 <p>But there are other prediction methods that draw on your training data rather than race results. After sharing my <a href="https://edwchris.github.io/blog/posts/TheBeginningStagesof/">past marathon times</a> in a previous post, I started wondering how well the training leading into those races actually correlated with my finish times.</p>
 <p><strong>Enter Tanda.</strong></p>
-<p>Developed by Giovanni Tanda from the University of Genova, this model is based on actual training data, not race times. His 2011 paper<span class="citation" data-cites="tanda2011">(Tanda 2011)</span> looked at a bunch of marathoners’ training logs and used regression analysis to see what best predicted marathon pace.</p>
+<p>Developed by Giovanni Tanda from the University of Genova, this model is based on actual training data, not race times. His 2011 paper<span class="citation" data-cites="tanda2011">(Tanda 2011)</span> looked at a bunch of training logs and used regression analysis to see what best predicted marathon pace (and by extension marathon finish time).</p>
 <div class="no-row-height column-margin column-container"><div id="ref-tanda2011" class="csl-entry">
 Tanda, Giovanni. 2011. <span>“Prediction of Marathon Performance Time on the Basis of Training Indices.”</span> <em>Journal of Human Sport and Exercise</em> 6 (3): 511–20. <a href="https://doi.org/10.4100/jhse.2011.63.05">https://doi.org/10.4100/jhse.2011.63.05</a>.
 </div></div><p>The result? For the 8 weeks leading into the final week of training, the paper excluded the final taper week, the two key variables that correlated best with finish times were:</p>
 <p>• K = average weekly distance (km/week)</p>
 <p>• P = average training pace (sec/km)</p>
-<p>There are, of course, some obvious limitations to the study. It included a modest number of runners (and only one female), and it didn’t attempt to correlate performance with things like individual VO₂ max, lactate threshold, body composition, or biomechanics—factors that are known to influence endurance performance.</p>
-<p>Christof Schwiening has written a brilliant blog<sup>3</sup> exploring the Tanda model in depth, for those keen to venture further down the rabbit hole. One of his best analogies compares Tanda nicely to other race predictors:</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Christof Schwiening’s random thoughts and writings, <a href="https://christofschwiening.blogspot.com/">https://christofschwiening.blogspot.com/</a></p></div></div><div class="page-columns page-full"><blockquote class="blockquote">
-<p>“…the Tanda 8-week period is just another race. It is the training race – a race with no defined distance or time, but a race nevertheless.”<sup>4</sup></p>
-</blockquote><div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Understanding race predictors - Riegel versus Tanda - Christof Schwiening <a href="https://christofschwiening.blogspot.com/2019/05/understanding-race-predictors-riegel.html">blog</a></p></div></div></div>
+<p>There are, of course, some obvious limitations to the study. It included a modest number of runners (and only one female), and it didn’t attempt to correlate performance with things like individual VO₂ max, lactate threshold, body composition, or biomechanics—factors that are known to influence performance.</p>
+<p>Christof Schwiening has written a <a href="https://christofschwiening.blogspot.com/">brilliant blog</a> exploring the Tanda model in depth, for those keen to venture further down the rabbit hole. One of his best analogies compares Tanda nicely to other race predictors:</p>
+<div class="page-columns page-full"><blockquote class="blockquote">
+<p>“…the Tanda 8-week period is just another race. It is the training race – a race with no defined distance or time, but a race nevertheless.”<sup>3</sup></p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Understanding race predictors - Riegel versus Tanda - Christof Schwiening <a href="https://christofschwiening.blogspot.com/2019/05/understanding-race-predictors-riegel.html">blog</a></p></div></div></div>
 <p>For me, it was just an interesting exercise to see how the model held up. So I went full archaeologist on the 8 weeks leading into all 12 previous marathons. I dug up the P and the K, and ran the Tanda model for each.</p>
 <p>Below is the output</p>
 <div class="cell">
@@ -1064,23 +1064,23 @@ font-style: inherit;">cdot P$"</span></span>
 <span id="cb1-37">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="uyvkpqaerz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uyvkpqaerz table {
+<div id="ofptopcpwf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ofptopcpwf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uyvkpqaerz thead, #uyvkpqaerz tbody, #uyvkpqaerz tfoot, #uyvkpqaerz tr, #uyvkpqaerz td, #uyvkpqaerz th {
+#ofptopcpwf thead, #ofptopcpwf tbody, #ofptopcpwf tfoot, #ofptopcpwf tr, #ofptopcpwf td, #ofptopcpwf th {
   border-style: none;
 }
 
-#uyvkpqaerz p {
+#ofptopcpwf p {
   margin: 0;
   padding: 0;
 }
 
-#uyvkpqaerz .gt_table {
+#ofptopcpwf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1106,12 +1106,12 @@ font-style: inherit;">cdot P$"</span></span>
   border-left-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_caption {
+#ofptopcpwf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uyvkpqaerz .gt_title {
+#ofptopcpwf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1123,7 +1123,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-width: 0;
 }
 
-#uyvkpqaerz .gt_subtitle {
+#ofptopcpwf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1135,7 +1135,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-top-width: 0;
 }
 
-#uyvkpqaerz .gt_heading {
+#ofptopcpwf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1147,13 +1147,13 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_bottom_border {
+#ofptopcpwf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_col_headings {
+#ofptopcpwf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1168,7 +1168,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_col_heading {
+#ofptopcpwf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1188,7 +1188,7 @@ font-style: inherit;">cdot P$"</span></span>
   overflow-x: hidden;
 }
 
-#uyvkpqaerz .gt_column_spanner_outer {
+#ofptopcpwf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1200,15 +1200,15 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 4px;
 }
 
-#uyvkpqaerz .gt_column_spanner_outer:first-child {
+#ofptopcpwf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uyvkpqaerz .gt_column_spanner_outer:last-child {
+#ofptopcpwf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uyvkpqaerz .gt_column_spanner {
+#ofptopcpwf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1220,11 +1220,11 @@ font-style: inherit;">cdot P$"</span></span>
   width: 100%;
 }
 
-#uyvkpqaerz .gt_spanner_row {
+#ofptopcpwf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uyvkpqaerz .gt_group_heading {
+#ofptopcpwf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1250,7 +1250,7 @@ font-style: inherit;">cdot P$"</span></span>
   text-align: left;
 }
 
-#uyvkpqaerz .gt_empty_group_heading {
+#ofptopcpwf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1265,15 +1265,15 @@ font-style: inherit;">cdot P$"</span></span>
   vertical-align: middle;
 }
 
-#uyvkpqaerz .gt_from_md > :first-child {
+#ofptopcpwf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uyvkpqaerz .gt_from_md > :last-child {
+#ofptopcpwf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uyvkpqaerz .gt_row {
+#ofptopcpwf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1292,7 +1292,7 @@ font-style: inherit;">cdot P$"</span></span>
   overflow-x: hidden;
 }
 
-#uyvkpqaerz .gt_stub {
+#ofptopcpwf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1305,7 +1305,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#uyvkpqaerz .gt_stub_row_group {
+#ofptopcpwf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1319,15 +1319,15 @@ font-style: inherit;">cdot P$"</span></span>
   vertical-align: top;
 }
 
-#uyvkpqaerz .gt_row_group_first td {
+#ofptopcpwf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uyvkpqaerz .gt_row_group_first th {
+#ofptopcpwf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uyvkpqaerz .gt_summary_row {
+#ofptopcpwf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1337,16 +1337,16 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#uyvkpqaerz .gt_first_summary_row {
+#ofptopcpwf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_first_summary_row.thick {
+#ofptopcpwf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uyvkpqaerz .gt_last_summary_row {
+#ofptopcpwf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1356,7 +1356,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_grand_summary_row {
+#ofptopcpwf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1366,7 +1366,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#uyvkpqaerz .gt_first_grand_summary_row {
+#ofptopcpwf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1376,7 +1376,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-top-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_last_grand_summary_row_top {
+#ofptopcpwf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1386,11 +1386,11 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_striped {
+#ofptopcpwf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uyvkpqaerz .gt_table_body {
+#ofptopcpwf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1399,7 +1399,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_footnotes {
+#ofptopcpwf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1413,7 +1413,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_footnote {
+#ofptopcpwf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1422,7 +1422,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#uyvkpqaerz .gt_sourcenotes {
+#ofptopcpwf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1436,7 +1436,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#uyvkpqaerz .gt_sourcenote {
+#ofptopcpwf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1444,72 +1444,72 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#uyvkpqaerz .gt_left {
+#ofptopcpwf .gt_left {
   text-align: left;
 }
 
-#uyvkpqaerz .gt_center {
+#ofptopcpwf .gt_center {
   text-align: center;
 }
 
-#uyvkpqaerz .gt_right {
+#ofptopcpwf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uyvkpqaerz .gt_font_normal {
+#ofptopcpwf .gt_font_normal {
   font-weight: normal;
 }
 
-#uyvkpqaerz .gt_font_bold {
+#ofptopcpwf .gt_font_bold {
   font-weight: bold;
 }
 
-#uyvkpqaerz .gt_font_italic {
+#ofptopcpwf .gt_font_italic {
   font-style: italic;
 }
 
-#uyvkpqaerz .gt_super {
+#ofptopcpwf .gt_super {
   font-size: 65%;
 }
 
-#uyvkpqaerz .gt_footnote_marks {
+#ofptopcpwf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uyvkpqaerz .gt_asterisk {
+#ofptopcpwf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uyvkpqaerz .gt_indent_1 {
+#ofptopcpwf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uyvkpqaerz .gt_indent_2 {
+#ofptopcpwf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uyvkpqaerz .gt_indent_3 {
+#ofptopcpwf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uyvkpqaerz .gt_indent_4 {
+#ofptopcpwf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uyvkpqaerz .gt_indent_5 {
+#ofptopcpwf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uyvkpqaerz .katex-display {
+#ofptopcpwf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uyvkpqaerz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ofptopcpwf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1667,8 +1667,8 @@ Race Performance
 </div>
 </div>
 <p>I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss.</p>
-<p>The Bland–Altman plot<sup>5</sup> below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the <em>y-axis</em>. Which I suppose is a good thing.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Wikipedia reference for the <a href="https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot">Bland- Altman plot</a></p></div></div><p>What’s more concerning is the width of the Limits of Agreement (LoA). The <span style="color:red;">red-dotted lines</span> hovers around <em>±25 minutes</em> — which is wild. That essentially means there’s 95% “confidence” that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.</p>
+<p>The Bland–Altman plot<sup>4</sup> below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the <em>y-axis</em>. Which I suppose is a good thing.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Wikipedia reference for the <a href="https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot">Bland- Altman plot</a></p></div></div><p>What’s more concerning is the width of the Limits of Agreement (LoA). The <span style="color:red;">red-dotted lines</span> hovers around <em>±25 minutes</em> — which is wild. That essentially means there’s 95% “confidence” that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.</p>
 <p>Also, I have a feeling the finishes over 3:30 are skewing the results. Two of those were significant blow-ups — races where things really unravelled in the later stages. The third was more of a social run, where I paced comfortably alongside a mate.</p>
 <p>All up, it’s a reminder that while models like Tanda can offer a rough guide, they don’t always capture the messiness of the marathon. And maybe that’s the point: running isn’t always about prediction — sometimes it’s about embracing the unknown, the artistry of pacing, the conditions on the day, and that delicate mix of patience and bravery that makes each race its own adventure.</p>
 <div class="cell">
@@ -1957,12 +1957,12 @@ font-style: inherit;">theme_minimal</span>()</span>
 <p>“He who makes a beast of himself gets rid of the pain of being a man.” <sup>1</sup> — Dr.&nbsp;Samuel Johnson, quoted in Fear and Loathing in Las Vegas by Hunter S. Thompson (1971)</p>
 </blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Originally by Dr.&nbsp;Samuel Johnson, used by Hunter S. Thompson as the epigraph to <em>Fear and Loathing in Las Vegas</em> (1971).</p></div></div></div>
 <p>This is the beginning of a small experiment — part training log, part data science side project, part nostalgic therapy. After a long and sometimes questionable relationship with the marathon, I’ve decided to document the road to my next one — my 13th, though who’s counting. A “local” marathon, the <a href="https://goldcoastmarathon.com.au/">Gold Coast Marathon</a> and one I’m familiar with. I’m not chasing a personal best (at least, that’s what I tell myself), but I am chasing something: structure, understanding, maybe even redemption. This blog, and the series to follow, is a place to reflect on old performances, track new training efforts, and occasionally make sense of the numbers — or at least dress them up in tidy tables and plots that suggest control over what is an unpredictable pursuit.</p>
-<p>The marathon doesn’t just test the man — it spawns the beast in him. Not a beast of rage or reckless indulgence, like the one Hunter S. Thompson conjured in the neon haze of Vegas, but something more controlled, more methodical… yet still, undeniably, irrational. To train for a marathon is to willingly embrace a kind of madness: to rise early, log the miles, sweat through long runs, negotiate splits, and obsess over details that no one else will ever see or care about. No different, I suppose, than compulsions of drink and drugs — except that one ends with a finisher’s medal and (hopefully) less liver damage. Still, both require full immersion. Both blur the lines between discipline and delusion. And both, in their way, are a form of mayhem that allows escape from the polite constraints of ordinary life.</p>
-<p>Reflecting on my own running, I haven’t trained “properly” since 2019 — which, not coincidentally, was also my personal best (2:52). A high-water mark that I’ve stared at lovingly (and maybe delusionally) in the rear-view mirror ever since. Since then, the structure and my resolve have slipped. My belief systems about what “should work” in training have often charged ahead of the evidence. In hindsight, I probably need to be a better Bayesian <sup>2</sup>: update my beliefs <em>when the data tells me to,</em> not just when my ego needs a pick-me-up.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;For a general introduction to Bayesian inference — the process of updating beliefs as new evidence becomes available — see the <a href="https://en.wikipedia.org/wiki/Bayesian_inference">Wikipedia article on Bayesian inference</a>.</p></div></div><p>So, why blog now?</p>
-<p>Partly because I’m nostalgic. But also because I’ll “try” and quietly turn this into a small data science project — an excuse to tinker with my training logs, Strava uploads, physiological markers, and the occasional psychological pothole. Maybe there’s something to learn from 12 previous marathons. And really, I just love running — the rhythm, the ritual, the ridiculousness of it all. This is a way to make sense of it, or at least enjoy the attempt.</p>
-<p>It’s also a chance to learn more about Quarto <sup>3</sup> (the system used to create this website), and to explore how to tell a story with better visuals, interactive tables, and a cleaner presentation style. I’ve taken a liking to the Tufte handout theme <sup>4</sup>, and writing more here gives me a good excuse to experiment with that as well. Consider it a running diary meets technical playground — one foot in the marathon world, the other in markdown.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Quarto is an open-source scientific and technical publishing system. For documentation and source code, see the official website at <a href="https://www.quarto.org">quarto.org</a> and the <a href="https://www.github.com/quarto-dev/quarto-cli">GitHub repository</a>.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;The Tufte theme in Quarto is inspired by Edward Tufte’s design principles, emphasizing clarity, simplicity, and effective use of white space. See the Quarto Tufte layout example at <a href="https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html">quarto-dev.github.io</a>.</p></div></div><p>For background, I’m including a table below that gives a snapshot of my past marathon performances, complete with age-graded percentages. It’s a mix of highs and “what the hell happened there?”</p>
+<p>The marathon doesn’t just test the man — it spawns the beast in him. Not a beast of rage or reckless indulgence, like the one Hunter S. Thompson conjured in the neon haze of Vegas, but something more controlled, more methodical… yet still, undeniably, irrational. To train for a marathon is to willingly embrace a kind of madness: to rise early, log the miles, sweat through long runs, negotiate splits, and obsess over details that no one else will ever see or care about. No different, I suppose, than other, less healthy forms of addition— except that one ends with a finisher’s medal and (hopefully) less liver damage. Still, both blur the lines between discipline and delusion. And both, in their way, are obsessions that allow escape from the polite constraints of ordinary life.</p>
+<p>Reflecting on my own running, I haven’t trained “properly” since 2019 — which, not coincidentally, was also my personal best (2:52). A high-water mark that I’ve stared at lovingly (and distortedly) in the rear-view mirror ever since. In the time that followed, both the structure and my resolve slipped. My belief systems about what <em>should</em> work in training have often charged ahead of the evidence. In hindsight, I probably need to be a better Bayesian <sup>2</sup>: update my beliefs <em>when the data tells me to,</em> not just <em>when my ego</em> needs a pick-me-up.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;For a general introduction to Bayesian inference — the process of updating beliefs as new evidence becomes available — see the <a href="https://en.wikipedia.org/wiki/Bayesian_inference">Wikipedia article on Bayesian inference</a>.</p></div></div><p>So, why write now?</p>
+<p>Partly because I’m keen to trace the path from start to finish. But also because I’ll “try” and quietly turn this into a small data science project — an excuse to tinker with my training logs, Strava uploads, physiological markers, and the occasional psychological pothole. Maybe there’s something to learn from 12 previous marathons. And really, I just love running — the rhythm, the ritual, the ridiculousness of it all. This is a way to make sense of it, or at least enjoy the attempt.</p>
+<p>It’s also a chance to learn more about Quarto<sup>3</sup> (the system used to create this website), and to explore how to tell a story with better visuals, tables, and a cleaner presentation style. Consider it a running diary meets technical playground — one foot in the marathon world, the other in R markdown.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Quarto is an open-source scientific and technical publishing system. For documentation and source code, see the official website at <a href="https://www.quarto.org">quarto.org</a> and the <a href="https://www.github.com/quarto-dev/quarto-cli">GitHub repository</a>.</p></div></div><p>For background, I’m including some data below to give a snapshot of my past marathon performances, complete with age-graded percentages. It’s a mix of highs and “what the hell happened there?”</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -2060,23 +2060,23 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
 <span id="cb1-24">df</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="mpwdbuathf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mpwdbuathf table {
+<div id="azkhylreok" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#azkhylreok table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mpwdbuathf thead, #mpwdbuathf tbody, #mpwdbuathf tfoot, #mpwdbuathf tr, #mpwdbuathf td, #mpwdbuathf th {
+#azkhylreok thead, #azkhylreok tbody, #azkhylreok tfoot, #azkhylreok tr, #azkhylreok td, #azkhylreok th {
   border-style: none;
 }
 
-#mpwdbuathf p {
+#azkhylreok p {
   margin: 0;
   padding: 0;
 }
 
-#mpwdbuathf .gt_table {
+#azkhylreok .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2102,12 +2102,12 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-left-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_caption {
+#azkhylreok .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mpwdbuathf .gt_title {
+#azkhylreok .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2119,7 +2119,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-width: 0;
 }
 
-#mpwdbuathf .gt_subtitle {
+#azkhylreok .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2131,7 +2131,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-top-width: 0;
 }
 
-#mpwdbuathf .gt_heading {
+#azkhylreok .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2143,13 +2143,13 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_bottom_border {
+#azkhylreok .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_col_headings {
+#azkhylreok .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2164,7 +2164,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_col_heading {
+#azkhylreok .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2184,7 +2184,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   overflow-x: hidden;
 }
 
-#mpwdbuathf .gt_column_spanner_outer {
+#azkhylreok .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2196,15 +2196,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 4px;
 }
 
-#mpwdbuathf .gt_column_spanner_outer:first-child {
+#azkhylreok .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mpwdbuathf .gt_column_spanner_outer:last-child {
+#azkhylreok .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mpwdbuathf .gt_column_spanner {
+#azkhylreok .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2216,11 +2216,11 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   width: 100%;
 }
 
-#mpwdbuathf .gt_spanner_row {
+#azkhylreok .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mpwdbuathf .gt_group_heading {
+#azkhylreok .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2246,7 +2246,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   text-align: left;
 }
 
-#mpwdbuathf .gt_empty_group_heading {
+#azkhylreok .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2261,15 +2261,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   vertical-align: middle;
 }
 
-#mpwdbuathf .gt_from_md > :first-child {
+#azkhylreok .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mpwdbuathf .gt_from_md > :last-child {
+#azkhylreok .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mpwdbuathf .gt_row {
+#azkhylreok .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2288,7 +2288,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   overflow-x: hidden;
 }
 
-#mpwdbuathf .gt_stub {
+#azkhylreok .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2301,7 +2301,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_stub_row_group {
+#azkhylreok .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2315,15 +2315,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   vertical-align: top;
 }
 
-#mpwdbuathf .gt_row_group_first td {
+#azkhylreok .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mpwdbuathf .gt_row_group_first th {
+#azkhylreok .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mpwdbuathf .gt_summary_row {
+#azkhylreok .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2333,16 +2333,16 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_first_summary_row {
+#azkhylreok .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_first_summary_row.thick {
+#azkhylreok .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mpwdbuathf .gt_last_summary_row {
+#azkhylreok .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2352,7 +2352,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_grand_summary_row {
+#azkhylreok .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2362,7 +2362,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_first_grand_summary_row {
+#azkhylreok .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2372,7 +2372,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-top-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_last_grand_summary_row_top {
+#azkhylreok .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2382,11 +2382,11 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_striped {
+#azkhylreok .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mpwdbuathf .gt_table_body {
+#azkhylreok .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2395,7 +2395,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_footnotes {
+#azkhylreok .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2409,7 +2409,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_footnote {
+#azkhylreok .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2418,7 +2418,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_sourcenotes {
+#azkhylreok .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2432,7 +2432,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#mpwdbuathf .gt_sourcenote {
+#azkhylreok .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2440,72 +2440,72 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#mpwdbuathf .gt_left {
+#azkhylreok .gt_left {
   text-align: left;
 }
 
-#mpwdbuathf .gt_center {
+#azkhylreok .gt_center {
   text-align: center;
 }
 
-#mpwdbuathf .gt_right {
+#azkhylreok .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mpwdbuathf .gt_font_normal {
+#azkhylreok .gt_font_normal {
   font-weight: normal;
 }
 
-#mpwdbuathf .gt_font_bold {
+#azkhylreok .gt_font_bold {
   font-weight: bold;
 }
 
-#mpwdbuathf .gt_font_italic {
+#azkhylreok .gt_font_italic {
   font-style: italic;
 }
 
-#mpwdbuathf .gt_super {
+#azkhylreok .gt_super {
   font-size: 65%;
 }
 
-#mpwdbuathf .gt_footnote_marks {
+#azkhylreok .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mpwdbuathf .gt_asterisk {
+#azkhylreok .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mpwdbuathf .gt_indent_1 {
+#azkhylreok .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mpwdbuathf .gt_indent_2 {
+#azkhylreok .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mpwdbuathf .gt_indent_3 {
+#azkhylreok .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mpwdbuathf .gt_indent_4 {
+#azkhylreok .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mpwdbuathf .gt_indent_5 {
+#azkhylreok .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mpwdbuathf .katex-display {
+#azkhylreok .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mpwdbuathf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#azkhylreok div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2614,7 +2614,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
 </div>
 </div>
 </div>
-<p>One main difference this time is I’ve handed over the keys to someone else. A friend — and experienced runner — who is guiding me through the process. So training plan to come. Left to my own devices, I tend to alternate between overtraining, under-believing, and ignoring all evidence in favour of whatever romantic training idea is currently floating through my brain. So this time, I’m trying structure. Consistency. Restraint. (I give that three weeks, tops.).</p>
+<p>One main difference this time is I’ve handed over the keys to someone else. A friend — and experienced runner — who is guiding my training. So training plan to come. Left to my own devices, I tend to alternate between over-training, under-believing, and ignoring all evidence in favour of whatever romantic training idea is currently floating through my brain. So this time, I’m trying structure. Consistency. Restraint. (I give that three weeks, tops!).</p>
 <p>So here we are: 13 weeks out. The beginning stages of… I don’t know if I’ll run sub-3 again. But I’ll document the attempt, the process, and the data that drips out along the way. I’m choosing to believe if only for a little while, and at least in this moment it seems worth leaning into.</p>
 <p>Let’s see what happens.</p>
 

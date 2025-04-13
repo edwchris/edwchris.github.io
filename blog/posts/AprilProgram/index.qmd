@@ -1,0 +1,89 @@
+---
+title: "April Training Plan "
+date: today
+categories: [Running, Data Science]
+image: images/April_training.jpg
+date-modified: last-modified
+code-fold: true
+draft: false
+---
+
+Here’s my training plan for April — 12 weeks out from **Gold Coast Marathon 2025**. I’ll post the May and June plans a bit later depending on how I’m travelling — time and fitness-wise.
+
+The current focus is on keeping things manageable, with the exception of Thursdays — which should feel pretty tough. Saturdays and Sundays start to introduce some marathon pace (MP) efforts, but nothing overwhelming just yet. 
+
+### Training Notes
+
+- **Thursdays are hard.** That’s deliberate. The rest of the week should feel sustainable.
+- **Missing a running session occasionally is fine.** Missing gym work is not.
+- The next 5-week block will build from this. Expect longer MP blocks on Saturdays and extended MP efforts on Sundays.
+
+Want to follow along 👉 [Strava profile](https://www.strava.com/athletes/3581834) here
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+library(gt)
+library(dplyr)
+library(readxl)
+
+# Load your data
+df <- read_excel("data/April.xlsx")
+
+# Create gt table
+df %>%
+  gt() %>%
+  tab_header(
+    title = md("**April Marathon Training Plan 🏃‍♂**")
+  ) %>%
+  cols_label(
+    `Week starting` = "📅 Week of",
+    Monday = "Mon",
+    Tuesday = "Tue",
+    Wednesday = "Wed",
+    Thursday = "Thu",
+    Friday = "Fri",
+    Saturday = "Sat",
+    Sunday = "Sun"
+  ) %>%
+  tab_spanner(
+    label = "Weekday Training",
+    columns = Monday:Friday
+  ) %>%
+  tab_spanner(
+    label = "Weekend Sessions",
+    columns = Saturday:Sunday
+  ) %>%
+  opt_row_striping() %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.font.names = "Helvetica",
+    data_row.padding = px(6),
+    table.width = pct(100),
+    heading.title.font.size = 20,
+    heading.subtitle.font.size = 14
+  ) %>%
+  tab_footnote(
+    footnote = "Option to swap for a Parkrun.",
+    locations = cells_body(columns = Saturday, rows = `Week starting` == "28th April")
+  ) %>%
+    tab_footnote(
+    footnote = "Watts session if reps are 800m or longer",
+    locations = cells_column_labels(columns = Tuesday)
+  ) %>%
+    tab_footnote(
+    footnote = md("Optional - 25-30 min **very slow** jog (morning or lunch or evening)"),
+    locations = cells_column_labels(columns = Friday)
+  ) %>%
+    tab_footnote(
+    footnote = md("Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort (might mean slowing a lot)"),
+    locations = cells_column_labels(columns = Sunday)
+  ) 
+
+
+```
+

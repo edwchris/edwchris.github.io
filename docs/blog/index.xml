@@ -10,7 +10,864 @@
 <atom:link href="https://edwchris.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Sonography</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Fri, 11 Apr 2025 14:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 12 Apr 2025 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>April Training Plan</title>
+  <link>https://edwchris.github.io/blog/posts/AprilProgram/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Here’s my training plan for April — 12 weeks out from <strong>Gold Coast Marathon 2025</strong>. I’ll post the May and June plans a bit later depending on how I’m travelling — time and fitness-wise.</p>
+<p>The current focus is on keeping things manageable, with the exception of Thursdays — which should feel pretty tough. Saturdays and Sundays start to introduce some marathon pace (MP) efforts, but nothing overwhelming just yet.</p>
+<section id="training-notes" class="level3">
+<h3 class="anchored" data-anchor-id="training-notes">Training Notes</h3>
+<ul>
+<li><strong>Thursdays are hard.</strong> That’s deliberate. The rest of the week should feel sustainable.</li>
+<li><strong>Missing a running session occasionally is fine.</strong> Missing gym work is not.</li>
+<li>The next 5-week block will build from this. Expect longer MP blocks on Saturdays and extended MP efforts on Sundays.</li>
+</ul>
+<p>Want to follow along 👉 <a href="https://www.strava.com/athletes/3581834">Strava profile</a> here</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(gt)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(readxl)</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load your data</span></span>
+<span id="cb1-6">df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_excel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"data/April.xlsx"</span>)</span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create gt table</span></span>
+<span id="cb1-9">df <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">gt</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_header</span>(</span>
+<span id="cb1-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"**April Marathon Training Plan 🏃‍♂**"</span>)</span>
+<span id="cb1-13">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-14">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cols_label</span>(</span>
+<span id="cb1-15">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Week starting</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"📅 Week of"</span>,</span>
+<span id="cb1-16">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Monday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mon"</span>,</span>
+<span id="cb1-17">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Tuesday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tue"</span>,</span>
+<span id="cb1-18">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Wednesday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Wed"</span>,</span>
+<span id="cb1-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Thursday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Thu"</span>,</span>
+<span id="cb1-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Friday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Fri"</span>,</span>
+<span id="cb1-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Saturday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Sat"</span>,</span>
+<span id="cb1-22">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Sunday =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Sun"</span></span>
+<span id="cb1-23">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-24">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_spanner</span>(</span>
+<span id="cb1-25">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Weekday Training"</span>,</span>
+<span id="cb1-26">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Monday<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>Friday</span>
+<span id="cb1-27">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-28">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_spanner</span>(</span>
+<span id="cb1-29">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Weekend Sessions"</span>,</span>
+<span id="cb1-30">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Saturday<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>Sunday</span>
+<span id="cb1-31">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-32">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">opt_row_striping</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-33">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_style</span>(</span>
+<span id="cb1-34">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cell_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">weight =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold"</span>),</span>
+<span id="cb1-35">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locations =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cells_column_labels</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">everything</span>())</span>
+<span id="cb1-36">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-37">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_options</span>(</span>
+<span id="cb1-38">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">table.font.names =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Helvetica"</span>,</span>
+<span id="cb1-39">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data_row.padding =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">px</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>),</span>
+<span id="cb1-40">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">table.width =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pct</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>),</span>
+<span id="cb1-41">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">heading.title.font.size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>,</span>
+<span id="cb1-42">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">heading.subtitle.font.size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span></span>
+<span id="cb1-43">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-44">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_footnote</span>(</span>
+<span id="cb1-45">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">footnote =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Option to swap for a Parkrun."</span>,</span>
+<span id="cb1-46">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locations =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cells_body</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Saturday, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">rows =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Week starting</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"28th April"</span>)</span>
+<span id="cb1-47">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-48">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_footnote</span>(</span>
+<span id="cb1-49">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">footnote =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Watts session if reps are 800m or longer"</span>,</span>
+<span id="cb1-50">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locations =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cells_column_labels</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Tuesday)</span>
+<span id="cb1-51">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-52">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_footnote</span>(</span>
+<span id="cb1-53">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">footnote =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Optional - 25-30 min **very slow** jog (morning or lunch or evening)"</span>),</span>
+<span id="cb1-54">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locations =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cells_column_labels</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Friday)</span>
+<span id="cb1-55">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb1-56">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_footnote</span>(</span>
+<span id="cb1-57">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">footnote =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort (might mean slowing a lot)"</span>),</span>
+<span id="cb1-58">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locations =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cells_column_labels</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> Sunday)</span>
+<span id="cb1-59">  ) </span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="nhbuxvarla" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nhbuxvarla table {
+  font-family: Helvetica;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nhbuxvarla thead, #nhbuxvarla tbody, #nhbuxvarla tfoot, #nhbuxvarla tr, #nhbuxvarla td, #nhbuxvarla th {
+  border-style: none;
+}
+
+#nhbuxvarla p {
+  margin: 0;
+  padding: 0;
+}
+
+#nhbuxvarla .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nhbuxvarla .gt_title {
+  color: #333333;
+  font-size: 20px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nhbuxvarla .gt_subtitle {
+  color: #333333;
+  font-size: 14px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nhbuxvarla .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nhbuxvarla .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nhbuxvarla .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nhbuxvarla .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nhbuxvarla .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nhbuxvarla .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nhbuxvarla .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nhbuxvarla .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nhbuxvarla .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nhbuxvarla .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nhbuxvarla .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nhbuxvarla .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhbuxvarla .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nhbuxvarla .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nhbuxvarla .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nhbuxvarla .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhbuxvarla .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nhbuxvarla .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhbuxvarla .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nhbuxvarla .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhbuxvarla .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nhbuxvarla .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhbuxvarla .gt_left {
+  text-align: left;
+}
+
+#nhbuxvarla .gt_center {
+  text-align: center;
+}
+
+#nhbuxvarla .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nhbuxvarla .gt_font_normal {
+  font-weight: normal;
+}
+
+#nhbuxvarla .gt_font_bold {
+  font-weight: bold;
+}
+
+#nhbuxvarla .gt_font_italic {
+  font-style: italic;
+}
+
+#nhbuxvarla .gt_super {
+  font-size: 65%;
+}
+
+#nhbuxvarla .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nhbuxvarla .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nhbuxvarla .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nhbuxvarla .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nhbuxvarla .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nhbuxvarla .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nhbuxvarla .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#nhbuxvarla .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#nhbuxvarla div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header gt_heading">
+<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>April Marathon Training Plan 🏃‍♂</strong></th>
+</tr>
+<tr class="odd gt_col_headings gt_spanner_row">
+<th rowspan="2" id="Week-starting" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">📅 Week of</th>
+<th colspan="5" id="Weekday Training" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Weekday Training
+</div></th>
+<th colspan="2" id="Weekend Sessions" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Weekend Sessions
+</div></th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="Monday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Mon</th>
+<th id="Tuesday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Tue<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="Wednesday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Wed</th>
+<th id="Thursday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Thu</th>
+<th id="Friday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Fri<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span></th>
+<th id="Saturday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Sat</th>
+<th id="Sunday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Sun<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Week starting">7th April</td>
+<td class="gt_row gt_left" headers="Monday">Gym</td>
+<td class="gt_row gt_left" headers="Tuesday">12k with 2 x 2k at MP</td>
+<td class="gt_row gt_left" headers="Wednesday">1:00 hours easy to HR</td>
+<td class="gt_row gt_left" headers="Thursday">Watts thresholds but with longer WU and WD (say 3k each)</td>
+<td class="gt_row gt_left" headers="Friday">Gym</td>
+<td class="gt_row gt_left" headers="Saturday">12k with 4k at MP</td>
+<td class="gt_row gt_left" headers="Sunday">24k with 4 x 2k at MP</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Week starting">14th April</td>
+<td class="gt_row gt_left gt_striped" headers="Monday">Gym</td>
+<td class="gt_row gt_left gt_striped" headers="Tuesday">12k with 2 x 2k at MP</td>
+<td class="gt_row gt_left gt_striped" headers="Wednesday">1:05 hours easy to HR</td>
+<td class="gt_row gt_left gt_striped" headers="Thursday">As above</td>
+<td class="gt_row gt_left gt_striped" headers="Friday">Gym</td>
+<td class="gt_row gt_left gt_striped" headers="Saturday">14k with 5k at MP</td>
+<td class="gt_row gt_left gt_striped" headers="Sunday">26k with 3 x 3k at MP</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Week starting">21st April</td>
+<td class="gt_row gt_left" headers="Monday">Gym</td>
+<td class="gt_row gt_left" headers="Tuesday">14k with 3 x 2k at MP</td>
+<td class="gt_row gt_left" headers="Wednesday">1:10 hours easy to HR</td>
+<td class="gt_row gt_left" headers="Thursday">As above</td>
+<td class="gt_row gt_left" headers="Friday">Gym</td>
+<td class="gt_row gt_left" headers="Saturday">14k with 6k at MP</td>
+<td class="gt_row gt_left" headers="Sunday">28k with 3 x 3k at MP</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Week starting">28th April</td>
+<td class="gt_row gt_left gt_striped" headers="Monday">Gym</td>
+<td class="gt_row gt_left gt_striped" headers="Tuesday">14k with 3 x 2k at MP</td>
+<td class="gt_row gt_left gt_striped" headers="Wednesday">1:15 hours easy to HR</td>
+<td class="gt_row gt_left gt_striped" headers="Thursday">As above.</td>
+<td class="gt_row gt_left gt_striped" headers="Friday">Gym</td>
+<td class="gt_row gt_left gt_striped" headers="Saturday">One hour easy to HR (or Parkrun if you want a hit out)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span></td>
+<td class="gt_row gt_left gt_striped" headers="Sunday">Two hours easy to HR</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Watts session if reps are 800m or longer</td>
+</tr>
+<tr class="even">
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> Optional - 25-30 min <strong>very slow</strong> jog (morning or lunch or evening)</td>
+</tr>
+<tr class="odd">
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span> Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort (might mean slowing a lot)</td>
+</tr>
+<tr class="even">
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span> Option to swap for a Parkrun.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Running</category>
+  <category>Data Science</category>
+  <guid>https://edwchris.github.io/blog/posts/AprilProgram/</guid>
+  <pubDate>Sat, 12 Apr 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://edwchris.github.io/blog/posts/AprilProgram/images/April_training.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Race Predictors..</title>
   <link>https://edwchris.github.io/blog/posts/RaceTimePrediction/</link>
@@ -206,23 +1063,23 @@ font-style: inherit;">cdot P$"</span></span>
 <span id="cb1-37">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="wxedpixgpp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wxedpixgpp table {
+<div id="wjlzrpddxm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wjlzrpddxm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wxedpixgpp thead, #wxedpixgpp tbody, #wxedpixgpp tfoot, #wxedpixgpp tr, #wxedpixgpp td, #wxedpixgpp th {
+#wjlzrpddxm thead, #wjlzrpddxm tbody, #wjlzrpddxm tfoot, #wjlzrpddxm tr, #wjlzrpddxm td, #wjlzrpddxm th {
   border-style: none;
 }
 
-#wxedpixgpp p {
+#wjlzrpddxm p {
   margin: 0;
   padding: 0;
 }
 
-#wxedpixgpp .gt_table {
+#wjlzrpddxm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -248,12 +1105,12 @@ font-style: inherit;">cdot P$"</span></span>
   border-left-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_caption {
+#wjlzrpddxm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wxedpixgpp .gt_title {
+#wjlzrpddxm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -265,7 +1122,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-width: 0;
 }
 
-#wxedpixgpp .gt_subtitle {
+#wjlzrpddxm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -277,7 +1134,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-top-width: 0;
 }
 
-#wxedpixgpp .gt_heading {
+#wjlzrpddxm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -289,13 +1146,13 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_bottom_border {
+#wjlzrpddxm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_col_headings {
+#wjlzrpddxm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -310,7 +1167,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_col_heading {
+#wjlzrpddxm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -330,7 +1187,7 @@ font-style: inherit;">cdot P$"</span></span>
   overflow-x: hidden;
 }
 
-#wxedpixgpp .gt_column_spanner_outer {
+#wjlzrpddxm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,15 +1199,15 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 4px;
 }
 
-#wxedpixgpp .gt_column_spanner_outer:first-child {
+#wjlzrpddxm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wxedpixgpp .gt_column_spanner_outer:last-child {
+#wjlzrpddxm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wxedpixgpp .gt_column_spanner {
+#wjlzrpddxm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -362,11 +1219,11 @@ font-style: inherit;">cdot P$"</span></span>
   width: 100%;
 }
 
-#wxedpixgpp .gt_spanner_row {
+#wjlzrpddxm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wxedpixgpp .gt_group_heading {
+#wjlzrpddxm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -392,7 +1249,7 @@ font-style: inherit;">cdot P$"</span></span>
   text-align: left;
 }
 
-#wxedpixgpp .gt_empty_group_heading {
+#wjlzrpddxm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -407,15 +1264,15 @@ font-style: inherit;">cdot P$"</span></span>
   vertical-align: middle;
 }
 
-#wxedpixgpp .gt_from_md > :first-child {
+#wjlzrpddxm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wxedpixgpp .gt_from_md > :last-child {
+#wjlzrpddxm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wxedpixgpp .gt_row {
+#wjlzrpddxm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -434,7 +1291,7 @@ font-style: inherit;">cdot P$"</span></span>
   overflow-x: hidden;
 }
 
-#wxedpixgpp .gt_stub {
+#wjlzrpddxm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -447,7 +1304,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#wxedpixgpp .gt_stub_row_group {
+#wjlzrpddxm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -461,15 +1318,15 @@ font-style: inherit;">cdot P$"</span></span>
   vertical-align: top;
 }
 
-#wxedpixgpp .gt_row_group_first td {
+#wjlzrpddxm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wxedpixgpp .gt_row_group_first th {
+#wjlzrpddxm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wxedpixgpp .gt_summary_row {
+#wjlzrpddxm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -479,16 +1336,16 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#wxedpixgpp .gt_first_summary_row {
+#wjlzrpddxm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_first_summary_row.thick {
+#wjlzrpddxm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wxedpixgpp .gt_last_summary_row {
+#wjlzrpddxm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -498,7 +1355,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_grand_summary_row {
+#wjlzrpddxm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -508,7 +1365,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#wxedpixgpp .gt_first_grand_summary_row {
+#wjlzrpddxm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -518,7 +1375,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-top-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_last_grand_summary_row_top {
+#wjlzrpddxm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -528,11 +1385,11 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_striped {
+#wjlzrpddxm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wxedpixgpp .gt_table_body {
+#wjlzrpddxm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -541,7 +1398,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_footnotes {
+#wjlzrpddxm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -555,7 +1412,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_footnote {
+#wjlzrpddxm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -564,7 +1421,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#wxedpixgpp .gt_sourcenotes {
+#wjlzrpddxm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -578,7 +1435,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#wxedpixgpp .gt_sourcenote {
+#wjlzrpddxm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -586,72 +1443,72 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#wxedpixgpp .gt_left {
+#wjlzrpddxm .gt_left {
   text-align: left;
 }
 
-#wxedpixgpp .gt_center {
+#wjlzrpddxm .gt_center {
   text-align: center;
 }
 
-#wxedpixgpp .gt_right {
+#wjlzrpddxm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wxedpixgpp .gt_font_normal {
+#wjlzrpddxm .gt_font_normal {
   font-weight: normal;
 }
 
-#wxedpixgpp .gt_font_bold {
+#wjlzrpddxm .gt_font_bold {
   font-weight: bold;
 }
 
-#wxedpixgpp .gt_font_italic {
+#wjlzrpddxm .gt_font_italic {
   font-style: italic;
 }
 
-#wxedpixgpp .gt_super {
+#wjlzrpddxm .gt_super {
   font-size: 65%;
 }
 
-#wxedpixgpp .gt_footnote_marks {
+#wjlzrpddxm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wxedpixgpp .gt_asterisk {
+#wjlzrpddxm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wxedpixgpp .gt_indent_1 {
+#wjlzrpddxm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wxedpixgpp .gt_indent_2 {
+#wjlzrpddxm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wxedpixgpp .gt_indent_3 {
+#wjlzrpddxm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wxedpixgpp .gt_indent_4 {
+#wjlzrpddxm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wxedpixgpp .gt_indent_5 {
+#wjlzrpddxm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wxedpixgpp .katex-display {
+#wjlzrpddxm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wxedpixgpp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wjlzrpddxm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1083,7 +1940,7 @@ font-style: inherit;">theme_minimal</span>()</span>
   <category>Running</category>
   <category>Data Science</category>
   <guid>https://edwchris.github.io/blog/posts/RaceTimePrediction/</guid>
-  <pubDate>Fri, 11 Apr 2025 14:00:00 GMT</pubDate>
+  <pubDate>Sat, 12 Apr 2025 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>The Beginning Stages of..</title>
@@ -1201,23 +2058,23 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
 <span id="cb1-24">df</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="bzlwiuswox" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bzlwiuswox table {
+<div id="khhypoagnl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#khhypoagnl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bzlwiuswox thead, #bzlwiuswox tbody, #bzlwiuswox tfoot, #bzlwiuswox tr, #bzlwiuswox td, #bzlwiuswox th {
+#khhypoagnl thead, #khhypoagnl tbody, #khhypoagnl tfoot, #khhypoagnl tr, #khhypoagnl td, #khhypoagnl th {
   border-style: none;
 }
 
-#bzlwiuswox p {
+#khhypoagnl p {
   margin: 0;
   padding: 0;
 }
 
-#bzlwiuswox .gt_table {
+#khhypoagnl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1243,12 +2100,12 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-left-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_caption {
+#khhypoagnl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bzlwiuswox .gt_title {
+#khhypoagnl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1260,7 +2117,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-width: 0;
 }
 
-#bzlwiuswox .gt_subtitle {
+#khhypoagnl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1272,7 +2129,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-top-width: 0;
 }
 
-#bzlwiuswox .gt_heading {
+#khhypoagnl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1284,13 +2141,13 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_bottom_border {
+#khhypoagnl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_col_headings {
+#khhypoagnl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1305,7 +2162,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_col_heading {
+#khhypoagnl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1325,7 +2182,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   overflow-x: hidden;
 }
 
-#bzlwiuswox .gt_column_spanner_outer {
+#khhypoagnl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1337,15 +2194,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 4px;
 }
 
-#bzlwiuswox .gt_column_spanner_outer:first-child {
+#khhypoagnl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bzlwiuswox .gt_column_spanner_outer:last-child {
+#khhypoagnl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bzlwiuswox .gt_column_spanner {
+#khhypoagnl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1357,11 +2214,11 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   width: 100%;
 }
 
-#bzlwiuswox .gt_spanner_row {
+#khhypoagnl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bzlwiuswox .gt_group_heading {
+#khhypoagnl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1387,7 +2244,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   text-align: left;
 }
 
-#bzlwiuswox .gt_empty_group_heading {
+#khhypoagnl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1402,15 +2259,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   vertical-align: middle;
 }
 
-#bzlwiuswox .gt_from_md > :first-child {
+#khhypoagnl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bzlwiuswox .gt_from_md > :last-child {
+#khhypoagnl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bzlwiuswox .gt_row {
+#khhypoagnl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1429,7 +2286,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   overflow-x: hidden;
 }
 
-#bzlwiuswox .gt_stub {
+#khhypoagnl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1442,7 +2299,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#bzlwiuswox .gt_stub_row_group {
+#khhypoagnl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1456,15 +2313,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   vertical-align: top;
 }
 
-#bzlwiuswox .gt_row_group_first td {
+#khhypoagnl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bzlwiuswox .gt_row_group_first th {
+#khhypoagnl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bzlwiuswox .gt_summary_row {
+#khhypoagnl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1474,16 +2331,16 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#bzlwiuswox .gt_first_summary_row {
+#khhypoagnl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_first_summary_row.thick {
+#khhypoagnl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bzlwiuswox .gt_last_summary_row {
+#khhypoagnl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1493,7 +2350,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_grand_summary_row {
+#khhypoagnl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1503,7 +2360,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#bzlwiuswox .gt_first_grand_summary_row {
+#khhypoagnl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1513,7 +2370,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-top-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_last_grand_summary_row_top {
+#khhypoagnl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1523,11 +2380,11 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_striped {
+#khhypoagnl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bzlwiuswox .gt_table_body {
+#khhypoagnl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1536,7 +2393,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_footnotes {
+#khhypoagnl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1550,7 +2407,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_footnote {
+#khhypoagnl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1559,7 +2416,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#bzlwiuswox .gt_sourcenotes {
+#khhypoagnl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1573,7 +2430,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#bzlwiuswox .gt_sourcenote {
+#khhypoagnl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1581,72 +2438,72 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#bzlwiuswox .gt_left {
+#khhypoagnl .gt_left {
   text-align: left;
 }
 
-#bzlwiuswox .gt_center {
+#khhypoagnl .gt_center {
   text-align: center;
 }
 
-#bzlwiuswox .gt_right {
+#khhypoagnl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bzlwiuswox .gt_font_normal {
+#khhypoagnl .gt_font_normal {
   font-weight: normal;
 }
 
-#bzlwiuswox .gt_font_bold {
+#khhypoagnl .gt_font_bold {
   font-weight: bold;
 }
 
-#bzlwiuswox .gt_font_italic {
+#khhypoagnl .gt_font_italic {
   font-style: italic;
 }
 
-#bzlwiuswox .gt_super {
+#khhypoagnl .gt_super {
   font-size: 65%;
 }
 
-#bzlwiuswox .gt_footnote_marks {
+#khhypoagnl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bzlwiuswox .gt_asterisk {
+#khhypoagnl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bzlwiuswox .gt_indent_1 {
+#khhypoagnl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bzlwiuswox .gt_indent_2 {
+#khhypoagnl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bzlwiuswox .gt_indent_3 {
+#khhypoagnl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bzlwiuswox .gt_indent_4 {
+#khhypoagnl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bzlwiuswox .gt_indent_5 {
+#khhypoagnl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bzlwiuswox .katex-display {
+#khhypoagnl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bzlwiuswox div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#khhypoagnl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

@@ -1,7 +1,7 @@
 ---
 title: "Race Predictors..  "
 subtitle: "Art vs Science"
-date: today
+date: 04/09/2025
 categories: [Running, Data Science, GCM25]
 date-modified: last-modified
 format:
@@ -119,7 +119,7 @@ tanda_data %>%
 
 I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss. 
 
-The Bland–Altman plot[^3] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the *y-axis*. 
+The Bland–Altman plot[^3] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the <span style="color:blue;">blue line</span> howers around 0 on the *y-axis*. Which I suppose is a good thing. 
 
 What's more concerning is the width of the Limits of Agreement (LoA). The <span style="color:red;">red-dotted lines</span> hovers around *±25 minutes* — which is wild. That essentially means there's 95% "confidence" that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.
 

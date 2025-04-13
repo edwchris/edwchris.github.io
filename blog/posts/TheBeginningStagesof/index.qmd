@@ -2,7 +2,7 @@
 title: "The Beginning Stages of..  "
 subtitle: "A Marathon Journey"
 date: 04/06/2025
-categories: [Running, Data Science]
+categories: [Running, Data Science, #GCM25]
 date-modified: last-modified
 code-fold: true
 draft: false

@@ -2,7 +2,7 @@
 title: "Race Predictors..  "
 subtitle: "Art vs Science"
 date: today
-categories: [Running, Data Science]
+categories: [Running, Data Science, #GCM25]
 date-modified: last-modified
 code-fold: true
 draft: false

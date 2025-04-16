@@ -116,9 +116,9 @@ tanda_data %>%
 
 I’m not entirely sure how to interpret this. Based on the Tanda predictions, I outperformed the model in half of my races and underperformed in the other half. In other words, it was a coin toss.
 
-The Bland–Altman plot[^5] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the [blue line]{style="color:blue;"} howers around 0 on the *y-axis*. Which I suppose is a good thing.
+The Bland–Altman plot[^4] below doesn’t offer much insight either. There’s no meaningful bias between the Tanda prediction and my actual marathon finish times the [blue line]{style="color:blue;"} howers around 0 on the *y-axis*. Which I suppose is a good thing.
 
-[^5]: Wikipedia reference for the [Bland- Altman plot](https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot)
+[^4]: Wikipedia reference for the [Bland- Altman plot](https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot)
 
 What's more concerning is the width of the Limits of Agreement (LoA). The [red-dotted lines]{style="color:red;"} hovers around *±25 minutes* — which is wild. That essentially means there's 95% "confidence" that my actual time could be anywhere within 25 minutes of the Tanda prediction for any given race build-up. Not exactly razor-sharp guidance.
 

@@ -42,6 +42,8 @@ The percentage of training time spent in each of these three zones forms the bas
 
 **Polarised training**, by contrast, pushes the extremes: lots of low-intensity running (Zone 1), some high-intensity efforts (Zone 3), and very little training in the moderate Zone 2. In one intervention study, the polarised model delivered the largest performance gains in well-trained athletes [@stoggl2014].
 
+# 
+
 The science on which is optimal is promising but far from settled. A systematic review found that both polarised and pyramidal approaches outperformed threshold-heavy (Zone 2-focused) plans but couldn’t definitively crown a winner [@kenneally2018]. More recent research even suggests a **periodised blend** (another "P " word)—starting pyramidal and shifting toward polarised—may offer the best of both worlds [@filipas2022].
 
 In short: **intensity distribution matters**. But how you mix it, like so much in running, depends on timing, experience, and knowing when to hold back and when to push.

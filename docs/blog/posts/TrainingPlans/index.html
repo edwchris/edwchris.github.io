@@ -257,12 +257,14 @@ Knopp, M, D Appelhans, M Schönfelder, S Seiler, and Henning Wackerhage. 2024. <
 <p><strong>Polarised training</strong>, by contrast, pushes the extremes: lots of low-intensity running (Zone 1), some high-intensity efforts (Zone 3), and very little training in the moderate Zone 2. In one intervention study, the polarised model delivered the largest performance gains in well-trained athletes <span class="citation" data-cites="stoggl2014">(<a href="#ref-stoggl2014" role="doc-biblioref">Stöggl and Sperlich 2014</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-stoggl2014" class="csl-entry" role="listitem">
 Stöggl, T, and B Sperlich. 2014. <span>“Polarized Training Has Greater Impact on Key Endurance Variables Than Threshold, High Intensity, or High Volume Training.”</span> <em>Frontiers in Physiology</em> 5 (February). <a href="https://doi.org/10.3389/fphys.2014.00033">https://doi.org/10.3389/fphys.2014.00033</a>.
-</div><div id="ref-kenneally2018" class="csl-entry" role="listitem">
+</div></div><section id="section" class="level1 page-columns page-full">
+<h1></h1>
+<p>The science on which is optimal is promising but far from settled. A systematic review found that both polarised and pyramidal approaches outperformed threshold-heavy (Zone 2-focused) plans but couldn’t definitively crown a winner <span class="citation" data-cites="kenneally2018">(<a href="#ref-kenneally2018" role="doc-biblioref">Kenneally, Casado, and Santos-Concejero 2018</a>)</span>. More recent research even suggests a <strong>periodised blend</strong> (another “P” word)—starting pyramidal and shifting toward polarised—may offer the best of both worlds <span class="citation" data-cites="filipas2022">(<a href="#ref-filipas2022" role="doc-biblioref">Filipas et al. 2022</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-kenneally2018" class="csl-entry" role="listitem">
 Kenneally, M, A Casado, and Jordan Santos-Concejero. 2018. <span>“The <span>Effect</span> of <span>Periodization</span> and <span>Training Intensity Distribution</span> on <span>Middle-</span> and <span>Long-Distance Running Performance</span>: <span>A Systematic Review</span>.”</span> <em>International Journal of Sports Physiology and Performance</em> 13 (9): 1114–21. <a href="https://doi.org/10.1123/ijspp.2017-0327">https://doi.org/10.1123/ijspp.2017-0327</a>.
 </div><div id="ref-filipas2022" class="csl-entry" role="listitem">
 Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks of Pyramidal and Polarized Training Intensity Distributions in Well-Trained Endurance Runners.”</span> <em>Scandinavian Journal of Medicine &amp; Science in Sports</em> 32 (3): 498–511. <a href="https://doi.org/10.1111/sms.14101">https://doi.org/10.1111/sms.14101</a>.
-</div></div><p>The science on which is optimal is promising but far from settled. A systematic review found that both polarised and pyramidal approaches outperformed threshold-heavy (Zone 2-focused) plans but couldn’t definitively crown a winner <span class="citation" data-cites="kenneally2018">(<a href="#ref-kenneally2018" role="doc-biblioref">Kenneally, Casado, and Santos-Concejero 2018</a>)</span>. More recent research even suggests a <strong>periodised blend</strong> (another “P” word)—starting pyramidal and shifting toward polarised—may offer the best of both worlds <span class="citation" data-cites="filipas2022">(<a href="#ref-filipas2022" role="doc-biblioref">Filipas et al. 2022</a>)</span>.</p>
-<p>In short: <strong>intensity distribution matters</strong>. But how you mix it, like so much in running, depends on timing, experience, and knowing when to hold back and when to push.</p>
+</div></div><p>In short: <strong>intensity distribution matters</strong>. But how you mix it, like so much in running, depends on timing, experience, and knowing when to hold back and when to push.</p>
 <p>Curious about my own training, I took a quick peek at my data.</p>
 <p>Taking a <em>spherical cow</em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> approach to vastly simplify things (perhaps to my folly!), I scraped my recent running data from Garmin Connect and imported it into R. In the data.frame I have computed three Zones (Z1, Z2, Z3) using the Avg.HR for each lap. My watch is currently set to lap every 1km. For each zone I <del>inferred</del> guesstimated my HR ranges based on my current probable HRmax of around 180bpm.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;The <em>“spherical cow”</em> is a funny way of describing how scientists sometimes oversimplify complex problems into neat, potentially unrealistic models. <a href="https://en.wikipedia.org/wiki/Spherical_cow" class="uri">https://en.wikipedia.org/wiki/Spherical_cow</a></p></div></div><p>Roughly for April my distribution is fairly pyramidal ( 77% Z1, 16% Z2, 7% Z3).</p>
@@ -293,23 +295,23 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>zone_summary <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Month <span class="sc">==</span> <span class="st">"April"</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="azilszyblq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#azilszyblq table {
+<div id="qskahcxftd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qskahcxftd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#azilszyblq thead, #azilszyblq tbody, #azilszyblq tfoot, #azilszyblq tr, #azilszyblq td, #azilszyblq th {
+#qskahcxftd thead, #qskahcxftd tbody, #qskahcxftd tfoot, #qskahcxftd tr, #qskahcxftd td, #qskahcxftd th {
   border-style: none;
 }
 
-#azilszyblq p {
+#qskahcxftd p {
   margin: 0;
   padding: 0;
 }
 
-#azilszyblq .gt_table {
+#qskahcxftd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -335,12 +337,12 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-left-color: #D3D3D3;
 }
 
-#azilszyblq .gt_caption {
+#qskahcxftd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#azilszyblq .gt_title {
+#qskahcxftd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -352,7 +354,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-bottom-width: 0;
 }
 
-#azilszyblq .gt_subtitle {
+#qskahcxftd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -364,7 +366,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-top-width: 0;
 }
 
-#azilszyblq .gt_heading {
+#qskahcxftd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -376,13 +378,13 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-right-color: #D3D3D3;
 }
 
-#azilszyblq .gt_bottom_border {
+#qskahcxftd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#azilszyblq .gt_col_headings {
+#qskahcxftd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -397,7 +399,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-right-color: #D3D3D3;
 }
 
-#azilszyblq .gt_col_heading {
+#qskahcxftd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -417,7 +419,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   overflow-x: hidden;
 }
 
-#azilszyblq .gt_column_spanner_outer {
+#qskahcxftd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -429,15 +431,15 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   padding-right: 4px;
 }
 
-#azilszyblq .gt_column_spanner_outer:first-child {
+#qskahcxftd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#azilszyblq .gt_column_spanner_outer:last-child {
+#qskahcxftd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#azilszyblq .gt_column_spanner {
+#qskahcxftd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -449,11 +451,11 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   width: 100%;
 }
 
-#azilszyblq .gt_spanner_row {
+#qskahcxftd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#azilszyblq .gt_group_heading {
+#qskahcxftd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,7 +481,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   text-align: left;
 }
 
-#azilszyblq .gt_empty_group_heading {
+#qskahcxftd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -494,15 +496,15 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   vertical-align: middle;
 }
 
-#azilszyblq .gt_from_md > :first-child {
+#qskahcxftd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#azilszyblq .gt_from_md > :last-child {
+#qskahcxftd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#azilszyblq .gt_row {
+#qskahcxftd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -521,7 +523,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   overflow-x: hidden;
 }
 
-#azilszyblq .gt_stub {
+#qskahcxftd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -534,7 +536,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   padding-right: 5px;
 }
 
-#azilszyblq .gt_stub_row_group {
+#qskahcxftd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -548,15 +550,15 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   vertical-align: top;
 }
 
-#azilszyblq .gt_row_group_first td {
+#qskahcxftd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#azilszyblq .gt_row_group_first th {
+#qskahcxftd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#azilszyblq .gt_summary_row {
+#qskahcxftd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -566,16 +568,16 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   padding-right: 5px;
 }
 
-#azilszyblq .gt_first_summary_row {
+#qskahcxftd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#azilszyblq .gt_first_summary_row.thick {
+#qskahcxftd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#azilszyblq .gt_last_summary_row {
+#qskahcxftd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -585,7 +587,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-bottom-color: #D3D3D3;
 }
 
-#azilszyblq .gt_grand_summary_row {
+#qskahcxftd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -595,7 +597,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   padding-right: 5px;
 }
 
-#azilszyblq .gt_first_grand_summary_row {
+#qskahcxftd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -605,7 +607,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-top-color: #D3D3D3;
 }
 
-#azilszyblq .gt_last_grand_summary_row_top {
+#qskahcxftd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -615,11 +617,11 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-bottom-color: #D3D3D3;
 }
 
-#azilszyblq .gt_striped {
+#qskahcxftd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#azilszyblq .gt_table_body {
+#qskahcxftd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -628,7 +630,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-bottom-color: #D3D3D3;
 }
 
-#azilszyblq .gt_footnotes {
+#qskahcxftd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -642,7 +644,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-right-color: #D3D3D3;
 }
 
-#azilszyblq .gt_footnote {
+#qskahcxftd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -651,7 +653,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   padding-right: 5px;
 }
 
-#azilszyblq .gt_sourcenotes {
+#qskahcxftd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -665,7 +667,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   border-right-color: #D3D3D3;
 }
 
-#azilszyblq .gt_sourcenote {
+#qskahcxftd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -673,72 +675,72 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
   padding-right: 5px;
 }
 
-#azilszyblq .gt_left {
+#qskahcxftd .gt_left {
   text-align: left;
 }
 
-#azilszyblq .gt_center {
+#qskahcxftd .gt_center {
   text-align: center;
 }
 
-#azilszyblq .gt_right {
+#qskahcxftd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#azilszyblq .gt_font_normal {
+#qskahcxftd .gt_font_normal {
   font-weight: normal;
 }
 
-#azilszyblq .gt_font_bold {
+#qskahcxftd .gt_font_bold {
   font-weight: bold;
 }
 
-#azilszyblq .gt_font_italic {
+#qskahcxftd .gt_font_italic {
   font-style: italic;
 }
 
-#azilszyblq .gt_super {
+#qskahcxftd .gt_super {
   font-size: 65%;
 }
 
-#azilszyblq .gt_footnote_marks {
+#qskahcxftd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#azilszyblq .gt_asterisk {
+#qskahcxftd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#azilszyblq .gt_indent_1 {
+#qskahcxftd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#azilszyblq .gt_indent_2 {
+#qskahcxftd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#azilszyblq .gt_indent_3 {
+#qskahcxftd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#azilszyblq .gt_indent_4 {
+#qskahcxftd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#azilszyblq .gt_indent_5 {
+#qskahcxftd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#azilszyblq .katex-display {
+#qskahcxftd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#azilszyblq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qskahcxftd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -842,6 +844,7 @@ Filipas, L, M Bonato, G Gallo, and R Codella. 2022. <span>“Effects of 16 Weeks
 
 
 
+</section>
 
 
 </main> <!-- /main -->

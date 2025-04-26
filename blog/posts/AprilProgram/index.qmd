@@ -1,9 +1,9 @@
 ---
 title: "April Training Plan "
-date: today
+date: 04/16/2025
 categories: [Running, Data Science, GCM25]
 image: images/April_training.jpg
-date-modified: last-modified
+date-modified: 04/16/2025
 format:
   html:
     code-fold: true

@@ -1,0 +1,137 @@
+---
+title: "Training Plans - Tradition and Data"
+subtitle: "a spherical cow approach to intensity zones."
+date: 04/26/2025
+categories: [Running, Data Science, GCM25]
+date-modified: 04/26/2025
+format:
+  html:
+    code-fold: true
+    toc: false
+draft: false
+bibliography: references.bib
+---
+
+For all the GPS data, lactate curves, and laboratory testing, strange as it may seem, there’s still no gold standard for marathon training. While some interventions—like carbohydrate loading or tapering—can be studied in isolation, the training plan itself remains elusive: more art than science.
+
+As an interesting review paper states [@knopp2024]
+
+> “..a major challenge is that the training plan is not just one intervention but a complex mix of many ..”
+
+and
+
+> “…current marathon training plans are mostly experienced based, occasionally supplemented by evidence-based recommendations such as those related to carbohydrate ingestion”
+
+In other words, optimal training is some cocktail of long runs, intervals, tempo workouts, recovery days, and taper rituals, handed down from generations past and shaped more by tradition than strict scientific evidence. Unlike a drug intervention, you can’t easily randomise thousands of runners into perfectly controlled training groups for twelve weeks. As a result, much of what guides runners today comes from anecdotal success, coaches' intuition, and proven practices among running groups.
+
+In the face of this evidence gap, it’s fair to say that marathon training is still governed by the simple principle: what works, works. Yet patterns do emerge, especially when you study successful plans.
+
+One key aspect worth looking at is how runners distribute training intensity across their weekly mileage. When it comes to endurance training, not all kilometres are created equal. Coaches and exercise physiologists often speak in intensity zones. Although there are several models in the literature, I tend to favour the simplicity (and practicality) of sports scientist Stephen Seiler’s three-zone approach.
+
+-    **Zone 1** is the intensity up to the first lactate turn point (\~2 mmol/L), roughly around 80% of your maximum heart rate.
+
+-   **Zone 2** sits between the first and second lactate thresholds (2–4 mmol/L), typically around 87% of your HRmax.
+
+-   **Zone 3** is above this, where lactate rises rapidly.
+
+Here's a nice [YouTube video](https://youtu.be/NPwyk9B0j-s?si=exUqpTIPzRv6sHyA) from Stephen Seilers explaining his approach.
+
+The percentage of training time spent in each of these three zones forms the basis for many training strategies. Two of the most widely discussed are **pyramidal** and **polarised** training.
+
+**Pyramidal training** builds a broad base of easy miles (about 70–80% in Zone 1), with the remainder spread between Zones 2 and 3. The name comes from the pyramid-like shape: most training at low intensity, less at moderate, and even less at high intensity. Interestingly, this pattern matches the structure of many published marathon training plans [@knopp2024].
+
+**Polarised training**, by contrast, pushes the extremes: lots of low-intensity running (Zone 1), some high-intensity efforts (Zone 3), and very little training in the moderate Zone 2. In one intervention study, the polarised model delivered the largest performance gains in well-trained athletes [@stoggl2014].
+
+The science on which is optimal is promising but far from settled. A systematic review found that both polarised and pyramidal approaches outperformed threshold-heavy (Zone 2-focused) plans but couldn’t definitively crown a winner [@kenneally2018]. More recent research even suggests a **periodised blend** (another "P " word)—starting pyramidal and shifting toward polarised—may offer the best of both worlds [@filipas2022].
+
+In short: **intensity distribution matters**. But how you mix it, like so much in running, depends on timing, experience, and knowing when to hold back and when to push.
+
+Curious about my own training, I took a quick peek at my data.
+
+Taking a *spherical cow* [^1] approach to vastly simplify things (perhaps to my folly!), I scraped my recent running data from Garmin Connect and imported it into R. In the data.frame I have computed three Zones (Z1, Z2, Z3) using the Avg.HR for each lap. My watch is currently set to lap every 1km. For each zone I ~~inferred~~ guesstimated my HR ranges based on my current probable HRmax of around 180bpm.
+
+Roughly for April my distribution is fairly pyramidal ( 77% Z1, 16% Z2, 7% Z3).
+
+[^1]: The *"spherical cow"* is a funny way of describing how scientists sometimes oversimplify complex problems into neat, potentially unrealistic models. <https://en.wikipedia.org/wiki/Spherical_cow>
+
+Output below, and I am keen to track these distributions leading into the race.
+
+```{r}
+#| include: false
+
+data<- read.csv("data/data_comb.csv")
+
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+
+library(tidyverse)
+library(gt)
+
+# Calculate percentage of time and distance in each Zone
+
+zone_summary <- data %>%
+  group_by(Zones, Month) %>%
+  summarise(
+    Total_Time = sum(Time_seconds, na.rm = TRUE),          # Total time in each zone
+    Total_Distance = sum(Distance, na.rm = TRUE)          # Total distance in each zone
+  ) %>% group_by(Month) %>%
+  mutate(
+    Percentage_Time = 100 * Total_Time / sum(Total_Time),  # Percentage of total time
+    Percentage_Distance = 100 * Total_Distance / sum(Total_Distance) # Percentage of total distance
+  ) %>%
+  ungroup()
+
+# Display April Table
+
+zone_summary %>% filter(Month == "April") %>% gt()
+```
+
+```{r}
+
+zone_summary <- zone_summary %>%
+  mutate(
+    Zones = factor(Zones, levels = c("Z3", "Z2", "Z1")),  # Controls stacking
+  )
+
+# Just April
+
+zone_summary_april <- zone_summary %>% 
+  filter(Month == "April")
+
+zone_colours <- c(
+  "Z1" = "#ffbf00",
+  "Z2" = "#f27c23",
+  "Z3" = "#e24a6f"
+)
+
+ggplot(zone_summary_april, aes(x = Month, y = Percentage_Time, fill = Zones)) +
+  geom_col(width = 0.7) +
+  scale_fill_manual(
+    values = zone_colours,
+    breaks = c("Z1", "Z2", "Z3")  # Reorder the legend
+  ) +
+  labs(
+    title = "Training Time Distribution by Zone (April)",
+    x = "Month",
+    y = "Percentage of Total Time (%)",
+    fill = "Zone"
+  ) +
+  scale_y_continuous(
+    labels = scales::percent_format(scale = 1),
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  coord_flip() +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "top",
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold"),
+    axis.title = element_text(face = "bold"),
+    axis.text = element_text(color = "black")
+  )
+```

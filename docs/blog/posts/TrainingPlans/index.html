@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-04-06">
+<meta name="dcterms.date" content="2025-04-26">
 
-<title>The Beginning Stages of.. – Chris Edwards</title>
+<title>Training Plans - Tradition and Data – Chris Edwards</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -165,8 +185,8 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">The Beginning Stages of..</h1>
-            <p class="subtitle lead">A Marathon Journey</p>
+      <h1 class="title">Training Plans - Tradition and Data</h1>
+            <p class="subtitle lead">a spherical cow approach to intensity zones.</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Running</div>
                 <div class="quarto-category">Data Science</div>
@@ -182,14 +202,14 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 6, 2025</p>
+        <p class="date">April 26, 2025</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">April 13, 2025</p>
+        <p class="date-modified">April 26, 2025</p>
       </div>
     </div>
       
@@ -212,62 +232,84 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 
 
 
-<div class="page-columns page-full"><blockquote class="blockquote">
-<p>“He who makes a beast of himself gets rid of the pain of being a man.” <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> — Dr.&nbsp;Samuel Johnson, quoted in Fear and Loathing in Las Vegas by Hunter S. Thompson (1971)</p>
-</blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Originally by Dr.&nbsp;Samuel Johnson, used by Hunter S. Thompson as the epigraph to <em>Fear and Loathing in Las Vegas</em> (1971).</p></div></div></div>
-<p>This is the beginning of a small experiment — part training log, part data science side project, part nostalgic therapy. After a long and sometimes questionable relationship with the marathon, I’ve decided to document the road to my next one — my 13th, though who’s counting. A “local” marathon, the <a href="https://goldcoastmarathon.com.au/">Gold Coast Marathon</a> and one I’m familiar with. I’m not chasing a personal best (at least, that’s what I tell myself), but I am chasing something: structure, understanding, maybe even redemption. This blog, and the series to follow, is a place to reflect on old performances, track new training efforts, and occasionally make sense of the numbers — or at least dress them up in tidy tables and plots that suggest control over what is an unpredictable pursuit.</p>
-<p>The marathon doesn’t just test the man — it spawns the beast in him. Not a beast of rage or reckless indulgence, like the one Hunter S. Thompson conjured in the neon haze of Vegas, but something more controlled, more methodical… yet still, undeniably, irrational. To train for a marathon is to willingly embrace a kind of madness: to rise early, log the miles, sweat through long runs, negotiate splits, and obsess over details that no one else will ever see or care about. No different, I suppose, than other, less healthy forms of addition— except that one ends with a finisher’s medal and (hopefully) less liver damage. Still, both blur the lines between discipline and delusion. And both, in their way, are obsessions that allow escape from the polite constraints of ordinary life.</p>
-<p>Reflecting on my own running, I haven’t trained “properly” since 2019 — which, not coincidentally, was also my personal best (2:52). A high-water mark that I’ve stared at lovingly (and distortedly) in the rear-view mirror ever since. In the time that followed, both the structure and my resolve slipped. My belief systems about what <em>should</em> work in training have often charged ahead of the evidence. In hindsight, I probably need to be a better Bayesian <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>: update my beliefs <em>when the data tells me to,</em> not just <em>when my ego</em> needs a pick-me-up.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;For a general introduction to Bayesian inference — the process of updating beliefs as new evidence becomes available — see the <a href="https://en.wikipedia.org/wiki/Bayesian_inference">Wikipedia article on Bayesian inference</a>.</p></div></div><p>So, why write now?</p>
-<p>Partly because I’m keen to trace the path from start to finish. But also because I’ll “try” and quietly turn this into a small data science project — an excuse to tinker with my training logs, Strava uploads, physiological markers, and the occasional psychological pothole. Maybe there’s something to learn from 12 previous marathons. And really, I just love running — the rhythm, the ritual, the ridiculousness of it all. This is a way to make sense of it, or at least enjoy the attempt.</p>
-<p>It’s also a chance to learn more about Quarto<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (the system used to create this website), and to explore how to tell a story with better visuals, tables, and a cleaner presentation style. Consider it a running diary meets technical playground — one foot in the marathon world, the other in R markdown.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Quarto is an open-source scientific and technical publishing system. For documentation and source code, see the official website at <a href="https://www.quarto.org">quarto.org</a> and the <a href="https://www.github.com/quarto-dev/quarto-cli">GitHub repository</a>.</p></div></div><p>For background, I’m including some data below to give a snapshot of my past marathon performances, complete with age-graded percentages. It’s a mix of highs and “what the hell happened there?”</p>
+<p>For all the GPS data, lactate curves, and laboratory testing, strange as it may seem, there’s still no gold standard for marathon training. While some interventions—like carbohydrate loading or tapering—can be studied in isolation, the training plan itself remains elusive: more art than science.</p>
+<p>As an interesting review paper states <span class="citation" data-cites="knopp2024">(<a href="#ref-knopp2024" role="doc-biblioref">Knopp et al. 2024</a>)</span></p>
+<div class="no-row-height column-margin column-container"></div><blockquote class="blockquote">
+<p>“..a major challenge is that the training plan is not just one intervention but a complex mix of many ..”</p>
+</blockquote>
+<p>and</p>
+<blockquote class="blockquote">
+<p>“…current marathon training plans are mostly experienced based, occasionally supplemented by evidence-based recommendations such as those related to carbohydrate ingestion”</p>
+</blockquote>
+<p>In other words, optimal training is some cocktail of long runs, intervals, tempo workouts, recovery days, and taper rituals, handed down from generations past and shaped more by tradition than strict scientific evidence. Unlike a drug intervention, you can’t easily randomise thousands of runners into perfectly controlled training groups for twelve weeks. As a result, much of what guides runners today comes from anecdotal success, coaches’ intuition, and proven practices among running groups.</p>
+<p>In the face of this evidence gap, it’s fair to say that marathon training is still governed by the simple principle: what works, works. Yet patterns do emerge, especially when you study successful plans.</p>
+<p>One key aspect worth looking at is how runners distribute training intensity across their weekly mileage. When it comes to endurance training, not all kilometres are created equal. Coaches and exercise physiologists often speak in intensity zones. Although there are several models in the literature, I tend to favour the simplicity (and practicality) of sports scientist Stephen Seiler’s three-zone approach.</p>
+<ul>
+<li><p><strong>Zone 1</strong> is the intensity up to the first lactate turn point (~2 mmol/L), roughly around 80% of your maximum heart rate.</p></li>
+<li><p><strong>Zone 2</strong> sits between the first and second lactate thresholds (2–4 mmol/L), typically around 87% of your HRmax.</p></li>
+<li><p><strong>Zone 3</strong> is above this, where lactate rises rapidly.</p></li>
+</ul>
+<p>Here’s a nice <a href="https://youtu.be/NPwyk9B0j-s?si=exUqpTIPzRv6sHyA">YouTube video</a> from Stephen Seilers explaining his approach.</p>
+<p>The percentage of training time spent in each of these three zones forms the basis for many training strategies. Two of the most widely discussed are <strong>pyramidal</strong> and <strong>polarised</strong> training.</p>
+<p><strong>Pyramidal training</strong> builds a broad base of easy miles (about 70–80% in Zone 1), with the remainder spread between Zones 2 and 3. The name comes from the pyramid-like shape: most training at low intensity, less at moderate, and even less at high intensity. Interestingly, this pattern matches the structure of many published marathon training plans <span class="citation" data-cites="knopp2024">(<a href="#ref-knopp2024" role="doc-biblioref">Knopp et al. 2024</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-knopp2024" class="csl-entry" role="listitem">
+Knopp, Melanie, Daniel Appelhans, Martin Schönfelder, Stephen Seiler, and Henning Wackerhage. 2024. <span>“Quantitative <span>Analysis</span> of 92 12-<span class="nocase">Week Sub-elite Marathon Training Plans</span>.”</span> <em>Sports Medicine - Open</em> 10 (1): 50. <a href="https://doi.org/10.1186/s40798-024-00717-5">https://doi.org/10.1186/s40798-024-00717-5</a>.
+</div><div id="ref-stoggl2014" class="csl-entry" role="listitem">
+Stöggl, Thomas, and Billy Sperlich. 2014. <span>“Polarized Training Has Greater Impact on Key Endurance Variables Than Threshold, High Intensity, or High Volume Training.”</span> <em>Frontiers in Physiology</em> 5 (February). <a href="https://doi.org/10.3389/fphys.2014.00033">https://doi.org/10.3389/fphys.2014.00033</a>.
+</div></div><p><strong>Polarised training</strong>, by contrast, pushes the extremes: lots of low-intensity running (Zone 1), some high-intensity efforts (Zone 3), and very little training in the moderate Zone 2. In one intervention study, the polarised model delivered the largest performance gains in well-trained athletes <span class="citation" data-cites="stoggl2014">(<a href="#ref-stoggl2014" role="doc-biblioref">Stöggl and Sperlich 2014</a>)</span>.</p>
+<p>The science on which is optimal is promising but far from settled. A systematic review found that both polarised and pyramidal approaches outperformed threshold-heavy (Zone 2-focused) plans but couldn’t definitively crown a winner <span class="citation" data-cites="kenneally2018">(<a href="#ref-kenneally2018" role="doc-biblioref">Kenneally, Casado, and Santos-Concejero 2018</a>)</span>. More recent research even suggests a <strong>periodised blend</strong> (another “P” word)—starting pyramidal and shifting toward polarised—may offer the best of both worlds <span class="citation" data-cites="filipas2022">(<a href="#ref-filipas2022" role="doc-biblioref">Filipas et al. 2022</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-kenneally2018" class="csl-entry" role="listitem">
+Kenneally, Mark, Arturo Casado, and Jordan Santos-Concejero. 2018. <span>“The <span>Effect</span> of <span>Periodization</span> and <span>Training Intensity Distribution</span> on <span>Middle-</span> and <span>Long-Distance Running Performance</span>: <span>A Systematic Review</span>,”</span> October. <a href="https://journals.humankinetics.com/view/journals/ijspp/13/9/article-p1114.xml">https://journals.humankinetics.com/view/journals/ijspp/13/9/article-p1114.xml</a>.
+</div><div id="ref-filipas2022" class="csl-entry" role="listitem">
+Filipas, Luca, Matteo Bonato, Gabriele Gallo, and Roberto Codella. 2022. <span>“Effects of 16 Weeks of Pyramidal and Polarized Training Intensity Distributions in Well-Trained Endurance Runners.”</span> <em>Scandinavian Journal of Medicine &amp; Science in Sports</em> 32 (3): 498–511. <a href="https://doi.org/10.1111/sms.14101">https://doi.org/10.1111/sms.14101</a>.
+</div></div><p>In short: <strong>intensity distribution matters</strong>. But how you mix it, like so much in running, depends on timing, experience, and knowing when to hold back and when to push.</p>
+<p>Curious about my own training, I took a quick peek at my data.</p>
+<p>Taking a <em>spherical cow</em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> approach to vastly simplify things (perhaps to my folly!), I scraped my recent running data from Garmin Connect and imported it into R. In the data.frame I have computed three Zones (Z1, Z2, Z3) using the Avg.HR for each lap. My watch is currently set to lap every 1km. For each zone I <del>inferred</del> guesstimated my HR ranges based on my current probable HRmax of around 180bpm.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;The <em>“spherical cow”</em> is a funny way of describing how scientists sometimes oversimplify complex problems into neat, potentially unrealistic models. <a href="https://en.wikipedia.org/wiki/Spherical_cow" class="uri">https://en.wikipedia.org/wiki/Spherical_cow</a></p></div></div><p>Roughly for April my distribution is fairly pyramidal ( 77% Z1, 16% Z2, 7% Z3).</p>
+<p>Output below, and I am keen to track these distributions leading into the race.</p>
+<hr>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Date, Race, Time, Age, <span class="at">Age_Graded_Percent =</span> Age_Graded) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Age-Graded Marathon Performances"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(Age_Graded_Percent),</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">suffixing =</span> <span class="cn">TRUE</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate percentage of time and distance in each Zone</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>zone_summary <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Zones, Month) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Time =</span> <span class="fu">sum</span>(Time_seconds, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),          <span class="co"># Total time in each zone</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Distance =</span> <span class="fu">sum</span>(Distance, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)          <span class="co"># Total distance in each zone</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Month) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Percentage_Time =</span> <span class="dv">100</span> <span class="sc">*</span> Total_Time <span class="sc">/</span> <span class="fu">sum</span>(Total_Time),  <span class="co"># Percentage of total time</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Percentage_Distance =</span> <span class="dv">100</span> <span class="sc">*</span> Total_Distance <span class="sc">/</span> <span class="fu">sum</span>(Total_Distance) <span class="co"># Percentage of total distance</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Date =</span> <span class="st">"Race Date"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="st">"Event"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Time =</span> <span class="st">"Finish Time"</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age =</span> <span class="st">"Age"</span>,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Graded_Percent =</span> <span class="st">"Age-Graded (%)"</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Display April Table</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>zone_summary <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Month <span class="sc">==</span> <span class="st">"April"</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="mapyeflrgp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mapyeflrgp table {
+<div id="lbhhuzeeif" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lbhhuzeeif table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mapyeflrgp thead, #mapyeflrgp tbody, #mapyeflrgp tfoot, #mapyeflrgp tr, #mapyeflrgp td, #mapyeflrgp th {
+#lbhhuzeeif thead, #lbhhuzeeif tbody, #lbhhuzeeif tfoot, #lbhhuzeeif tr, #lbhhuzeeif td, #lbhhuzeeif th {
   border-style: none;
 }
 
-#mapyeflrgp p {
+#lbhhuzeeif p {
   margin: 0;
   padding: 0;
 }
 
-#mapyeflrgp .gt_table {
+#lbhhuzeeif .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -293,12 +335,12 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_caption {
+#lbhhuzeeif .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mapyeflrgp .gt_title {
+#lbhhuzeeif .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -310,7 +352,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#mapyeflrgp .gt_subtitle {
+#lbhhuzeeif .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -322,7 +364,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#mapyeflrgp .gt_heading {
+#lbhhuzeeif .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -334,13 +376,13 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_bottom_border {
+#lbhhuzeeif .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_col_headings {
+#lbhhuzeeif .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -355,7 +397,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_col_heading {
+#lbhhuzeeif .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -375,7 +417,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#mapyeflrgp .gt_column_spanner_outer {
+#lbhhuzeeif .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,15 +429,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#mapyeflrgp .gt_column_spanner_outer:first-child {
+#lbhhuzeeif .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mapyeflrgp .gt_column_spanner_outer:last-child {
+#lbhhuzeeif .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mapyeflrgp .gt_column_spanner {
+#lbhhuzeeif .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -407,11 +449,11 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#mapyeflrgp .gt_spanner_row {
+#lbhhuzeeif .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mapyeflrgp .gt_group_heading {
+#lbhhuzeeif .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -437,7 +479,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#mapyeflrgp .gt_empty_group_heading {
+#lbhhuzeeif .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -452,15 +494,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#mapyeflrgp .gt_from_md > :first-child {
+#lbhhuzeeif .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mapyeflrgp .gt_from_md > :last-child {
+#lbhhuzeeif .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mapyeflrgp .gt_row {
+#lbhhuzeeif .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,7 +521,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#mapyeflrgp .gt_stub {
+#lbhhuzeeif .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -492,7 +534,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mapyeflrgp .gt_stub_row_group {
+#lbhhuzeeif .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -506,15 +548,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#mapyeflrgp .gt_row_group_first td {
+#lbhhuzeeif .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mapyeflrgp .gt_row_group_first th {
+#lbhhuzeeif .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mapyeflrgp .gt_summary_row {
+#lbhhuzeeif .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -524,16 +566,16 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mapyeflrgp .gt_first_summary_row {
+#lbhhuzeeif .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_first_summary_row.thick {
+#lbhhuzeeif .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mapyeflrgp .gt_last_summary_row {
+#lbhhuzeeif .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -543,7 +585,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_grand_summary_row {
+#lbhhuzeeif .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -553,7 +595,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mapyeflrgp .gt_first_grand_summary_row {
+#lbhhuzeeif .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -563,7 +605,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_last_grand_summary_row_top {
+#lbhhuzeeif .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -573,11 +615,11 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_striped {
+#lbhhuzeeif .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mapyeflrgp .gt_table_body {
+#lbhhuzeeif .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -586,7 +628,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_footnotes {
+#lbhhuzeeif .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -600,7 +642,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_footnote {
+#lbhhuzeeif .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -609,7 +651,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mapyeflrgp .gt_sourcenotes {
+#lbhhuzeeif .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -623,7 +665,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mapyeflrgp .gt_sourcenote {
+#lbhhuzeeif .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -631,173 +673,111 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mapyeflrgp .gt_left {
+#lbhhuzeeif .gt_left {
   text-align: left;
 }
 
-#mapyeflrgp .gt_center {
+#lbhhuzeeif .gt_center {
   text-align: center;
 }
 
-#mapyeflrgp .gt_right {
+#lbhhuzeeif .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mapyeflrgp .gt_font_normal {
+#lbhhuzeeif .gt_font_normal {
   font-weight: normal;
 }
 
-#mapyeflrgp .gt_font_bold {
+#lbhhuzeeif .gt_font_bold {
   font-weight: bold;
 }
 
-#mapyeflrgp .gt_font_italic {
+#lbhhuzeeif .gt_font_italic {
   font-style: italic;
 }
 
-#mapyeflrgp .gt_super {
+#lbhhuzeeif .gt_super {
   font-size: 65%;
 }
 
-#mapyeflrgp .gt_footnote_marks {
+#lbhhuzeeif .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mapyeflrgp .gt_asterisk {
+#lbhhuzeeif .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mapyeflrgp .gt_indent_1 {
+#lbhhuzeeif .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mapyeflrgp .gt_indent_2 {
+#lbhhuzeeif .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mapyeflrgp .gt_indent_3 {
+#lbhhuzeeif .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mapyeflrgp .gt_indent_4 {
+#lbhhuzeeif .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mapyeflrgp .gt_indent_5 {
+#lbhhuzeeif .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mapyeflrgp .katex-display {
+#lbhhuzeeif .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mapyeflrgp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lbhhuzeeif div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
-<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Age-Graded Marathon Performances</th>
-</tr>
-<tr class="odd gt_col_headings">
-<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Race Date</th>
-<th id="Race" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Event</th>
-<th id="Time" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Finish Time</th>
-<th id="Age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Age</th>
-<th id="Age_Graded_Percent" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Age-Graded (%)</th>
+<tr class="header gt_col_headings">
+<th id="Zones" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Zones</th>
+<th id="Month" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Month</th>
+<th id="Total_Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total_Time</th>
+<th id="Total_Distance" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total_Distance</th>
+<th id="Percentage_Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Percentage_Time</th>
+<th id="Percentage_Distance" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Percentage_Distance</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_center" headers="Date">6/07/2014</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">3:07:47</td>
-<td class="gt_row gt_right" headers="Age">37</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">69.23</td>
+<td class="gt_row gt_left" headers="Zones">Z1</td>
+<td class="gt_row gt_left" headers="Month">April</td>
+<td class="gt_row gt_right" headers="Total_Time">68671.5</td>
+<td class="gt_row gt_right" headers="Total_Distance">203.29</td>
+<td class="gt_row gt_right" headers="Percentage_Time">77.041781</td>
+<td class="gt_row gt_right" headers="Percentage_Distance">71.302304</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_center" headers="Date">12/10/2014</td>
-<td class="gt_row gt_center" headers="Race">Melbourne</td>
-<td class="gt_row gt_center" headers="Time">3:38:06</td>
-<td class="gt_row gt_right" headers="Age">37</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">59.61</td>
+<td class="gt_row gt_left" headers="Zones">Z2</td>
+<td class="gt_row gt_left" headers="Month">April</td>
+<td class="gt_row gt_right" headers="Total_Time">14425.0</td>
+<td class="gt_row gt_right" headers="Total_Distance">56.34</td>
+<td class="gt_row gt_right" headers="Percentage_Time">16.183245</td>
+<td class="gt_row gt_right" headers="Percentage_Distance">19.760794</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_center" headers="Date">20/04/2015</td>
-<td class="gt_row gt_center" headers="Race">Boston</td>
-<td class="gt_row gt_center" headers="Time">3:05:00</td>
-<td class="gt_row gt_right" headers="Age">37</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">70.27</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Date">5/07/2015</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">2:58:12</td>
-<td class="gt_row gt_right" headers="Age">38</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">72.95</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Date">10/04/2016</td>
-<td class="gt_row gt_center" headers="Race">Canberra</td>
-<td class="gt_row gt_center" headers="Time">3:01:21</td>
-<td class="gt_row gt_right" headers="Age">38</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">71.68</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Date">3/07/2016</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">3:39:26</td>
-<td class="gt_row gt_right" headers="Age">38</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">59.24</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Date">6/11/2016</td>
-<td class="gt_row gt_center" headers="Race">New York City</td>
-<td class="gt_row gt_center" headers="Time">3:17:11</td>
-<td class="gt_row gt_right" headers="Age">39</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">65.93</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Date">1/07/2018</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">3:33:49</td>
-<td class="gt_row gt_right" headers="Age">40</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">63.14</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Date">7/07/2019</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">2:52:17</td>
-<td class="gt_row gt_right" headers="Age">42</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">78.36</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Date">3/07/2022</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">3:06:49</td>
-<td class="gt_row gt_right" headers="Age">44</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">72.26</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Date">17/09/2023</td>
-<td class="gt_row gt_center" headers="Race">Sydney</td>
-<td class="gt_row gt_center" headers="Time">3:23:10</td>
-<td class="gt_row gt_right" headers="Age">46</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">69.89</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Date">7/07/2024</td>
-<td class="gt_row gt_center" headers="Race">Gold Coast</td>
-<td class="gt_row gt_center" headers="Time">3:06:33</td>
-<td class="gt_row gt_right" headers="Age">47</td>
-<td class="gt_row gt_right" headers="Age_Graded_Percent">76.12</td>
+<td class="gt_row gt_left" headers="Zones">Z3</td>
+<td class="gt_row gt_left" headers="Month">April</td>
+<td class="gt_row gt_right" headers="Total_Time">6038.9</td>
+<td class="gt_row gt_right" headers="Total_Distance">25.48</td>
+<td class="gt_row gt_right" headers="Percentage_Time">6.774974</td>
+<td class="gt_row gt_right" headers="Percentage_Distance">8.936902</td>
 </tr>
 </tbody>
 </table>
@@ -805,9 +785,61 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>One main difference this time is I’ve handed over the keys to someone else. A friend — and experienced runner — who is guiding my training. So training plan to come. Left to my own devices, I tend to alternate between over-training, under-believing, and ignoring all evidence in favour of whatever romantic training idea is currently floating through my brain. So this time, I’m trying structure. Consistency. Restraint. (I give that three weeks, tops!).</p>
-<p>So here we are: 13 weeks out. The beginning stages of… I don’t know if I’ll run sub-3 again. But I’ll document the attempt, the process, and the data that drips out along the way. I’m choosing to believe if only for a little while, and at least in this moment it seems worth leaning into.</p>
-<p>Let’s see what happens.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>zone_summary <span class="ot">&lt;-</span> zone_summary <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Zones =</span> <span class="fu">factor</span>(Zones, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Z3"</span>, <span class="st">"Z2"</span>, <span class="st">"Z1"</span>)),  <span class="co"># Controls stacking</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Just April</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>zone_summary_april <span class="ot">&lt;-</span> zone_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Month <span class="sc">==</span> <span class="st">"April"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>zone_colours <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Z1"</span> <span class="ot">=</span> <span class="st">"#ffbf00"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Z2"</span> <span class="ot">=</span> <span class="st">"#f27c23"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Z3"</span> <span class="ot">=</span> <span class="st">"#e24a6f"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(zone_summary_april, <span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Percentage_Time, <span class="at">fill =</span> Zones)) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> zone_colours,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">"Z1"</span>, <span class="st">"Z2"</span>, <span class="st">"Z3"</span>)  <span class="co"># Reorder the legend</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Training Time Distribution by Zone (April)"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Month"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Total Time (%)"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Zone"</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>))</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
 
 
 

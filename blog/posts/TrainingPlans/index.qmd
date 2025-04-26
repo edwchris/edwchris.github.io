@@ -1,5 +1,5 @@
 ---
-title: "Training Plans - Tradition and Data"
+title: "Training Plans"
 subtitle: "a spherical cow approach to intensity zones."
 date: 04/26/2025
 categories: [Running, Data Science, GCM25]
@@ -28,7 +28,7 @@ In the face of this evidence gap, it’s fair to say that marathon training is s
 
 One key aspect worth looking at is how runners distribute training intensity across their weekly mileage. When it comes to endurance training, not all kilometres are created equal. Coaches and exercise physiologists often speak in intensity zones. Although there are several models in the literature, I tend to favour the simplicity (and practicality) of sports scientist Stephen Seiler’s three-zone approach.
 
--    **Zone 1** is the intensity up to the first lactate turn point (\~2 mmol/L), roughly around 80% of your maximum heart rate.
+-   **Zone 1** is the intensity up to the first lactate turn point (\~2 mmol/L), roughly around 80% of your maximum heart rate.
 
 -   **Zone 2** sits between the first and second lactate thresholds (2–4 mmol/L), typically around 87% of your HRmax.
 
@@ -38,7 +38,7 @@ Here's a nice [YouTube video](https://youtu.be/NPwyk9B0j-s?si=exUqpTIPzRv6sHyA) 
 
 The percentage of training time spent in each of these three zones forms the basis for many training strategies. Two of the most widely discussed are **pyramidal** and **polarised** training.
 
-**Pyramidal training** builds a broad base of easy miles (about 70–80% in Zone 1), with the remainder spread between Zones 2 and 3. The name comes from the pyramid-like shape: most training at low intensity, less at moderate, and even less at high intensity. Interestingly, this pattern matches the structure of many published marathon training plans [@knopp2024].
+**Pyramidal training** builds a broad base of easy miles (about 70–80% in Zone 1), with the remainder spread between Zones 2 and 3. The name comes from the pyramid-like shape: most training at low intensity, less at moderate, and even less at high intensity. Interestingly, this pattern matches the structure of many published marathon training plans (Knopp et al. 2024).
 
 **Polarised training**, by contrast, pushes the extremes: lots of low-intensity running (Zone 1), some high-intensity efforts (Zone 3), and very little training in the moderate Zone 2. In one intervention study, the polarised model delivered the largest performance gains in well-trained athletes [@stoggl2014].
 
@@ -50,9 +50,9 @@ Curious about my own training, I took a quick peek at my data.
 
 Taking a *spherical cow* [^1] approach to vastly simplify things (perhaps to my folly!), I scraped my recent running data from Garmin Connect and imported it into R. In the data.frame I have computed three Zones (Z1, Z2, Z3) using the Avg.HR for each lap. My watch is currently set to lap every 1km. For each zone I ~~inferred~~ guesstimated my HR ranges based on my current probable HRmax of around 180bpm.
 
-Roughly for April my distribution is fairly pyramidal ( 77% Z1, 16% Z2, 7% Z3).
-
 [^1]: The *"spherical cow"* is a funny way of describing how scientists sometimes oversimplify complex problems into neat, potentially unrealistic models. <https://en.wikipedia.org/wiki/Spherical_cow>
+
+Roughly for April my distribution is fairly pyramidal ( 77% Z1, 16% Z2, 7% Z3).
 
 Output below, and I am keen to track these distributions leading into the race.
 

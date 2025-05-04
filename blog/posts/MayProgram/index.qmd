@@ -1,0 +1,86 @@
+---
+title: "May Training Plan "
+date: 05/04/2025
+categories: [Running, Data Science, GCM25]
+date-modified: today
+image: images/May_training.jpg
+format:
+  html:
+    code-fold: true
+    toc: false
+draft: false
+---
+
+Here’s my training plan for May — 9 weeks out from **Gold Coast Marathon 2025**. 
+
+### Training Notes
+
+- Thursdays & Sundays should feel quite hard
+- **Missing a running session occasionally is fine.** Missing gym work is not.
+- Training peak in early/mid-June and then taper time.
+
+Want to follow along 👉 [Strava profile](https://www.strava.com/athletes/3581834) here
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+library(gt)
+library(dplyr)
+library(readxl)
+
+# Load your data
+df <- read_excel("data/May.xlsx")
+
+# Create gt table
+df %>%
+  gt() %>%
+  tab_header(
+    title = md("**May Marathon Training Plan 🏃‍♂**")
+  ) %>%
+  cols_label(
+    `Week starting` = "📅 Week of",
+    Monday = "Mon",
+    Tuesday = "Tue",
+    Wednesday = "Wed",
+    Thursday = "Thu",
+    Friday = "Fri",
+    Saturday = "Sat",
+    Sunday = "Sun"
+  ) %>%
+  tab_spanner(
+    label = "Weekday Training",
+    columns = Monday:Friday
+  ) %>%
+  tab_spanner(
+    label = "Weekend Sessions",
+    columns = Saturday:Sunday
+  ) %>%
+  opt_row_striping() %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.font.names = "Helvetica",
+    data_row.padding = px(6),
+    table.width = pct(100),
+    heading.title.font.size = 20,
+    heading.subtitle.font.size = 14
+  ) %>%
+    tab_footnote(
+    footnote = " (b) 14k comprising 2k WU, then every alternate km at MP or (c) the Watts session if reps are 800m or longer.",
+    locations = cells_body(columns = "Tuesday", rows = `Week starting` == "5th May")
+  ) %>%
+    tab_footnote(
+    footnote = md("25 to 30 minute very slow jog on most Fridays"),
+    locations = cells_column_labels(columns = Friday)
+  ) %>%
+    tab_footnote(
+    footnote = md("Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort "),
+    locations = cells_column_labels(columns = Sunday)
+  ) 
+
+
+```
+

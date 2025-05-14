@@ -1,0 +1,164 @@
+---
+title: "Marathon Pace and the Long Game "
+date: 05/14/2025
+categories: [Running, Data Science, GCM25]
+date-modified: 05/14/2025
+format:
+  html:
+    code-fold: true
+    toc: false
+draft: false
+---
+
+> “If you feel bad at 10 miles, you're in trouble. If you feel bad at 20 miles, you're normal. If you don't feel bad at 26 miles, you're abnormal” [^1] — Robert de Castella
+
+[^1]: Robert de Castella [Wikipedia](https://en.wikipedia.org/wiki/Bayesian_inference).
+
+Since I’ve been posting recent training plans, one thing stands out is a definite shift toward marathon pace work. My volume has crept up a little, but the specificity towards marathon paced work has significately. More long runs with marathon pace segments, more steady-state sessions right around that 4:05–4:15/km range. It’s a deliberate experiment—and I’m curious where it leads.
+
+Back in 2019, when I ran my marathon PB (2:52), the build-up was strong—but interestingly, I also set PBs in the 5K and 10K. That block had more speed, more threshold, and arguably, more overall fitness. But it had less dedicated work at goal pace. Looking back, I wonder if I left something on the table by not targeting the specific physiological demands of the marathon more closely.
+
+This time around, I'm trying to tilt the balance the other way. Less top-end sharpness maybe, but more resilience at race pace. Whether that pays off or just wears me down remains to be seen. That’s the trick with marathon training—you're gambling six to eight weeks in advance.
+
+Of course, no plan survives contact with the road. I’ve picked up a tight hamstring, so I’ll be backing off for a few days and hoping that’s all it needs. These interruptions are frustrating, but they’re also reminders to be flexible—not just in the schedule, but in mindset. You don't lose fitness in three days. You do lose perspective if you panic too early.
+
+The upside is I have some time to post some data from my training block—especially the changes between Janurary–April. For this period I have been running fairly consistently but it wasn't until April that marathon pace work started creeping into more and more sessions. It's been interesting to watch that shift in real-time, and even more interesting to see how the body reacts to it. Marathon Pace work is getting more comfortable that for sure.
+
+The plot below was created by pulling done my run data from Garmin Connect, extracting the average pace for each lap and grouping them. My watch is set to lap every 1km. This plot is inspired by one of the wonderful plots made by [Anatasia Anastasiadou](https://natanast.github.io/)
+
+April saw a bit jump.
+
+***Load libraries***
+
+```{r}
+#| message: false
+#| warning: false
+
+# load libraries -------
+
+rm(list = ls())
+
+library(data.table)
+library(tidyverse)
+library(ggplot2)
+library(ggtext)
+library(extrafont)
+
+
+
+```
+
+***Load data***
+
+```{r}
+# load data --------
+
+df <- fread("data/data_comb2.csv")
+```
+
+***Dataset for plotting***
+
+```{r}
+
+# Create Pace Dataset -----------
+
+pace <- df%>%
+  mutate(
+    pace_category = cut(
+      pace_sec_per_km,
+      breaks = c(-Inf, 240, 260, 300, 330, Inf),
+      labels = c(
+        "<4:00 min/km",
+        "4:00–4:20 min/km",
+        "4:20–5:00 min/km",
+        "5:00–5:30 min/km",
+        ">5:30 min/km"
+      ),
+      right = FALSE
+    )
+  ) %>%
+  group_by(Month,pace_category) %>%
+  summarise(
+    Total_Distance_km = sum(Distance, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  group_by(Month) %>%
+  mutate(
+    Percentage_Distance = round(100 * Total_Distance_km / sum(Total_Distance_km), 1)
+  ) %>%
+  ungroup()
+
+# Cleaning -------------
+
+pace <- pace %>% filter(Month != "May")
+
+pace$Month <- factor(pace$Month, levels = c("January", "February", "March","April"))
+
+
+```
+
+***Plot***
+
+```{r}
+
+# colours-----------
+
+
+grid_colors <- c(
+  ">5:30 min/km"       = "#5a8192",  
+  "5:00–5:30 min/km"   = "#c1cbe3",  
+  "4:20–5:00 min/km"   = "#a4a0d1",  
+  "4:00–4:20 min/km"   = "#8570b0",  
+  "<4:00 min/km"       = "#67206f"   
+)
+
+
+p <-  ggplot(pace, aes(x = Month, y = Percentage_Distance, fill = pace_category)) +
+
+    geom_bar(stat = "identity", width = 0.5) +
+   scale_fill_manual(values = grid_colors) +
+
+    labs(
+        title = "Monthly % Distribution of Kilometres by Pace Zone",
+        subtitle = "4:00-4:20 min/km represents target Marathon Pace (MP).",
+        caption = " Source: <b> Garmin Connect</b> | Graphic: <b>Chris Edwards</b>",
+        y = "Distance Run (km)", 
+        fill = "Type"
+    ) +
+    
+    theme_minimal(base_family = "Enriqueta") +
+    
+    theme(
+        
+        axis.title.x = element_blank(),
+        
+        axis.title.y = element_text(size = 9),
+        
+        axis.text.x = element_text(size = 7),
+        axis.text.y = element_text(size = 7),
+        
+        legend.text = element_text(size = 7),         # Smaller text
+        legend.title = element_text(size = 8),        # Optional: smaller title
+        legend.key.size = unit(0.8, "lines"),         # Smaller boxes
+        legend.spacing.y = unit(0.5, "lines"),
+        
+        legend.position = "right",
+        
+        panel.grid.major = element_line(color = "grey75", linetype = "dashed", lineend = "round"),
+        panel.grid.minor = element_blank(),
+        
+        plot.title = element_markdown(size = 14, face = "bold", hjust = 0.5, margin = margin(t = 2, b = 2)),
+        plot.subtitle = element_markdown(size = 10, hjust = 0.5,  color = "grey30", margin = margin(t = 5, b = 10)),
+        plot.caption  = element_markdown(margin = margin(t = 25), size = 6, hjust = 1.28),
+        
+        
+        plot.margin = margin(20, 20, 20, 20),
+        
+        plot.background = element_rect(fill = "#e4e4e3", color = NA) 
+    )  +  
+        coord_flip()  
+        
+    
+p
+
+```

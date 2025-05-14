@@ -9,8 +9,621 @@
 <link>https://edwchris.github.io/blog/</link>
 <atom:link href="https://edwchris.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Sonography</description>
-<generator>quarto-1.5.57</generator>
-<lastBuildDate>Sat, 03 May 2025 14:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Tue, 13 May 2025 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>Marathon Pace and the Long Game</title>
+  <link>https://edwchris.github.io/blog/posts/Plots/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="page-columns page-full"><blockquote class="blockquote">
+<p>“If you feel bad at 10 miles, you’re in trouble. If you feel bad at 20 miles, you’re normal. If you don’t feel bad at 26 miles, you’re abnormal” <sup>1</sup> — Robert de Castella</p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Robert de Castella <a href="https://en.wikipedia.org/wiki/Bayesian_inference">Wikipedia</a>.</p></div></div></div>
+<p>Since I’ve been posting recent training plans, one thing stands out is a definite shift toward marathon pace work. My volume has crept up a little, but the specificity towards marathon paced work has significately. More long runs with marathon pace segments, more steady-state sessions right around that 4:05–4:15/km range. It’s a deliberate experiment—and I’m curious where it leads.</p>
+<p>Back in 2019, when I ran my marathon PB (2:52), the build-up was strong—but interestingly, I also set PBs in the 5K and 10K. That block had more speed, more threshold, and arguably, more overall fitness. But it had less dedicated work at goal pace. Looking back, I wonder if I left something on the table by not targeting the specific physiological demands of the marathon more closely.</p>
+<p>This time around, I’m trying to tilt the balance the other way. Less top-end sharpness maybe, but more resilience at race pace. Whether that pays off or just wears me down remains to be seen. That’s the trick with marathon training—you’re gambling six to eight weeks in advance.</p>
+<p>Of course, no plan survives contact with the road. I’ve picked up a tight hamstring, so I’ll be backing off for a few days and hoping that’s all it needs. These interruptions are frustrating, but they’re also reminders to be flexible—not just in the schedule, but in mindset. You don’t lose fitness in three days. You do lose perspective if you panic too early.</p>
+<p>The upside is I have some time to post some data from my training block—especially the changes between Janurary–April. For this period I have been running fairly consistently but it wasn’t until April that marathon pace work started creeping into more and more sessions. It’s been interesting to watch that shift in real-time, and even more interesting to see how the body reacts to it. Marathon Pace work is getting more comfortable that for sure.</p>
+<p>The plot below was created by pulling done my run data from Garmin Connect, extracting the average pace for each lap and grouping them. My watch is set to lap every 1km. This plot is inspired by one of the wonderful plots made by <a href="https://natanast.github.io/">Anatasia Anastasiadou</a></p>
+<p>April saw a bit jump.</p>
+<p><strong><em>Load libraries</em></strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># load libraries -------</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rm</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">list =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ls</span>())</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(data.table)</span>
+<span id="cb1-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)</span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggtext)</span>
+<span id="cb1-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(extrafont)</span></code></pre></div>
+</details>
+</div>
+<p><strong><em>Load data</em></strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># load data --------</span></span>
+<span id="cb2-2"></span>
+<span id="cb2-3">df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fread</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"data/data_comb2.csv"</span>)</span></code></pre></div>
+</details>
+</div>
+<p><strong><em>Dataset for plotting</em></strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create Pace Dataset -----------</span></span>
+<span id="cb3-2"></span>
+<span id="cb3-3">pace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pace_category =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cut</span>(</span>
+<span id="cb3-6">      pace_sec_per_km,</span>
+<span id="cb3-7">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">breaks =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">Inf</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">240</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">260</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">300</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">330</span>, <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">Inf</span>),</span>
+<span id="cb3-8">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="cb3-9">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"&lt;4:00 min/km"</span>,</span>
+<span id="cb3-10">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"4:00–4:20 min/km"</span>,</span>
+<span id="cb3-11">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"4:20–5:00 min/km"</span>,</span>
+<span id="cb3-12">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5:00–5:30 min/km"</span>,</span>
+<span id="cb3-13">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"&gt;5:30 min/km"</span></span>
+<span id="cb3-14">      ),</span>
+<span id="cb3-15">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">right =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span></span>
+<span id="cb3-16">    )</span>
+<span id="cb3-17">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb3-18">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(Month,pace_category) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb3-19">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(</span>
+<span id="cb3-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Total_Distance_km =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(Distance, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>),</span>
+<span id="cb3-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"drop"</span></span>
+<span id="cb3-22">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb3-23">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(Month) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb3-24">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-25">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Percentage_Distance =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> Total_Distance_km <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(Total_Distance_km), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb3-26">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb3-27">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ungroup</span>()</span>
+<span id="cb3-28"></span>
+<span id="cb3-29"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cleaning -------------</span></span>
+<span id="cb3-30"></span>
+<span id="cb3-31">pace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> pace <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(Month <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"May"</span>)</span>
+<span id="cb3-32"></span>
+<span id="cb3-33">pace<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Month <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">factor</span>(pace<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Month, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">levels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"January"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"February"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"March"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"April"</span>))</span></code></pre></div>
+</details>
+</div>
+<p><strong><em>Plot</em></strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># colours-----------</span></span>
+<span id="cb4-2"></span>
+<span id="cb4-3"></span>
+<span id="cb4-4">grid_colors <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="cb4-5">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"&gt;5:30 min/km"</span>       <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#5a8192"</span>,  </span>
+<span id="cb4-6">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5:00–5:30 min/km"</span>   <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#c1cbe3"</span>,  </span>
+<span id="cb4-7">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"4:20–5:00 min/km"</span>   <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#a4a0d1"</span>,  </span>
+<span id="cb4-8">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"4:00–4:20 min/km"</span>   <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#8570b0"</span>,  </span>
+<span id="cb4-9">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"&lt;4:00 min/km"</span>       <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#67206f"</span>   </span>
+<span id="cb4-10">)</span>
+<span id="cb4-11"></span>
+<span id="cb4-12"></span>
+<span id="cb4-13">p <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(pace, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> Month, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> Percentage_Distance, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> pace_category)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-14"></span>
+<span id="cb4-15">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">stat =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"identity"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">width =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-16">   <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_fill_manual</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values =</span> grid_colors) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-17"></span>
+<span id="cb4-18">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb4-19">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Monthly % Distribution of Kilometres by Pace Zone"</span>,</span>
+<span id="cb4-20">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"4:00-4:20 min/km represents target Marathon Pace (MP)."</span>,</span>
+<span id="cb4-21">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" Source: &lt;b&gt; Garmin Connect&lt;/b&gt; | Graphic: &lt;b&gt;Chris Edwards&lt;/b&gt;"</span>,</span>
+<span id="cb4-22">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Distance Run (km)"</span>, </span>
+<span id="cb4-23">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Type"</span></span>
+<span id="cb4-24">    ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-25">    </span>
+<span id="cb4-26">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">base_family =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enriqueta"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-27">    </span>
+<span id="cb4-28">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(</span>
+<span id="cb4-29">        </span>
+<span id="cb4-30">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">axis.title.x =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>(),</span>
+<span id="cb4-31">        </span>
+<span id="cb4-32">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">axis.title.y =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>),</span>
+<span id="cb4-33">        </span>
+<span id="cb4-34">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">axis.text.x =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>),</span>
+<span id="cb4-35">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">axis.text.y =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>),</span>
+<span id="cb4-36">        </span>
+<span id="cb4-37">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.text =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>),         <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Smaller text</span></span>
+<span id="cb4-38">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.title =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>),        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Optional: smaller title</span></span>
+<span id="cb4-39">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.key.size =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unit</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lines"</span>),         <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Smaller boxes</span></span>
+<span id="cb4-40">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.spacing.y =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unit</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lines"</span>),</span>
+<span id="cb4-41">        </span>
+<span id="cb4-42">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"right"</span>,</span>
+<span id="cb4-43">        </span>
+<span id="cb4-44">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.grid.major =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_line</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"grey75"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dashed"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lineend =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"round"</span>),</span>
+<span id="cb4-45">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.grid.minor =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>(),</span>
+<span id="cb4-46">        </span>
+<span id="cb4-47">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.title =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_markdown</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">face =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">hjust =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">margin =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">t =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">b =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)),</span>
+<span id="cb4-48">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.subtitle =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_markdown</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">hjust =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>,  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"grey30"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">margin =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">t =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">b =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)),</span>
+<span id="cb4-49">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.caption  =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_markdown</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">margin =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">t =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">hjust =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.28</span>),</span>
+<span id="cb4-50">        </span>
+<span id="cb4-51">        </span>
+<span id="cb4-52">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.margin =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>),</span>
+<span id="cb4-53">        </span>
+<span id="cb4-54">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#e4e4e3"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>) </span>
+<span id="cb4-55">    )  <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>  </span>
+<span id="cb4-56">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">coord_flip</span>()  </span>
+<span id="cb4-57">        </span>
+<span id="cb4-58">    </span>
+<span id="cb4-59">p</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://edwchris.github.io/blog/posts/Plots/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+
+
+ ]]></description>
+  <category>Running</category>
+  <category>Data Science</category>
+  <category>GCM25</category>
+  <guid>https://edwchris.github.io/blog/posts/Plots/</guid>
+  <pubDate>Tue, 13 May 2025 14:00:00 GMT</pubDate>
+</item>
 <item>
   <title>May Training Plan</title>
   <link>https://edwchris.github.io/blog/posts/MayProgram/</link>
@@ -295,23 +908,23 @@ font-style: inherit;">columns =</span> Sunday)</span>
 <span id="cb1-55">  ) </span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="meclepjknv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#meclepjknv table {
+<div id="lmfuzxjqga" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lmfuzxjqga table {
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#meclepjknv thead, #meclepjknv tbody, #meclepjknv tfoot, #meclepjknv tr, #meclepjknv td, #meclepjknv th {
+#lmfuzxjqga thead, #lmfuzxjqga tbody, #lmfuzxjqga tfoot, #lmfuzxjqga tr, #lmfuzxjqga td, #lmfuzxjqga th {
   border-style: none;
 }
 
-#meclepjknv p {
+#lmfuzxjqga p {
   margin: 0;
   padding: 0;
 }
 
-#meclepjknv .gt_table {
+#lmfuzxjqga .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -337,12 +950,12 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-left-color: #D3D3D3;
 }
 
-#meclepjknv .gt_caption {
+#lmfuzxjqga .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#meclepjknv .gt_title {
+#lmfuzxjqga .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -354,7 +967,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-width: 0;
 }
 
-#meclepjknv .gt_subtitle {
+#lmfuzxjqga .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -366,7 +979,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-top-width: 0;
 }
 
-#meclepjknv .gt_heading {
+#lmfuzxjqga .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -378,13 +991,13 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#meclepjknv .gt_bottom_border {
+#lmfuzxjqga .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#meclepjknv .gt_col_headings {
+#lmfuzxjqga .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -399,7 +1012,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#meclepjknv .gt_col_heading {
+#lmfuzxjqga .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -419,7 +1032,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   overflow-x: hidden;
 }
 
-#meclepjknv .gt_column_spanner_outer {
+#lmfuzxjqga .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -431,15 +1044,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 4px;
 }
 
-#meclepjknv .gt_column_spanner_outer:first-child {
+#lmfuzxjqga .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#meclepjknv .gt_column_spanner_outer:last-child {
+#lmfuzxjqga .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#meclepjknv .gt_column_spanner {
+#lmfuzxjqga .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -451,11 +1064,11 @@ font-style: inherit;">columns =</span> Sunday)</span>
   width: 100%;
 }
 
-#meclepjknv .gt_spanner_row {
+#lmfuzxjqga .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#meclepjknv .gt_group_heading {
+#lmfuzxjqga .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -481,7 +1094,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   text-align: left;
 }
 
-#meclepjknv .gt_empty_group_heading {
+#lmfuzxjqga .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -496,15 +1109,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   vertical-align: middle;
 }
 
-#meclepjknv .gt_from_md > :first-child {
+#lmfuzxjqga .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#meclepjknv .gt_from_md > :last-child {
+#lmfuzxjqga .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#meclepjknv .gt_row {
+#lmfuzxjqga .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -523,7 +1136,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   overflow-x: hidden;
 }
 
-#meclepjknv .gt_stub {
+#lmfuzxjqga .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -536,7 +1149,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#meclepjknv .gt_stub_row_group {
+#lmfuzxjqga .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -550,15 +1163,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   vertical-align: top;
 }
 
-#meclepjknv .gt_row_group_first td {
+#lmfuzxjqga .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#meclepjknv .gt_row_group_first th {
+#lmfuzxjqga .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#meclepjknv .gt_summary_row {
+#lmfuzxjqga .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -568,16 +1181,16 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#meclepjknv .gt_first_summary_row {
+#lmfuzxjqga .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#meclepjknv .gt_first_summary_row.thick {
+#lmfuzxjqga .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#meclepjknv .gt_last_summary_row {
+#lmfuzxjqga .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -587,7 +1200,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#meclepjknv .gt_grand_summary_row {
+#lmfuzxjqga .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -597,7 +1210,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#meclepjknv .gt_first_grand_summary_row {
+#lmfuzxjqga .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -607,7 +1220,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-top-color: #D3D3D3;
 }
 
-#meclepjknv .gt_last_grand_summary_row_top {
+#lmfuzxjqga .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -617,11 +1230,11 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#meclepjknv .gt_striped {
+#lmfuzxjqga .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#meclepjknv .gt_table_body {
+#lmfuzxjqga .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -630,7 +1243,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#meclepjknv .gt_footnotes {
+#lmfuzxjqga .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -644,7 +1257,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#meclepjknv .gt_footnote {
+#lmfuzxjqga .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -653,7 +1266,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#meclepjknv .gt_sourcenotes {
+#lmfuzxjqga .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -667,7 +1280,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#meclepjknv .gt_sourcenote {
+#lmfuzxjqga .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -675,72 +1288,72 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#meclepjknv .gt_left {
+#lmfuzxjqga .gt_left {
   text-align: left;
 }
 
-#meclepjknv .gt_center {
+#lmfuzxjqga .gt_center {
   text-align: center;
 }
 
-#meclepjknv .gt_right {
+#lmfuzxjqga .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#meclepjknv .gt_font_normal {
+#lmfuzxjqga .gt_font_normal {
   font-weight: normal;
 }
 
-#meclepjknv .gt_font_bold {
+#lmfuzxjqga .gt_font_bold {
   font-weight: bold;
 }
 
-#meclepjknv .gt_font_italic {
+#lmfuzxjqga .gt_font_italic {
   font-style: italic;
 }
 
-#meclepjknv .gt_super {
+#lmfuzxjqga .gt_super {
   font-size: 65%;
 }
 
-#meclepjknv .gt_footnote_marks {
+#lmfuzxjqga .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#meclepjknv .gt_asterisk {
+#lmfuzxjqga .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#meclepjknv .gt_indent_1 {
+#lmfuzxjqga .gt_indent_1 {
   text-indent: 5px;
 }
 
-#meclepjknv .gt_indent_2 {
+#lmfuzxjqga .gt_indent_2 {
   text-indent: 10px;
 }
 
-#meclepjknv .gt_indent_3 {
+#lmfuzxjqga .gt_indent_3 {
   text-indent: 15px;
 }
 
-#meclepjknv .gt_indent_4 {
+#lmfuzxjqga .gt_indent_4 {
   text-indent: 20px;
 }
 
-#meclepjknv .gt_indent_5 {
+#lmfuzxjqga .gt_indent_5 {
   text-indent: 25px;
 }
 
-#meclepjknv .katex-display {
+#lmfuzxjqga .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#meclepjknv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lmfuzxjqga div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -757,10 +1370,10 @@ font-style: inherit;">columns =</span> Sunday)</span>
 <col style="width: 12%">
 </colgroup>
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>May Marathon Training Plan 🏃‍♂</strong></th>
 </tr>
-<tr class="odd gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row even">
 <th rowspan="2" id="Week-starting" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">📅 Week of</th>
 <th colspan="5" id="Weekday Training" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
 Weekday Training
@@ -769,7 +1382,7 @@ Weekday Training
 Weekend Sessions
 </div></th>
 </tr>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="Monday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Mon</th>
 <th id="Tuesday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Tue</th>
 <th id="Wednesday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Wed</th>
@@ -1007,23 +1620,23 @@ background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="xsjwchjasj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xsjwchjasj table {
+<div id="ojcapuhiac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ojcapuhiac table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xsjwchjasj thead, #xsjwchjasj tbody, #xsjwchjasj tfoot, #xsjwchjasj tr, #xsjwchjasj td, #xsjwchjasj th {
+#ojcapuhiac thead, #ojcapuhiac tbody, #ojcapuhiac tfoot, #ojcapuhiac tr, #ojcapuhiac td, #ojcapuhiac th {
   border-style: none;
 }
 
-#xsjwchjasj p {
+#ojcapuhiac p {
   margin: 0;
   padding: 0;
 }
 
-#xsjwchjasj .gt_table {
+#ojcapuhiac .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1049,12 +1662,12 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_caption {
+#ojcapuhiac .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xsjwchjasj .gt_title {
+#ojcapuhiac .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1066,7 +1679,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#xsjwchjasj .gt_subtitle {
+#ojcapuhiac .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1078,7 +1691,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#xsjwchjasj .gt_heading {
+#ojcapuhiac .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1090,13 +1703,13 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_bottom_border {
+#ojcapuhiac .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_col_headings {
+#ojcapuhiac .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1111,7 +1724,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_col_heading {
+#ojcapuhiac .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1131,7 +1744,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#xsjwchjasj .gt_column_spanner_outer {
+#ojcapuhiac .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1143,15 +1756,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#xsjwchjasj .gt_column_spanner_outer:first-child {
+#ojcapuhiac .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xsjwchjasj .gt_column_spanner_outer:last-child {
+#ojcapuhiac .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xsjwchjasj .gt_column_spanner {
+#ojcapuhiac .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1163,11 +1776,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#xsjwchjasj .gt_spanner_row {
+#ojcapuhiac .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xsjwchjasj .gt_group_heading {
+#ojcapuhiac .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1193,7 +1806,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#xsjwchjasj .gt_empty_group_heading {
+#ojcapuhiac .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1208,15 +1821,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#xsjwchjasj .gt_from_md > :first-child {
+#ojcapuhiac .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xsjwchjasj .gt_from_md > :last-child {
+#ojcapuhiac .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xsjwchjasj .gt_row {
+#ojcapuhiac .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1235,7 +1848,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#xsjwchjasj .gt_stub {
+#ojcapuhiac .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1248,7 +1861,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsjwchjasj .gt_stub_row_group {
+#ojcapuhiac .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1262,15 +1875,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#xsjwchjasj .gt_row_group_first td {
+#ojcapuhiac .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xsjwchjasj .gt_row_group_first th {
+#ojcapuhiac .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xsjwchjasj .gt_summary_row {
+#ojcapuhiac .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1280,16 +1893,16 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsjwchjasj .gt_first_summary_row {
+#ojcapuhiac .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_first_summary_row.thick {
+#ojcapuhiac .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xsjwchjasj .gt_last_summary_row {
+#ojcapuhiac .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1299,7 +1912,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_grand_summary_row {
+#ojcapuhiac .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1309,7 +1922,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsjwchjasj .gt_first_grand_summary_row {
+#ojcapuhiac .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1319,7 +1932,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_last_grand_summary_row_top {
+#ojcapuhiac .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1329,11 +1942,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_striped {
+#ojcapuhiac .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xsjwchjasj .gt_table_body {
+#ojcapuhiac .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1342,7 +1955,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_footnotes {
+#ojcapuhiac .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1356,7 +1969,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_footnote {
+#ojcapuhiac .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1365,7 +1978,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsjwchjasj .gt_sourcenotes {
+#ojcapuhiac .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1379,7 +1992,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsjwchjasj .gt_sourcenote {
+#ojcapuhiac .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1387,79 +2000,79 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsjwchjasj .gt_left {
+#ojcapuhiac .gt_left {
   text-align: left;
 }
 
-#xsjwchjasj .gt_center {
+#ojcapuhiac .gt_center {
   text-align: center;
 }
 
-#xsjwchjasj .gt_right {
+#ojcapuhiac .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xsjwchjasj .gt_font_normal {
+#ojcapuhiac .gt_font_normal {
   font-weight: normal;
 }
 
-#xsjwchjasj .gt_font_bold {
+#ojcapuhiac .gt_font_bold {
   font-weight: bold;
 }
 
-#xsjwchjasj .gt_font_italic {
+#ojcapuhiac .gt_font_italic {
   font-style: italic;
 }
 
-#xsjwchjasj .gt_super {
+#ojcapuhiac .gt_super {
   font-size: 65%;
 }
 
-#xsjwchjasj .gt_footnote_marks {
+#ojcapuhiac .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xsjwchjasj .gt_asterisk {
+#ojcapuhiac .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xsjwchjasj .gt_indent_1 {
+#ojcapuhiac .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xsjwchjasj .gt_indent_2 {
+#ojcapuhiac .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xsjwchjasj .gt_indent_3 {
+#ojcapuhiac .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xsjwchjasj .gt_indent_4 {
+#ojcapuhiac .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xsjwchjasj .gt_indent_5 {
+#ojcapuhiac .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xsjwchjasj .katex-display {
+#ojcapuhiac .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xsjwchjasj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ojcapuhiac div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="Zones" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Zones</th>
 <th id="Month" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Month</th>
 <th id="Total_Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total_Time</th>
@@ -2057,23 +2670,23 @@ font-style: inherit;">columns =</span> Sunday)</span>
 <span id="cb1-59">  ) </span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="awbsnhixzt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#awbsnhixzt table {
+<div id="iejwpejabz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iejwpejabz table {
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#awbsnhixzt thead, #awbsnhixzt tbody, #awbsnhixzt tfoot, #awbsnhixzt tr, #awbsnhixzt td, #awbsnhixzt th {
+#iejwpejabz thead, #iejwpejabz tbody, #iejwpejabz tfoot, #iejwpejabz tr, #iejwpejabz td, #iejwpejabz th {
   border-style: none;
 }
 
-#awbsnhixzt p {
+#iejwpejabz p {
   margin: 0;
   padding: 0;
 }
 
-#awbsnhixzt .gt_table {
+#iejwpejabz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2099,12 +2712,12 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-left-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_caption {
+#iejwpejabz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#awbsnhixzt .gt_title {
+#iejwpejabz .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -2116,7 +2729,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-width: 0;
 }
 
-#awbsnhixzt .gt_subtitle {
+#iejwpejabz .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -2128,7 +2741,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-top-width: 0;
 }
 
-#awbsnhixzt .gt_heading {
+#iejwpejabz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2140,13 +2753,13 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_bottom_border {
+#iejwpejabz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_col_headings {
+#iejwpejabz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2161,7 +2774,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_col_heading {
+#iejwpejabz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2181,7 +2794,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   overflow-x: hidden;
 }
 
-#awbsnhixzt .gt_column_spanner_outer {
+#iejwpejabz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2193,15 +2806,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 4px;
 }
 
-#awbsnhixzt .gt_column_spanner_outer:first-child {
+#iejwpejabz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#awbsnhixzt .gt_column_spanner_outer:last-child {
+#iejwpejabz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#awbsnhixzt .gt_column_spanner {
+#iejwpejabz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2213,11 +2826,11 @@ font-style: inherit;">columns =</span> Sunday)</span>
   width: 100%;
 }
 
-#awbsnhixzt .gt_spanner_row {
+#iejwpejabz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#awbsnhixzt .gt_group_heading {
+#iejwpejabz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2243,7 +2856,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   text-align: left;
 }
 
-#awbsnhixzt .gt_empty_group_heading {
+#iejwpejabz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2258,15 +2871,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   vertical-align: middle;
 }
 
-#awbsnhixzt .gt_from_md > :first-child {
+#iejwpejabz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#awbsnhixzt .gt_from_md > :last-child {
+#iejwpejabz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#awbsnhixzt .gt_row {
+#iejwpejabz .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -2285,7 +2898,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   overflow-x: hidden;
 }
 
-#awbsnhixzt .gt_stub {
+#iejwpejabz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2298,7 +2911,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#awbsnhixzt .gt_stub_row_group {
+#iejwpejabz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2312,15 +2925,15 @@ font-style: inherit;">columns =</span> Sunday)</span>
   vertical-align: top;
 }
 
-#awbsnhixzt .gt_row_group_first td {
+#iejwpejabz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#awbsnhixzt .gt_row_group_first th {
+#iejwpejabz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#awbsnhixzt .gt_summary_row {
+#iejwpejabz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2330,16 +2943,16 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#awbsnhixzt .gt_first_summary_row {
+#iejwpejabz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_first_summary_row.thick {
+#iejwpejabz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#awbsnhixzt .gt_last_summary_row {
+#iejwpejabz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2349,7 +2962,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_grand_summary_row {
+#iejwpejabz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2359,7 +2972,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#awbsnhixzt .gt_first_grand_summary_row {
+#iejwpejabz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2369,7 +2982,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-top-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_last_grand_summary_row_top {
+#iejwpejabz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2379,11 +2992,11 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_striped {
+#iejwpejabz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#awbsnhixzt .gt_table_body {
+#iejwpejabz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2392,7 +3005,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-bottom-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_footnotes {
+#iejwpejabz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2406,7 +3019,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_footnote {
+#iejwpejabz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2415,7 +3028,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#awbsnhixzt .gt_sourcenotes {
+#iejwpejabz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2429,7 +3042,7 @@ font-style: inherit;">columns =</span> Sunday)</span>
   border-right-color: #D3D3D3;
 }
 
-#awbsnhixzt .gt_sourcenote {
+#iejwpejabz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2437,72 +3050,72 @@ font-style: inherit;">columns =</span> Sunday)</span>
   padding-right: 5px;
 }
 
-#awbsnhixzt .gt_left {
+#iejwpejabz .gt_left {
   text-align: left;
 }
 
-#awbsnhixzt .gt_center {
+#iejwpejabz .gt_center {
   text-align: center;
 }
 
-#awbsnhixzt .gt_right {
+#iejwpejabz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#awbsnhixzt .gt_font_normal {
+#iejwpejabz .gt_font_normal {
   font-weight: normal;
 }
 
-#awbsnhixzt .gt_font_bold {
+#iejwpejabz .gt_font_bold {
   font-weight: bold;
 }
 
-#awbsnhixzt .gt_font_italic {
+#iejwpejabz .gt_font_italic {
   font-style: italic;
 }
 
-#awbsnhixzt .gt_super {
+#iejwpejabz .gt_super {
   font-size: 65%;
 }
 
-#awbsnhixzt .gt_footnote_marks {
+#iejwpejabz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#awbsnhixzt .gt_asterisk {
+#iejwpejabz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#awbsnhixzt .gt_indent_1 {
+#iejwpejabz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#awbsnhixzt .gt_indent_2 {
+#iejwpejabz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#awbsnhixzt .gt_indent_3 {
+#iejwpejabz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#awbsnhixzt .gt_indent_4 {
+#iejwpejabz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#awbsnhixzt .gt_indent_5 {
+#iejwpejabz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#awbsnhixzt .katex-display {
+#iejwpejabz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#awbsnhixzt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iejwpejabz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2519,10 +3132,10 @@ font-style: inherit;">columns =</span> Sunday)</span>
 <col style="width: 12%">
 </colgroup>
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>April Marathon Training Plan 🏃‍♂</strong></th>
 </tr>
-<tr class="odd gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row even">
 <th rowspan="2" id="Week-starting" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">📅 Week of</th>
 <th colspan="5" id="Weekday Training" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
 Weekday Training
@@ -2531,7 +3144,7 @@ Weekday Training
 Weekend Sessions
 </div></th>
 </tr>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="Monday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Mon</th>
 <th id="Tuesday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Tue<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
 <th id="Wednesday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Wed</th>
@@ -2809,23 +3422,23 @@ font-style: inherit;">cdot P$"</span></span>
 <span id="cb1-37">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="pgvwzvjptw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pgvwzvjptw table {
+<div id="sfnvvrpybq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sfnvvrpybq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pgvwzvjptw thead, #pgvwzvjptw tbody, #pgvwzvjptw tfoot, #pgvwzvjptw tr, #pgvwzvjptw td, #pgvwzvjptw th {
+#sfnvvrpybq thead, #sfnvvrpybq tbody, #sfnvvrpybq tfoot, #sfnvvrpybq tr, #sfnvvrpybq td, #sfnvvrpybq th {
   border-style: none;
 }
 
-#pgvwzvjptw p {
+#sfnvvrpybq p {
   margin: 0;
   padding: 0;
 }
 
-#pgvwzvjptw .gt_table {
+#sfnvvrpybq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2851,12 +3464,12 @@ font-style: inherit;">cdot P$"</span></span>
   border-left-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_caption {
+#sfnvvrpybq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pgvwzvjptw .gt_title {
+#sfnvvrpybq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2868,7 +3481,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-width: 0;
 }
 
-#pgvwzvjptw .gt_subtitle {
+#sfnvvrpybq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2880,7 +3493,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-top-width: 0;
 }
 
-#pgvwzvjptw .gt_heading {
+#sfnvvrpybq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2892,13 +3505,13 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_bottom_border {
+#sfnvvrpybq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_col_headings {
+#sfnvvrpybq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2913,7 +3526,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_col_heading {
+#sfnvvrpybq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2933,7 +3546,7 @@ font-style: inherit;">cdot P$"</span></span>
   overflow-x: hidden;
 }
 
-#pgvwzvjptw .gt_column_spanner_outer {
+#sfnvvrpybq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2945,15 +3558,15 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 4px;
 }
 
-#pgvwzvjptw .gt_column_spanner_outer:first-child {
+#sfnvvrpybq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pgvwzvjptw .gt_column_spanner_outer:last-child {
+#sfnvvrpybq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pgvwzvjptw .gt_column_spanner {
+#sfnvvrpybq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2965,11 +3578,11 @@ font-style: inherit;">cdot P$"</span></span>
   width: 100%;
 }
 
-#pgvwzvjptw .gt_spanner_row {
+#sfnvvrpybq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pgvwzvjptw .gt_group_heading {
+#sfnvvrpybq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2995,7 +3608,7 @@ font-style: inherit;">cdot P$"</span></span>
   text-align: left;
 }
 
-#pgvwzvjptw .gt_empty_group_heading {
+#sfnvvrpybq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3010,15 +3623,15 @@ font-style: inherit;">cdot P$"</span></span>
   vertical-align: middle;
 }
 
-#pgvwzvjptw .gt_from_md > :first-child {
+#sfnvvrpybq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pgvwzvjptw .gt_from_md > :last-child {
+#sfnvvrpybq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pgvwzvjptw .gt_row {
+#sfnvvrpybq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3037,7 +3650,7 @@ font-style: inherit;">cdot P$"</span></span>
   overflow-x: hidden;
 }
 
-#pgvwzvjptw .gt_stub {
+#sfnvvrpybq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3050,7 +3663,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#pgvwzvjptw .gt_stub_row_group {
+#sfnvvrpybq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3064,15 +3677,15 @@ font-style: inherit;">cdot P$"</span></span>
   vertical-align: top;
 }
 
-#pgvwzvjptw .gt_row_group_first td {
+#sfnvvrpybq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pgvwzvjptw .gt_row_group_first th {
+#sfnvvrpybq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pgvwzvjptw .gt_summary_row {
+#sfnvvrpybq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3082,16 +3695,16 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#pgvwzvjptw .gt_first_summary_row {
+#sfnvvrpybq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_first_summary_row.thick {
+#sfnvvrpybq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pgvwzvjptw .gt_last_summary_row {
+#sfnvvrpybq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3101,7 +3714,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_grand_summary_row {
+#sfnvvrpybq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3111,7 +3724,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#pgvwzvjptw .gt_first_grand_summary_row {
+#sfnvvrpybq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3121,7 +3734,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-top-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_last_grand_summary_row_top {
+#sfnvvrpybq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3131,11 +3744,11 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_striped {
+#sfnvvrpybq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pgvwzvjptw .gt_table_body {
+#sfnvvrpybq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3144,7 +3757,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_footnotes {
+#sfnvvrpybq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3158,7 +3771,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_footnote {
+#sfnvvrpybq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3167,7 +3780,7 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#pgvwzvjptw .gt_sourcenotes {
+#sfnvvrpybq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3181,7 +3794,7 @@ font-style: inherit;">cdot P$"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#pgvwzvjptw .gt_sourcenote {
+#sfnvvrpybq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3189,72 +3802,72 @@ font-style: inherit;">cdot P$"</span></span>
   padding-right: 5px;
 }
 
-#pgvwzvjptw .gt_left {
+#sfnvvrpybq .gt_left {
   text-align: left;
 }
 
-#pgvwzvjptw .gt_center {
+#sfnvvrpybq .gt_center {
   text-align: center;
 }
 
-#pgvwzvjptw .gt_right {
+#sfnvvrpybq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pgvwzvjptw .gt_font_normal {
+#sfnvvrpybq .gt_font_normal {
   font-weight: normal;
 }
 
-#pgvwzvjptw .gt_font_bold {
+#sfnvvrpybq .gt_font_bold {
   font-weight: bold;
 }
 
-#pgvwzvjptw .gt_font_italic {
+#sfnvvrpybq .gt_font_italic {
   font-style: italic;
 }
 
-#pgvwzvjptw .gt_super {
+#sfnvvrpybq .gt_super {
   font-size: 65%;
 }
 
-#pgvwzvjptw .gt_footnote_marks {
+#sfnvvrpybq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pgvwzvjptw .gt_asterisk {
+#sfnvvrpybq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pgvwzvjptw .gt_indent_1 {
+#sfnvvrpybq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pgvwzvjptw .gt_indent_2 {
+#sfnvvrpybq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pgvwzvjptw .gt_indent_3 {
+#sfnvvrpybq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pgvwzvjptw .gt_indent_4 {
+#sfnvvrpybq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pgvwzvjptw .gt_indent_5 {
+#sfnvvrpybq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pgvwzvjptw .katex-display {
+#sfnvvrpybq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pgvwzvjptw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sfnvvrpybq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3270,10 +3883,10 @@ font-style: inherit;">cdot P$"</span></span>
 <col style="width: 14%">
 </colgroup>
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Marathon Performance vs Tanda Prediction</th>
 </tr>
-<tr class="odd gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row even">
 <th rowspan="2" id="Race" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Event</th>
 <th colspan="2" id="Training Summary" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
 Training Summary
@@ -3282,7 +3895,7 @@ Training Summary
 Race Performance
 </div></th>
 </tr>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="Avg_Dist_week_K" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Avg Weekly Distance (K, km)</th>
 <th id="Pace" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Training Pace (P, sec/km)</th>
 <th id="Predicted_Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Tanda Prediction (hh:mm:ss)</th>
@@ -3805,23 +4418,23 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
 <span id="cb1-24">df</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="smhzvjggni" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#smhzvjggni table {
+<div id="yszwqqdqqe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yszwqqdqqe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#smhzvjggni thead, #smhzvjggni tbody, #smhzvjggni tfoot, #smhzvjggni tr, #smhzvjggni td, #smhzvjggni th {
+#yszwqqdqqe thead, #yszwqqdqqe tbody, #yszwqqdqqe tfoot, #yszwqqdqqe tr, #yszwqqdqqe td, #yszwqqdqqe th {
   border-style: none;
 }
 
-#smhzvjggni p {
+#yszwqqdqqe p {
   margin: 0;
   padding: 0;
 }
 
-#smhzvjggni .gt_table {
+#yszwqqdqqe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3847,12 +4460,12 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-left-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_caption {
+#yszwqqdqqe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#smhzvjggni .gt_title {
+#yszwqqdqqe .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3864,7 +4477,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-width: 0;
 }
 
-#smhzvjggni .gt_subtitle {
+#yszwqqdqqe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3876,7 +4489,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-top-width: 0;
 }
 
-#smhzvjggni .gt_heading {
+#yszwqqdqqe .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3888,13 +4501,13 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_bottom_border {
+#yszwqqdqqe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_col_headings {
+#yszwqqdqqe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3909,7 +4522,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_col_heading {
+#yszwqqdqqe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3929,7 +4542,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   overflow-x: hidden;
 }
 
-#smhzvjggni .gt_column_spanner_outer {
+#yszwqqdqqe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3941,15 +4554,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 4px;
 }
 
-#smhzvjggni .gt_column_spanner_outer:first-child {
+#yszwqqdqqe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#smhzvjggni .gt_column_spanner_outer:last-child {
+#yszwqqdqqe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#smhzvjggni .gt_column_spanner {
+#yszwqqdqqe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3961,11 +4574,11 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   width: 100%;
 }
 
-#smhzvjggni .gt_spanner_row {
+#yszwqqdqqe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#smhzvjggni .gt_group_heading {
+#yszwqqdqqe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3991,7 +4604,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   text-align: left;
 }
 
-#smhzvjggni .gt_empty_group_heading {
+#yszwqqdqqe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4006,15 +4619,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   vertical-align: middle;
 }
 
-#smhzvjggni .gt_from_md > :first-child {
+#yszwqqdqqe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#smhzvjggni .gt_from_md > :last-child {
+#yszwqqdqqe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#smhzvjggni .gt_row {
+#yszwqqdqqe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4033,7 +4646,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   overflow-x: hidden;
 }
 
-#smhzvjggni .gt_stub {
+#yszwqqdqqe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4046,7 +4659,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#smhzvjggni .gt_stub_row_group {
+#yszwqqdqqe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4060,15 +4673,15 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   vertical-align: top;
 }
 
-#smhzvjggni .gt_row_group_first td {
+#yszwqqdqqe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#smhzvjggni .gt_row_group_first th {
+#yszwqqdqqe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#smhzvjggni .gt_summary_row {
+#yszwqqdqqe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4078,16 +4691,16 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#smhzvjggni .gt_first_summary_row {
+#yszwqqdqqe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_first_summary_row.thick {
+#yszwqqdqqe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#smhzvjggni .gt_last_summary_row {
+#yszwqqdqqe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4097,7 +4710,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_grand_summary_row {
+#yszwqqdqqe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4107,7 +4720,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#smhzvjggni .gt_first_grand_summary_row {
+#yszwqqdqqe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4117,7 +4730,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-top-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_last_grand_summary_row_top {
+#yszwqqdqqe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4127,11 +4740,11 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_striped {
+#yszwqqdqqe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#smhzvjggni .gt_table_body {
+#yszwqqdqqe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4140,7 +4753,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-bottom-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_footnotes {
+#yszwqqdqqe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4154,7 +4767,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_footnote {
+#yszwqqdqqe .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4163,7 +4776,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#smhzvjggni .gt_sourcenotes {
+#yszwqqdqqe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4177,7 +4790,7 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   border-right-color: #D3D3D3;
 }
 
-#smhzvjggni .gt_sourcenote {
+#yszwqqdqqe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4185,82 +4798,82 @@ font-style: inherit;">"Age-Graded (%)"</span></span>
   padding-right: 5px;
 }
 
-#smhzvjggni .gt_left {
+#yszwqqdqqe .gt_left {
   text-align: left;
 }
 
-#smhzvjggni .gt_center {
+#yszwqqdqqe .gt_center {
   text-align: center;
 }
 
-#smhzvjggni .gt_right {
+#yszwqqdqqe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#smhzvjggni .gt_font_normal {
+#yszwqqdqqe .gt_font_normal {
   font-weight: normal;
 }
 
-#smhzvjggni .gt_font_bold {
+#yszwqqdqqe .gt_font_bold {
   font-weight: bold;
 }
 
-#smhzvjggni .gt_font_italic {
+#yszwqqdqqe .gt_font_italic {
   font-style: italic;
 }
 
-#smhzvjggni .gt_super {
+#yszwqqdqqe .gt_super {
   font-size: 65%;
 }
 
-#smhzvjggni .gt_footnote_marks {
+#yszwqqdqqe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#smhzvjggni .gt_asterisk {
+#yszwqqdqqe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#smhzvjggni .gt_indent_1 {
+#yszwqqdqqe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#smhzvjggni .gt_indent_2 {
+#yszwqqdqqe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#smhzvjggni .gt_indent_3 {
+#yszwqqdqqe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#smhzvjggni .gt_indent_4 {
+#yszwqqdqqe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#smhzvjggni .gt_indent_5 {
+#yszwqqdqqe .gt_indent_5 {
   text-indent: 25px;
 }
 
-#smhzvjggni .katex-display {
+#yszwqqdqqe .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#smhzvjggni div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yszwqqdqqe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Age-Graded Marathon Performances</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="Date" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Race Date</th>
 <th id="Race" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Event</th>
 <th id="Time" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Finish Time</th>

@@ -2,6 +2,7 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/Plots/index.html",
       "/blog/posts/MayProgram/index.html",
       "/blog/posts/TrainingPlans/index.html",
       "/blog/posts/AprilProgram/index.html",

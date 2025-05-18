@@ -11,13 +11,15 @@ format:
 draft: false
 ---
 
-Here’s my training plan for May — 9 weeks out from **Gold Coast Marathon 2025**. 
+Here’s my training plan for May — 9 weeks out from **Gold Coast Marathon 2025**.
+
+Modified *18/05/2025* to adjust for running the [Noosa Half Marathon](https://runawaynoosamarathon.com.au/race-options/half-marathon/)
 
 ### Training Notes
 
-- Thursdays & Sundays should feel quite hard
-- **Missing a running session occasionally is fine.** Missing gym work is not.
-- Training peak in early/mid-June and then taper time.
+-   Thursdays & Sundays should feel quite hard
+-   **Missing a running session occasionally is fine.** Missing gym work is not.
+-   Training peak in early/mid-June and then taper time.
 
 Want to follow along 👉 [Strava profile](https://www.strava.com/athletes/3581834) here
 
@@ -83,4 +85,3 @@ df %>%
 
 
 ```
-

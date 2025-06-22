@@ -28,7 +28,7 @@ library(tidyverse)
 ```{r}
 # load data --------
 
-df <- fread("data/data_comb2.csv")
+df <- fread("data/data_comb3.csv")
 ```
 
 ```{r}
@@ -68,7 +68,7 @@ pace
 
 # Cleaning -------------
 
-pace$Month <- factor(pace$Month, levels = c("January", "February", "March","April", "May"))
+pace$Month <- factor(pace$Month, levels = c("January", "February", "March","April", "May", "Jun"))
 
 pace
 
@@ -149,6 +149,8 @@ p <-  ggplot(pace, aes(x = Month, y = Percentage_Distance, fill = pace_category)
     
 p
 
+
+
 ggsave(
     plot = p, filename = "Rplot.png",
     width = 8, height = 6, units = "in", dpi = 600
@@ -170,20 +172,22 @@ library(tidyverse)
 ```{r}
 # load data --------
 
-df <- fread("data/data_comb2.csv")
+df <- fread("data/data_comb3.csv")
 ```
 
 ```{r}
 # clean data -----
 
-# Filter dataset between 250 sec (4:10) and 260 sec (4:20) per kilometer
+# Filter dataset between 245 sec (4:05) and 255 sec (4:15) per kilometer
 
 df_pace <- df %>%
-  filter(pace_sec_per_km >= 245, pace_sec_per_km <= 265)
+  filter(pace_sec_per_km >= 245, pace_sec_per_km <= 255)
 
 # very few kms in Jan, Feb and March let's filter out these as well and lets only include complete laps i.e. laps =>
 
-df_pace <- df_pace %>% filter((Month == "April" | Month == "May") & Distance >= 1)
+df_pace <- df_pace %>% filter((Month == "April" | Month == "May" | Month == "Jun") & Distance >= 1)
+
+df_pace$Month <- factor(df_pace$Month, levels = c("April", "May", "Jun"))
 ```
 
 ```{r}
@@ -215,7 +219,7 @@ gr <- ggplot() +
   
       labs(
         title = "Average HR at approximate Marathon Pace",
-        subtitle = "Distribution of Average HR values for laps recorded at 4:05 - 4:25 min/km. ",
+        subtitle = "Distribution of Average HR values for laps recorded at 4:05 - 4:15 min/km. ",
         caption = "Source: <b>Garmin Connect</b> | Graphic: <b>Chris Edwards</b>",
         x = "Month",
         y = "Average Heart Rate (bpm)"

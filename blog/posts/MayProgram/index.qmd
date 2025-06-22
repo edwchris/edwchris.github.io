@@ -2,7 +2,7 @@
 title: "May Training Plan "
 date: 05/04/2025
 categories: [Running, Data Science, GCM25]
-date-modified: today
+date-modified: 05/18/2025
 image: images/May_training.jpg
 format:
   html:

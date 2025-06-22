@@ -1,0 +1,30 @@
+---
+title: "Shoes, Soreness, and the Sweet Spot of Specificity"
+date: 06/22/2025
+categories: [Running,GCM25]
+date-modified: 06/22/2025
+format:
+  html:
+    code-fold: true
+    toc: false
+draft: false
+---
+
+> “I have been bent and broken, but I hope into a better shape.”\
+> — *Charles Dickens*
+
+Since my last [post in May](https://edwchris.github.io/blog/posts/Plots/), the training block has kept ticking along, more or less to plan. The hamstring niggle that flared up in mid-May thankfully settled down (touch wood). But it’s done its job as a persistent reminder: don’t skimp on the gym work. These days, I’m locked into two lower body sessions a week. Nothing flashy, just the essentials to hopefully to keep the tight hamstring at bay. The rest of the body can wait until after the marathon.
+
+The standout recently? A half marathon in Noosa. I clocked 1:23:20, no PB, but stronger than expected. The plan going in was around 1:25 or 1:26, so it was a pleasant surprise to come home feeling strong. [Here’s the Strava link if you’re curious](https://www.strava.com/activities/14574088282).
+
+I gave the Saucony Endorphin Elite v2s their debut, and they lived up to the hype. Light, responsive, and aggressive. There’s always a temptation to overinterpret a good half marathon performance, but I’m trying to keep it in context. I’ve done more marathon specific work than ever before this cycle, so while the shorter race results might not be razor sharp, the hope is that the engine is better tuned for the full 42.2.
+
+I also recently listened to an episode of *Eat Sleep Run Repeat*[^1], a podcast produced by Brisbane based runners which really got me thinking more about specificity. It featured an in-depth interview with coach John Starrett ([episode link](https://shows.acast.com/eat-sleep-run-repeat/episodes/ep-170-john-starrett)), who has coached hundreds of sub 3 hour and 2:30 marathoners.
+
+[^1]: [Eat Sleep Run Repeat - Podcast](https://shows.acast.com/eat-sleep-run-repeat).
+
+Starrett’s approach is built around a phased structure that guides athletes from base conditioning through to race readiness. He breaks the training block into distinct segments, what he calls the “Pre-Superbase,” “Superbase,” and “Marathon Bridge,” each with a specific physiological focus. It’s not just about ramping up mileage, it’s about layering fitness in a deliberate and purposeful way.
+
+What really struck me was how much emphasis he places on quality sessions over quantity. He's definitely not a fan of *junk miles*. His plans centre around two hard workouts per week that target the specific demands of the marathon, using marathon pace and threshold sessions. That approach made a lot of sense, especially in the context of my own build. Another aspect that stood out was his lack of reliance on frequent tune-up races. Instead, he uses well designed marathon pace workouts to simulate both the physical demands of race day. While my own program remains different in structure, I found plenty in that conversation that resonated. The specificity, the structured progress and the idea that fewer races might not be a disadvantage after all. Which was especially relevant after Noosa. The week following the half was tough, significant muscle soreness meant I didn’t get back to full training for several days. The race was on the Saturday. I managed a 6 km effort the following Thursday, and then a 32 km long run on Sunday, keeping it all in Zone 2 heart rate.
+
+I’ll post a breakdown of the June training block soon. There’s definitely been more marathon pace work creeping in, and it’s starting to feel more comfortable. The last few weeks have built into a big weekend, but I’ll save that story for next time.

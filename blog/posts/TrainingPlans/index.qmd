@@ -50,7 +50,7 @@ In short: **intensity distribution matters**. But how you mix it, like so much i
 
 Curious about my own training, I took a quick peek at my data.
 
-Taking a *spherical cow* [^1] approach to vastly simplify things (perhaps to my folly!), I scraped my recent running data from Garmin Connect and imported it into R. In the data.frame I have computed three Zones (Z1, Z2, Z3) using the Avg.HR for each lap. My watch is currently set to lap every 1km. For each zone I ~~inferred~~ guesstimated my HR ranges based on my current probable HRmax of around 180bpm.
+Taking a *spherical cow* [^1] approach to vastly simplify things (perhaps to my folly!), I scaped my recent running data from Garmin Connect and imported it into R. In the data.frame I have computed three Zones (Z1, Z2, Z3) using the Avg.HR for each lap. My watch is currently set to lap every 1km. For each zone I ~~inferred~~ guesstimated my HR ranges based on my current probable HRmax of around 180bpm.
 
 [^1]: The *"spherical cow"* is a funny way of describing how scientists sometimes oversimplify complex problems into neat, potentially unrealistic models. <https://en.wikipedia.org/wiki/Spherical_cow>
 

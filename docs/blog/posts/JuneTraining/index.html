@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-04">
+<meta name="dcterms.date" content="2025-06-26">
 
-<title>May Training Plan – Chris Edwards</title>
+<title>June Training Plan and intensity progression – Chris Edwards</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="floating nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -165,7 +165,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">May Training Plan</h1>
+      <h1 class="title">June Training Plan and intensity progression</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Running</div>
                 <div class="quarto-category">Data Science</div>
@@ -181,14 +181,14 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 4, 2025</p>
+        <p class="date">June 26, 2025</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">May 18, 2025</p>
+        <p class="date-modified">June 26, 2025</p>
       </div>
     </div>
       
@@ -202,24 +202,20 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p>Here’s my training plan for May — 9 weeks out from <strong>Gold Coast Marathon 2025</strong>.</p>
-<p>Modified <em>18/05/2025</em> to adjust for running the <a href="https://runawaynoosamarathon.com.au/race-options/half-marathon/">Noosa Half Marathon</a></p>
-<section id="training-notes" class="level3">
-<h3 class="anchored" data-anchor-id="training-notes">Training Notes</h3>
-<ul>
-<li>Thursdays &amp; Sundays should feel quite hard</li>
-<li><strong>Missing a running session occasionally is fine.</strong> Missing gym work is not.</li>
-<li>Training peak in early/mid-June and then taper time.</li>
-</ul>
-<p>Want to follow along 👉 <a href="https://www.strava.com/athletes/3581834">Strava profile</a> here</p>
+<div class="page-columns page-full"><blockquote class="blockquote">
+<p>“Start where you are. Use what you have. Do what you can.” <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> — Arthur Ashe</p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Arthur Ashe <a href="https://en.wikipedia.org/wiki/Arthur_Ashe">Wikipedia</a>.</p></div></div></div>
+<p>I’ve been slack uploading my training plan, but here’s the plan <del>for</del> from June — as of writing i’ve ticked of most of this and its now less than 2 weeks from <strong>Gold Coast Marathon 2025</strong>.</p>
+<p>This was a tough three weeks, and we had to make some adjustments to fit in with work.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -228,13 +224,13 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your data</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/May.xlsx"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/June.xlsx"</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create gt table</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**May Marathon Training Plan 🏃‍♂**"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**June Marathon Training Plan 🏃‍♂**"</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Week starting</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"📅 Week of"</span>,</span>
@@ -267,36 +263,28 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="dv">14</span></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">" (b) 14k comprising 2k WU, then every alternate km at MP or (c) the Watts session if reps are 800m or longer."</span>,</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> <span class="st">"Tuesday"</span>, <span class="at">rows =</span> <span class="st">`</span><span class="at">Week starting</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"5th May"</span>)</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="fu">md</span>(<span class="st">"25 to 30 minute very slow jog on most Fridays"</span>),</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> Friday)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="fu">md</span>(<span class="st">"Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort "</span>),</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> Sunday)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="fu">md</span>(<span class="st">"25 to 30 minute very slow jog on most Fridays if no session"</span>),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> Friday)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="dgagvqivke" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dgagvqivke table {
+<div id="ikujhfumbs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ikujhfumbs table {
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dgagvqivke thead, #dgagvqivke tbody, #dgagvqivke tfoot, #dgagvqivke tr, #dgagvqivke td, #dgagvqivke th {
+#ikujhfumbs thead, #ikujhfumbs tbody, #ikujhfumbs tfoot, #ikujhfumbs tr, #ikujhfumbs td, #ikujhfumbs th {
   border-style: none;
 }
 
-#dgagvqivke p {
+#ikujhfumbs p {
   margin: 0;
   padding: 0;
 }
 
-#dgagvqivke .gt_table {
+#ikujhfumbs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -322,12 +310,12 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_caption {
+#ikujhfumbs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dgagvqivke .gt_title {
+#ikujhfumbs .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -339,7 +327,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#dgagvqivke .gt_subtitle {
+#ikujhfumbs .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -351,7 +339,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#dgagvqivke .gt_heading {
+#ikujhfumbs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -363,13 +351,13 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_bottom_border {
+#ikujhfumbs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_col_headings {
+#ikujhfumbs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -384,7 +372,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_col_heading {
+#ikujhfumbs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -404,7 +392,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#dgagvqivke .gt_column_spanner_outer {
+#ikujhfumbs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -416,15 +404,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#dgagvqivke .gt_column_spanner_outer:first-child {
+#ikujhfumbs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dgagvqivke .gt_column_spanner_outer:last-child {
+#ikujhfumbs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dgagvqivke .gt_column_spanner {
+#ikujhfumbs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -436,11 +424,11 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#dgagvqivke .gt_spanner_row {
+#ikujhfumbs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dgagvqivke .gt_group_heading {
+#ikujhfumbs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -466,7 +454,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#dgagvqivke .gt_empty_group_heading {
+#ikujhfumbs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -481,15 +469,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#dgagvqivke .gt_from_md > :first-child {
+#ikujhfumbs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dgagvqivke .gt_from_md > :last-child {
+#ikujhfumbs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dgagvqivke .gt_row {
+#ikujhfumbs .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -508,7 +496,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#dgagvqivke .gt_stub {
+#ikujhfumbs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -521,7 +509,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#dgagvqivke .gt_stub_row_group {
+#ikujhfumbs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,15 +523,15 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#dgagvqivke .gt_row_group_first td {
+#ikujhfumbs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dgagvqivke .gt_row_group_first th {
+#ikujhfumbs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dgagvqivke .gt_summary_row {
+#ikujhfumbs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -553,16 +541,16 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#dgagvqivke .gt_first_summary_row {
+#ikujhfumbs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_first_summary_row.thick {
+#ikujhfumbs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dgagvqivke .gt_last_summary_row {
+#ikujhfumbs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -572,7 +560,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_grand_summary_row {
+#ikujhfumbs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -582,7 +570,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#dgagvqivke .gt_first_grand_summary_row {
+#ikujhfumbs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -592,7 +580,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_last_grand_summary_row_top {
+#ikujhfumbs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -602,11 +590,11 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_striped {
+#ikujhfumbs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dgagvqivke .gt_table_body {
+#ikujhfumbs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -615,7 +603,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_footnotes {
+#ikujhfumbs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -629,7 +617,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_footnote {
+#ikujhfumbs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -638,7 +626,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#dgagvqivke .gt_sourcenotes {
+#ikujhfumbs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -652,7 +640,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#dgagvqivke .gt_sourcenote {
+#ikujhfumbs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -660,72 +648,72 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#dgagvqivke .gt_left {
+#ikujhfumbs .gt_left {
   text-align: left;
 }
 
-#dgagvqivke .gt_center {
+#ikujhfumbs .gt_center {
   text-align: center;
 }
 
-#dgagvqivke .gt_right {
+#ikujhfumbs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dgagvqivke .gt_font_normal {
+#ikujhfumbs .gt_font_normal {
   font-weight: normal;
 }
 
-#dgagvqivke .gt_font_bold {
+#ikujhfumbs .gt_font_bold {
   font-weight: bold;
 }
 
-#dgagvqivke .gt_font_italic {
+#ikujhfumbs .gt_font_italic {
   font-style: italic;
 }
 
-#dgagvqivke .gt_super {
+#ikujhfumbs .gt_super {
   font-size: 65%;
 }
 
-#dgagvqivke .gt_footnote_marks {
+#ikujhfumbs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dgagvqivke .gt_asterisk {
+#ikujhfumbs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dgagvqivke .gt_indent_1 {
+#ikujhfumbs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dgagvqivke .gt_indent_2 {
+#ikujhfumbs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dgagvqivke .gt_indent_3 {
+#ikujhfumbs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dgagvqivke .gt_indent_4 {
+#ikujhfumbs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dgagvqivke .gt_indent_5 {
+#ikujhfumbs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dgagvqivke .katex-display {
+#ikujhfumbs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dgagvqivke div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ikujhfumbs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -743,7 +731,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 </colgroup>
 <thead>
 <tr class="gt_heading header">
-<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>May Marathon Training Plan 🏃‍♂</strong></th>
+<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>June Marathon Training Plan 🏃‍♂</strong></th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row even">
 <th rowspan="2" id="Week-starting" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">📅 Week of</th>
@@ -761,59 +749,43 @@ Weekend Sessions
 <th id="Thursday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Thu</th>
 <th id="Friday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Fri<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
 <th id="Saturday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Sat</th>
-<th id="Sunday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Sun<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span></th>
+<th id="Sunday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Sun</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Week starting">5th May</td>
+<td class="gt_row gt_left" headers="Week starting">2nd June</td>
 <td class="gt_row gt_left" headers="Monday">Gym</td>
-<td class="gt_row gt_left" headers="Tuesday">(a) 14k with 2 x 3k at MP or (b) or (c) as below<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></td>
-<td class="gt_row gt_left" headers="Wednesday">1:20 hours easy to HR</td>
+<td class="gt_row gt_left" headers="Tuesday">18k build from 5:40 to 4:10 pace- 1k steady at end</td>
+<td class="gt_row gt_left" headers="Wednesday">1:40 hours easy to HR</td>
 <td class="gt_row gt_left" headers="Thursday">Watts thresholds with 4K WU and WD</td>
 <td class="gt_row gt_left" headers="Friday">Gym</td>
-<td class="gt_row gt_left" headers="Saturday">14k with 8k at MP</td>
-<td class="gt_row gt_left" headers="Sunday">28k with 3 x 4k at MP</td>
+<td class="gt_row gt_left" headers="Saturday">16k with 12k at MP</td>
+<td class="gt_row gt_left" headers="Sunday">32k with 4 x 4k at MP</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Week starting">12th May</td>
+<td class="gt_row gt_left gt_striped" headers="Week starting">9th June</td>
 <td class="gt_row gt_left gt_striped" headers="Monday">Gym</td>
-<td class="gt_row gt_left gt_striped" headers="Tuesday">as above</td>
-<td class="gt_row gt_left gt_striped" headers="Wednesday">1:25 hours easy to HR</td>
-<td class="gt_row gt_left gt_striped" headers="Thursday">As above</td>
-<td class="gt_row gt_left gt_striped" headers="Friday">Gym</td>
-<td class="gt_row gt_left gt_striped" headers="Saturday">16k with 10k at MP</td>
-<td class="gt_row gt_left gt_striped" headers="Sunday">30k with 3 x 4k at MP plus 2k at HMP (last effort)</td>
+<td class="gt_row gt_left gt_striped" headers="Tuesday">As above but 20k</td>
+<td class="gt_row gt_left gt_striped" headers="Wednesday">1:45 hours easy to HR</td>
+<td class="gt_row gt_left gt_striped" headers="Thursday">Rest</td>
+<td class="gt_row gt_left gt_striped" headers="Friday">20k with 16km at MP*</td>
+<td class="gt_row gt_left gt_striped" headers="Saturday">34K with 4 x 5K at MP^</td>
+<td class="gt_row gt_left gt_striped" headers="Sunday">Rest</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Week starting">19th May</td>
+<td class="gt_row gt_left" headers="Week starting">16th June</td>
 <td class="gt_row gt_left" headers="Monday">Gym</td>
 <td class="gt_row gt_left" headers="Tuesday">16k easy to HR with 2k at HMP</td>
-<td class="gt_row gt_left" headers="Wednesday">10k easy to HR with 2 x 500m at HMP</td>
-<td class="gt_row gt_left" headers="Thursday">Rest day or 30min very slow jog</td>
-<td class="gt_row gt_left" headers="Friday">5k easy with 6 to 8 100m efforts to 4:05 pace.</td>
-<td class="gt_row gt_left" headers="Saturday">Noosa HM</td>
-<td class="gt_row gt_left" headers="Sunday">10km easy</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Week starting">26th May</td>
-<td class="gt_row gt_left gt_striped" headers="Monday">Gym</td>
-<td class="gt_row gt_left gt_striped" headers="Tuesday">12k easy to HR</td>
-<td class="gt_row gt_left gt_striped" headers="Wednesday">1:35 hours easy to HR</td>
-<td class="gt_row gt_left gt_striped" headers="Thursday">Watts thresholds with 4K WU and WD</td>
-<td class="gt_row gt_left gt_striped" headers="Friday">Gym</td>
-<td class="gt_row gt_left gt_striped" headers="Saturday">1:20 hours easy to HR</td>
-<td class="gt_row gt_left gt_striped" headers="Sunday">2:20 hours easy to HR</td>
+<td class="gt_row gt_left" headers="Wednesday">1:40 hours easy to HR</td>
+<td class="gt_row gt_left" headers="Thursday">Watts thresholds with 4K WU and WD</td>
+<td class="gt_row gt_left" headers="Friday">Gym</td>
+<td class="gt_row gt_left" headers="Saturday">1:40 hours easy to HR</td>
+<td class="gt_row gt_left" headers="Sunday">Top end of Zone2 (Garmin) 2:30hours</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> 25 to 30 minute very slow jog on most Fridays</td>
-</tr>
-<tr class="even">
-<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort</td>
-</tr>
-<tr class="odd">
-<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span> (b) 14k comprising 2k WU, then every alternate km at MP or (c) the Watts session if reps are 800m or longer.</td>
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> 25 to 30 minute very slow jog on most Fridays if no session</td>
 </tr>
 </tfoot>
 
@@ -822,9 +794,607 @@ Weekend Sessions
 </div>
 </div>
 </div>
+<section id="training-notes" class="level3">
+<h3 class="anchored" data-anchor-id="training-notes">Training Notes</h3>
+<ul>
+<li><p>13 June + 14 June = 36km at marathon pace total. The 16km on the 13th* was fine but the 20k on the 14th^ was a real struggle.</p></li>
+<li><p>14 June was the peak. Then it was a matter of keeping fit and injury free.</p></li>
+</ul>
+<p>👉 <a href="https://www.strava.com/athletes/3581834">Strava profile</a> here</p>
+<p>Following on from a previous post where I explained my training plan had a heavy focus on specificity, ie running a significant portion of weekly kilometres at or near marathon pace. I was curious to dig into the data and see how well I’d followed that principle.</p>
+<p>Below is a summary table of my running since January, categorised by paces - significantly faster than marathon pace (&lt;4:05 min/km) or at or around my goal marathon pace (4:05–4:20 min/km). Obviously, my actual race pace is still to be determined.</p>
+<p>One small caveat: June isn’t quite over yet, so there may be a few more kilometres to add before month’s end.</p>
+<p>Interesting, early in the year, marathon pace work was virtually absent, just 1.0 km in January and 0.1 km in February, likely reflecting a period of just turing up to the <a href="https://www.wattsathletics.com.au/">Watts sessions</a>. Typically this involves a Tuesday (speed) and Thursday (threshold) session, and both run quicker than MP. But April marked a turning point, and a big jump towards goal pace, and that volume has held steady since, with 62.0 km logged in June so far.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Pace Dataset -----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"data/data_comb4.csv"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>pace <span class="ot">&lt;-</span> df1<span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">pace_category =</span> <span class="fu">cut</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      pace_sec_per_km,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">245</span>, <span class="dv">260</span>, <span class="dv">300</span>, <span class="dv">330</span>, <span class="cn">Inf</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"&lt;4:05 min/km"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4:05–4:20 min/km"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4:20–5:00 min/km"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5:00–5:30 min/km"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"&gt;5:30 min/km"</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">right =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Month,pace_category) <span class="sc">%&gt;%</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Distance_km =</span> <span class="fu">sum</span>(Distance, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Month) <span class="sc">%&gt;%</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Percentage_Distance =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> Total_Distance_km <span class="sc">/</span> <span class="fu">sum</span>(Total_Distance_km), <span class="dv">1</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Cleaning -------------</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>pace<span class="sc">$</span>Month <span class="ot">&lt;-</span> <span class="fu">factor</span>(pace<span class="sc">$</span>Month, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"January"</span>, <span class="st">"February"</span>, <span class="st">"March"</span>,<span class="st">"April"</span>, <span class="st">"May"</span>, <span class="st">"June"</span>))</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Data Table-------------</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate total monthly distance from full pace dataset</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>monthly_total <span class="ot">&lt;-</span> pace <span class="sc">%&gt;%</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Month) <span class="sc">%&gt;%</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total_Distance_km, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create pace zone summary for selected categories</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> pace <span class="sc">%&gt;%</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pace_category <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"&lt;4:05 min/km"</span>, <span class="st">"4:05–4:20 min/km"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Month, pace_category, Total_Distance_km) <span class="sc">%&gt;%</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> pace_category,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> Total_Distance_km</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>summary_table <span class="sc">%&gt;%</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(monthly_total, <span class="at">by =</span> <span class="st">"Month"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">factor</span>(Month, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"January"</span>, <span class="st">"February"</span>, <span class="st">"March"</span>, <span class="st">"April"</span>, <span class="st">"May"</span>, <span class="st">"June"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Monthly Distance Totals (km)"</span>,</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Selected Pace Zones"</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">Month =</span> <span class="st">"Month"</span>,</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">4:05–4:20 min/km</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"4:05–4:20 min/km"</span>,</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">&lt;4:05 min/km</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"&lt;4:05 min/km"</span>,</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total =</span> <span class="st">"Total"</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">4:05–4:20 min/km</span><span class="st">`</span>, <span class="st">`</span><span class="at">&lt;4:05 min/km</span><span class="st">`</span>, Total),</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="iqxdbekikt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iqxdbekikt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#iqxdbekikt thead, #iqxdbekikt tbody, #iqxdbekikt tfoot, #iqxdbekikt tr, #iqxdbekikt td, #iqxdbekikt th {
+  border-style: none;
+}
+
+#iqxdbekikt p {
+  margin: 0;
+  padding: 0;
+}
+
+#iqxdbekikt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#iqxdbekikt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#iqxdbekikt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#iqxdbekikt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#iqxdbekikt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#iqxdbekikt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#iqxdbekikt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#iqxdbekikt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#iqxdbekikt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#iqxdbekikt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#iqxdbekikt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#iqxdbekikt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#iqxdbekikt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#iqxdbekikt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#iqxdbekikt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqxdbekikt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#iqxdbekikt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#iqxdbekikt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#iqxdbekikt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqxdbekikt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#iqxdbekikt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqxdbekikt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#iqxdbekikt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqxdbekikt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iqxdbekikt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqxdbekikt .gt_left {
+  text-align: left;
+}
+
+#iqxdbekikt .gt_center {
+  text-align: center;
+}
+
+#iqxdbekikt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#iqxdbekikt .gt_font_normal {
+  font-weight: normal;
+}
+
+#iqxdbekikt .gt_font_bold {
+  font-weight: bold;
+}
+
+#iqxdbekikt .gt_font_italic {
+  font-style: italic;
+}
+
+#iqxdbekikt .gt_super {
+  font-size: 65%;
+}
+
+#iqxdbekikt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#iqxdbekikt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#iqxdbekikt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#iqxdbekikt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#iqxdbekikt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#iqxdbekikt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#iqxdbekikt .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#iqxdbekikt .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#iqxdbekikt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="4" class="gt_heading gt_title gt_font_normal">Monthly Distance Totals (km)</th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Selected Pace Zones</th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Month" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Month</th>
+<th id="a<4:05-min/km" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">&lt;4:05 min/km</th>
+<th id="a4:05–4:20-min/km" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">4:05–4:20 min/km</th>
+<th id="Total" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="Month">January</td>
+<td class="gt_row gt_right" headers="<4:05 min/km">29.3</td>
+<td class="gt_row gt_right" headers="4:05–4:20 min/km">1.0</td>
+<td class="gt_row gt_right" headers="Total">208.4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Month">February</td>
+<td class="gt_row gt_right" headers="<4:05 min/km">41.1</td>
+<td class="gt_row gt_right" headers="4:05–4:20 min/km">0.1</td>
+<td class="gt_row gt_right" headers="Total">231.2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Month">March</td>
+<td class="gt_row gt_right" headers="<4:05 min/km">33.5</td>
+<td class="gt_row gt_right" headers="4:05–4:20 min/km">5.0</td>
+<td class="gt_row gt_right" headers="Total">234.8</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Month">April</td>
+<td class="gt_row gt_right" headers="<4:05 min/km">33.5</td>
+<td class="gt_row gt_right" headers="4:05–4:20 min/km">59.0</td>
+<td class="gt_row gt_right" headers="Total">340.0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Month">May</td>
+<td class="gt_row gt_right" headers="<4:05 min/km">45.9</td>
+<td class="gt_row gt_right" headers="4:05–4:20 min/km">46.0</td>
+<td class="gt_row gt_right" headers="Total">367.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Month">June</td>
+<td class="gt_row gt_right" headers="<4:05 min/km">31.6</td>
+<td class="gt_row gt_right" headers="4:05–4:20 min/km">62.0</td>
+<td class="gt_row gt_right" headers="Total">338.6</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

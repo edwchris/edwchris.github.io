@@ -1,9 +1,9 @@
 ---
-title: "May Training Plan "
-date: 05/04/2025
+title: "June Training Plan and intensity progression "
+date: 06/26/2025
 categories: [Running, Data Science, GCM25]
-date-modified: 05/18/2025
-image: images/May_training.jpg
+date-modified: 06/26/2025
+image: images/June_training.jpg
 format:
   html:
     code-fold: true
@@ -11,17 +11,14 @@ format:
 draft: false
 ---
 
-Here’s my training plan for May — 9 weeks out from **Gold Coast Marathon 2025**.
+> “Start where you are. Use what you have. Do what you can.” [^1] — Arthur Ashe
 
-Modified *18/05/2025* to adjust for running the [Noosa Half Marathon](https://runawaynoosamarathon.com.au/race-options/half-marathon/)
+[^1]: Arthur Ashe [Wikipedia](https://en.wikipedia.org/wiki/Arthur_Ashe).
 
-### Training Notes
+I've been slack uploading my training plan, but here’s the plan ~~for~~ from June — as of writing i've ticked of most of this and its now less than 2 weeks from **Gold Coast Marathon 2025**.
 
--   Thursdays & Sundays should feel quite hard
--   **Missing a running session occasionally is fine.** Missing gym work is not.
--   Training peak in early/mid-June and then taper time.
+This was a tough three weeks, and we had to make some adjustments to fit in with work.
 
-Want to follow along 👉 [Strava profile](https://www.strava.com/athletes/3581834) here
 
 ```{r}
 #| echo: true
@@ -32,13 +29,13 @@ library(dplyr)
 library(readxl)
 
 # Load your data
-df <- read_excel("data/May.xlsx")
+df <- read_excel("data/June.xlsx")
 
 # Create gt table
 df %>%
   gt() %>%
   tab_header(
-    title = md("**May Marathon Training Plan 🏃‍♂**")
+    title = md("**June Marathon Training Plan 🏃‍♂**")
   ) %>%
   cols_label(
     `Week starting` = "📅 Week of",
@@ -71,17 +68,107 @@ df %>%
     heading.subtitle.font.size = 14
   ) %>%
     tab_footnote(
-    footnote = " (b) 14k comprising 2k WU, then every alternate km at MP or (c) the Watts session if reps are 800m or longer.",
-    locations = cells_body(columns = "Tuesday", rows = `Week starting` == "5th May")
-  ) %>%
-    tab_footnote(
-    footnote = md("25 to 30 minute very slow jog on most Fridays"),
+    footnote = md("25 to 30 minute very slow jog on most Fridays if no session"),
     locations = cells_column_labels(columns = Friday)
-  ) %>%
-    tab_footnote(
-    footnote = md("Weekend runs easy pace between MP efforts. Heart rate returns to (Garmin) zone 2 before next effort "),
-    locations = cells_column_labels(columns = Sunday)
   ) 
 
 
 ```
+
+### Training Notes
+
+-   13 June + 14 June = 36km at marathon pace total. The 16km on the 13th* was fine but the 20k on the 14th^ was a real struggle.
+
+-   14 June was the peak. Then it was a matter of keeping fit and injury free.
+
+👉 [Strava profile](https://www.strava.com/athletes/3581834) here
+
+Following on from a previous post where I explained my training plan had a heavy focus on specificity, ie running a significant portion of weekly kilometres at or near marathon pace. I was curious to dig into the data and see how well I’d followed that principle.
+
+Below is a summary table of my running since January, categorised by paces - significantly faster than marathon pace (<4:05 min/km) or at or around my goal marathon pace (4:05–4:20 min/km). Obviously, my actual race pace is still to be determined.
+
+One small caveat: June isn’t quite over yet, so there may be a few more kilometres to add before month’s end.
+
+Interesting, early in the year, marathon pace work was virtually absent, just 1.0 km in January and 0.1 km in February, likely reflecting a period of just turing up to the [Watts sessions](https://www.wattsathletics.com.au/). Typically this involves a Tuesday (speed) and Thursday (threshold) session, and both run quicker than MP. But April marked a turning point, and a big jump towards goal pace, and that volume has held steady since, with 62.0 km logged in June so far.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+# Create Pace Dataset -----------
+library(data.table)
+library(tidyverse)
+
+df1 <- fread("data/data_comb4.csv")
+
+pace <- df1%>%
+  mutate(
+    pace_category = cut(
+      pace_sec_per_km,
+      breaks = c(-Inf, 245, 260, 300, 330, Inf),
+      labels = c(
+        "<4:05 min/km",
+        "4:05–4:20 min/km",
+        "4:20–5:00 min/km",
+        "5:00–5:30 min/km",
+        ">5:30 min/km"
+      ),
+      right = FALSE
+    )
+  ) %>%
+  group_by(Month,pace_category) %>%
+  summarise(
+    Total_Distance_km = sum(Distance, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  group_by(Month) %>%
+  mutate(
+    Percentage_Distance = round(100 * Total_Distance_km / sum(Total_Distance_km), 1)
+  ) %>%
+  ungroup()
+
+# Cleaning -------------
+
+pace$Month <- factor(pace$Month, levels = c("January", "February", "March","April", "May", "June"))
+
+# Create Data Table-------------
+library(gt)
+
+
+#Calculate total monthly distance from full pace dataset
+monthly_total <- pace %>%
+  group_by(Month) %>%
+  summarise(Total = sum(Total_Distance_km, na.rm = TRUE))
+
+# Create pace zone summary for selected categories
+summary_table <- pace %>%
+  filter(pace_category %in% c("<4:05 min/km", "4:05–4:20 min/km")) %>%
+  select(Month, pace_category, Total_Distance_km) %>%
+  pivot_wider(
+    names_from = pace_category,
+    values_from = Total_Distance_km
+  )
+
+
+summary_table %>%
+  left_join(monthly_total, by = "Month") %>%
+  arrange(factor(Month, levels = c("January", "February", "March", "April", "May", "June"))) %>%
+  gt() %>%
+  tab_header(
+    title = "Monthly Distance Totals (km)",
+    subtitle = "Selected Pace Zones"
+  ) %>%
+  cols_label(
+    Month = "Month",
+    `4:05–4:20 min/km` = "4:05–4:20 min/km",
+    `<4:05 min/km` = "<4:05 min/km",
+    Total = "Total"
+  ) %>%
+  fmt_number(
+    columns = c(`4:05–4:20 min/km`, `<4:05 min/km`, Total),
+    decimals = 1
+  )
+```
+
+

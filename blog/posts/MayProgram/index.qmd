@@ -83,5 +83,4 @@ df %>%
     locations = cells_column_labels(columns = Sunday)
   ) 
 
-
 ```

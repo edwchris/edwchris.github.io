@@ -2,7 +2,7 @@
 title: "June Training Plan and intensity progression "
 date: 06/26/2025
 categories: [Running, Data Science, GCM25]
-date-modified: 06/26/2025
+date-modified: 06/28/2025
 image: images/June_training.jpg
 format:
   html:
@@ -168,7 +168,11 @@ summary_table %>%
   fmt_number(
     columns = c(`4:05–4:20 min/km`, `<4:05 min/km`, Total),
     decimals = 1
-  )
+  ) %>%
+cols_align(
+  align = "center",
+  columns = c(`4:05–4:20 min/km`, `<4:05 min/km`, Total)
+)
 ```
 
 

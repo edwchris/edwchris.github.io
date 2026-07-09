@@ -1,6 +1,6 @@
 ---
 title: "Chris Edwards"
-image: profilenew2.jpg
+image: profilenew3.png
 about:
   template: trestles
   links:

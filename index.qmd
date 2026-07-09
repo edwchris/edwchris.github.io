@@ -3,6 +3,7 @@ title: "Chris Edwards"
 image: profilenew3.png
 about:
   template: trestles
+  image-width: 15em
   links:
     - icon: linkedin
       text: LinkedIn

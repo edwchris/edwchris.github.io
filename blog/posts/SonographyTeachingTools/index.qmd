@@ -1,0 +1,23 @@
+---
+title: "New Sonography Teaching Tools"
+subtitle: "A set of free, interactive tools for teaching ultrasound physics"
+date: 07/10/2026
+date-modified: last-modified
+categories: [Sonography, Teaching]
+draft: false
+---
+
+I've been chipping away at a small side project for a while now, and it's finally at a point I'm happy to share: [Sonography Teaching Tools](https://edwchris.github.io/sonography-teaching-tools/), a set of interactive web-based resources for teaching and learning the physics behind medical ultrasound.
+
+Anyone who has taught (or studied) ultrasound physics knows the challenge. Concepts like aliasing, angle correction, and flow dynamics are intuitive once you've seen them in action, but hard to picture from a textbook diagram or a single static waveform. These tools are my attempt to close that gap, letting students manipulate the variables themselves and see the effect in real time rather than just being told about it.
+
+There are currently four tools available:
+
+- **PW Doppler: Angle Correction** — shows how small errors in cursor placement barely matter at favourable insonation angles, but become a real problem once you push past 60°.
+- **PW Doppler: Aliasing & Nyquist Limit** — visualises spectral wraparound once blood velocity exceeds the Nyquist limit, and demonstrates the usual fixes: adjusting PRF, shifting the baseline, or changing frequency.
+- **Poiseuille's Law** — explores the (still slightly counterintuitive to me) relationship between vessel radius and flow rate, where radius acts on the 4th power while other variables scale linearly. Directly relevant to how we think about stenosis and vasodilation.
+- **PW Doppler: Waveform Characteristics** — explains why some Doppler traces look triphasic and others monophasic, by visualising pulse-pressure wave propagation and peripheral resistance.
+
+Each tool is a single self-contained HTML file with no external dependencies, so they can be opened directly in a browser or embedded as an iframe inside an LMS, which was a deliberate choice to make them as easy as possible to drop into existing teaching material.
+
+Everything is free to use, and the [code is open on GitHub](https://github.com/edwchris/sonography-teaching-tools) if you'd like to see how something works under the hood, adapt it, or suggest an improvement. If you're teaching or studying sonography and find these useful (or find a bug, or have an idea for another tool), I'd love to hear about it.

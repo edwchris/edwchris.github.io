@@ -1,0 +1,104 @@
+---
+title: "The Quickening"
+date: 06/29/2025
+categories: [Running, GCM25]
+date-modified: 06/29/2025
+image: images/taper.jpg
+format:
+  html:
+    code-fold: true
+    toc: false
+draft: false
+bibliography: references.bib
+---
+
+> "“The hay is in the barn.” – (by every coach ever)
+
+Taper week. That strange final chapter in marathon training where the miles drop, but the mind races. It's often described as a mix unease, doubt, phantom pains, and the occasional desperate search for “best race-day breakfast.”
+
+The usual routine, get up, train, recover, repeat, can be replaced if your not careful by second-guessing everything. Did I run enough? Too much? Should I squeeze in one more theshold session? Am I coming down with something? Why does my achilles feel weird?
+
+Most of these concerns come not from logic but from a change in rhythm. After months of structured training, the quiet of taper week feels unsettling, like the calm before a storm.
+
+### The Science Behind the Taper
+
+Unlike ~~some~~ many parts of marathon training, the science around tapering is actually pretty solid. It works. Studies show that reducing training volume and intensity in the final weeks leads to better race-day performance. Makes sense, One widely cited meta-analysis suggests that an exponential taper, where training volume is cut more sharply as race day approaches, is especially effective.[@bosquet2007]
+
+> “A 2-week taper during which training volume is exponentially reduced by 41–60% seems to be the most efficient strategy to maximize performance gains.” (Bosquet et al. 2007)
+
+That’s reassuring.
+
+For me, peak training landed three weeks out: 36 kilometres of marathon pace work spread over two key sessions. After that, I started to dial things down, both in terms of distance and intensity. Below is my training plan showing how my taper has taken shape leading into race week.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+library(gt)
+library(dplyr)
+library(readxl)
+
+# Load your data
+df <- read_excel("data/Taper.xlsx")
+
+# Create gt table
+df %>%
+  gt() %>%
+  tab_header(
+    title = md("**The Taper 🏃‍♂**")
+  ) %>%
+  cols_label(
+    `Week starting` = "📅 Week of",
+    Monday = "Mon",
+    Tuesday = "Tue",
+    Wednesday = "Wed",
+    Thursday = "Thu",
+    Friday = "Fri",
+    Saturday = "Sat",
+    Sunday = "Sun"
+  ) %>%
+  tab_spanner(
+    label = "Weekday Training",
+    columns = Monday:Friday
+  ) %>%
+  tab_spanner(
+    label = "Weekend Sessions",
+    columns = Saturday:Sunday
+  ) %>%
+  opt_row_striping() %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.font.names = "Helvetica",
+    data_row.padding = px(6),
+    table.width = pct(100),
+    heading.title.font.size = 20,
+    heading.subtitle.font.size = 14
+  ) 
+
+
+```
+
+### Carb-Loading
+
+Carbohydrate-loading is another classic source of pre-race stress.
+
+It’s one of those things runners love to debate. Over the years, I’ve mostly just aimed to bump up my carbohydrate intake in the final few days before a race. Nothing too rigid. Gone are the days of the depletion-then-loading method (where you run yourself into the ground, eat like a bird, then binge on pasta). That model’s largely been debunked. Instead, the evidence now supports a more balanced approach:
+
+👉 10–12 grams of carbohydrate per kilogram of body weight per day, ideally during the 36–48 hours leading into the race.[@burkeC2011]
+
+At 75 kg, that means around 750–900 grams per day—which, let’s be honest, is a lot of carbs. ~~Luckily~~ Unfortunately, my usual diet is already fairly carb-heavy (hello, white bread and rice), so I won’t be reinventing the wheel. I’ll just dial it up a notch, e.g. more sports drinks, soft drinks, etc)
+
+The attached is sample plan that’s been doing the rounds lately, and I'll give this a go *broadly speaking* during the 48 hours leading into the race.
+
+[Download pre race carbo loading](CarboLoading.docx)
+
+As of writing, we’re officially one week out from the marathon. I've definitely felt the load from the training block, some residual fatigue, a bit of sluggishness on recent runs. Nothing alarming, just the usual signs that the body is ready to recover and sharpen.
+
+With the big stuff now behind me, the aim this week is simple: trust the process, avoid overthinking, stay healthy, and maybe try to sleep a little more (easier said than done).
+
+Regardless of what happens on race day, this training block has been a win. I’ve found that sweet spot between pushing myself and still enjoying the process. I’ve managed to avoid overtraining and injury (so far—touch wood).
+
+So here’s to the final countdown. Let the taper madness begin, but hopefully not take over.

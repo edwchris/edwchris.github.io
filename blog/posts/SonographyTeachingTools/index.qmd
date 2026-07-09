@@ -10,7 +10,7 @@ author:
 citation:
   type: software
   title: Sonography Teaching Tools
-  url: https://edwchris.github.io/sonography-teaching-tools/
+  url: https://doi.org/10.5281/zenodo.21256976
   doi: 10.5281/zenodo.21256976
 categories: [Sonography, Teaching]
 draft: false

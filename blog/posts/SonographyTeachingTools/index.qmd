@@ -33,7 +33,7 @@ Each tool is a single self-contained HTML file with no external dependencies, so
 
 Everything is free to use, and the [code is open on GitHub](https://github.com/edwchris/sonography-teaching-tools) if you'd like to see how something works under the hood, adapt it, or suggest an improvement. If you're teaching or studying sonography and find these useful (or find a bug, or have an idea for another tool), I'd love to hear about it.
 
-If you find these useful in your own teaching or research, a citation is always appreciated[^1].
+If you find these useful in your own teaching or research, there's a citation here[^1].
 
 [^1]: Edwards C. Sonography Teaching Tools \[software\]. Zenodo, 2026. <https://doi.org/10.5281/zenodo.21256976>
 

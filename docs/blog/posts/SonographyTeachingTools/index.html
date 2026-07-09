@@ -25,7 +25,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -93,6 +112,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 <meta name="citation_fulltext_html_url" content="https://edwchris.github.io/sonography-teaching-tools/">
 <meta name="citation_doi" content="10.5281/zenodo.21256976">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Sonography teaching tools;,citation_abstract=A collection of small, self-contained, dependency-free interactive HTML/JS tools for teaching medical ultrasound physics and mathematics concepts to postgraduate sonography students.;,citation_author=Christopher Edwards;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_fulltext_html_url=https://doi.org/10.5281/zenodo.21256976;,citation_doi=10.5281/zenodo.21256976;,citation_publisher=Zenodo;">
 </head>
 
 <body class="floating nav-fixed quarto-light">
@@ -198,7 +218,7 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -215,12 +235,12 @@ gtag('config', 'G-69T2DQZDC7', { 'anonymize_ip': true});
 </ul>
 <p>Each tool is a single self-contained HTML file with no external dependencies, so they can be opened directly in a browser or embedded as an iframe inside an LMS, which was a deliberate choice to make them as easy as possible to drop into existing teaching material.</p>
 <p>Everything is free to use, and the <a href="https://github.com/edwchris/sonography-teaching-tools">code is open on GitHub</a> if you’d like to see how something works under the hood, adapt it, or suggest an improvement. If you’re teaching or studying sonography and find these useful (or find a bug, or have an idea for another tool), I’d love to hear about it.</p>
-<p>If you use these tools in your own teaching or research, please cite them as:</p>
-<blockquote class="blockquote">
-<p>Edwards, C. (2026). <em>Sonography Teaching Tools</em> [collection of interactive teaching tools]. <a href="https://doi.org/10.5281/zenodo.21256976" class="uri">https://doi.org/10.5281/zenodo.21256976</a></p>
-</blockquote>
+<p>If you use these tools in your own teaching or research, please cite them <span class="citation" data-cites="edwards2026sonographytools">(<a href="#ref-edwards2026sonographytools" role="doc-biblioref">Edwards 2026</a>)</span>.</p>
 
 
+<div class="no-row-height column-margin column-container"><div id="ref-edwards2026sonographytools" class="csl-entry" role="listitem">
+Edwards, Christopher. 2026. <em>Sonography Teaching Tools</em>. V. latest. Zenodo, released. <a href="https://doi.org/10.5281/zenodo.21256976">https://doi.org/10.5281/zenodo.21256976</a>.
+</div></div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

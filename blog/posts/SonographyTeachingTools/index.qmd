@@ -16,6 +16,7 @@ categories: [Sonography, Teaching]
 draft: false
 appendix-cite-as: false
 google-scholar: true
+bibliography: references.bib
 ---
 
 I've been chipping away at a small side project for a while now, and it's finally at a point I'm happy to share: [Sonography Teaching Tools](https://edwchris.github.io/sonography-teaching-tools/), a set of interactive web-based resources for teaching and learning the physics behind medical ultrasound.
@@ -33,6 +34,4 @@ Each tool is a single self-contained HTML file with no external dependencies, so
 
 Everything is free to use, and the [code is open on GitHub](https://github.com/edwchris/sonography-teaching-tools) if you'd like to see how something works under the hood, adapt it, or suggest an improvement. If you're teaching or studying sonography and find these useful (or find a bug, or have an idea for another tool), I'd love to hear about it.
 
-If you use these tools in your own teaching or research, please cite them as:
-
-> Edwards, C. (2026). *Sonography Teaching Tools* [collection of interactive teaching tools]. <https://doi.org/10.5281/zenodo.21256976>
+If you use these tools in your own teaching or research, please cite them [@edwards2026sonographytools].

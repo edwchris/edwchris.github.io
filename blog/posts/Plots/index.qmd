@@ -7,7 +7,7 @@ format:
   html:
     code-fold: true
     toc: false
-draft: false
+draft: true
 ---
 
 > “If you feel bad at 10 miles, you're in trouble. If you feel bad at 20 miles, you're normal. If you don't feel bad at 26 miles, you're abnormal” [^1] — Robert de Castella

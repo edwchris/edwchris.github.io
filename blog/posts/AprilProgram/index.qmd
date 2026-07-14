@@ -8,7 +8,7 @@ format:
   html:
     code-fold: true
     toc: false
-draft: false
+draft: true
 ---
 
 Here’s my training plan for April — 12 weeks out from **Gold Coast Marathon 2025**. I’ll post the May and June plans a bit later depending on how I’m travelling — time and fitness-wise.

@@ -8,7 +8,7 @@ format:
   html:
     code-fold: true
     toc: false
-draft: false
+draft: true
 bibliography: references.bib
 ---
 

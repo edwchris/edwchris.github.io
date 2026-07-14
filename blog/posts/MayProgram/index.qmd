@@ -8,7 +8,7 @@ format:
   html:
     code-fold: true
     toc: false
-draft: false
+draft: true
 ---
 
 Here’s my training plan for May — 9 weeks out from **Gold Coast Marathon 2025**.

@@ -5,7 +5,7 @@ date: 04/06/2025
 categories: [Running, Data Science, GCM25]
 date-modified: last-modified
 code-fold: true
-draft: false
+draft: true
 ---
 
 > “He who makes a beast of himself gets rid of the pain of being a man.” [^1] — Dr. Samuel Johnson, quoted in Fear and Loathing in Las Vegas by Hunter S. Thompson (1971)
